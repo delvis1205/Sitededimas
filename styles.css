@@ -59,3 +59,16 @@ header {
     width: 100%;
     height: auto;
 }
+
+/* Estilo para o rodapé */
+footer {
+    background-color: #282828; /* Cor de fundo do rodapé */
+    color: white; /* Cor do texto do rodapé */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 10px 0; /* Espaçamento interno */
+    position: fixed; /* Fixa o rodapé na parte inferior da página */
+    width: 100%; /* Faz o rodapé ocupar toda a largura da página */
+    bottom: 0; /* Posiciona o rodapé na parte inferior */
+    left: 0; /* Alinha o rodapé à esquerda */
+    font-size: 14px; /* Tamanho da fonte do texto */
+}

@@ -11,7 +11,7 @@
             color: white;
             text-align: center;
         }
-        h1, h2 {
+        h1 {
             color: #ffbe00;
         }
         .container {
@@ -46,110 +46,43 @@
             width: 150px;
             height: auto;
         }
-        .form-container {
-            margin-top: 20px;
-            background-color: #282828;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        }
-        .form-container input, .form-container select {
-            padding: 10px;
-            margin: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 80%;
-        }
-        .form-container button {
-            padding: 10px 20px;
-            background-color: #ff4500;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .form-container button:hover {
-            background-color: #ff8500;
-        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Assinaturas - Dimas FF DM</h1>
-        <h2>Escolha o tipo de Assinatura</h2>
+        <h2>Selecione o Plano de Assinatura</h2>
     </header>
 
     <div class="container">
-        <!-- Exemplo de produto -->
         <div class="product-card">
             <div class="img-container">
-                <img src="images/assinatura1.png" alt="3 Dias">
+                <img src="images/assinatura1.png" alt="Assinatura 3 dias">
             </div>
-            <h3>3 Dias</h3>
+            <h3>Assinatura - 3 dias</h3>
             <p class="price">700 Kz</p>
-            <p class="select-btn" data-preco="700" data-nome="3 Dias">Selecionar</p>
+            <a href="formulario.html?produto=Assinatura 3 dias&preco=700" class="select-btn">Selecionar</a>
         </div>
 
         <div class="product-card">
             <div class="img-container">
-                <img src="images/assinatura2.png" alt="1 Semana">
+                <img src="images/assinatura2.png" alt="Assinatura 1 semana">
             </div>
-            <h3>1 Semana</h3>
+            <h3>Assinatura - 1 semana</h3>
             <p class="price">1300 Kz</p>
-            <p class="select-btn" data-preco="1300" data-nome="1 Semana">Selecionar</p>
+            <a href="formulario.html?produto=Assinatura 1 semana&preco=1300" class="select-btn">Selecionar</a>
         </div>
 
         <div class="product-card">
             <div class="img-container">
-                <img src="images/assinatura3.png" alt="1 Mês">
+                <img src="images/assinatura3.png" alt="Assinatura 1 mês">
             </div>
-            <h3>1 Mês</h3>
+            <h3>Assinatura - 1 mês</h3>
             <p class="price">5200 Kz</p>
-            <p class="select-btn" data-preco="5200" data-nome="1 Mês">Selecionar</p>
-        </div>
-
-        <!-- Formulário de Pedido -->
-        <div class="form-container">
-            <form id="pedido-form" action="#" method="get" target="_blank">
-                <h3>Preencha seus dados para o Pedido de Assinatura</h3>
-                <input type="text" id="id-jogador" name="id" placeholder="ID do Jogador" required>
-                <input type="text" id="nome-jogador" name="name" placeholder="Nome" required>
-                <select id="metodo-pagamento" name="payment" required>
-                    <option value="" disabled selected>Método de Pagamento</option>
-                    <option value="Multicaixa Express: 930441438">Multicaixa Express: 930441438</option>
-                    <option value="Transferência Bancária: 0040.0000.9841.5347.1016.4">Transferência Bancária: 0040.0000.9841.5347.1016.4</option>
-                </select>
-                <input type="hidden" id="hidden-text" name="text">
-                <button type="submit">Obter Agora</button>
-            </form>
+            <a href="formulario.html?produto=Assinatura 1 mês&preco=5200" class="select-btn">Selecionar</a>
         </div>
     </div>
 
-    <script>
-        document.querySelectorAll('.select-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const preco = button.dataset.preco;
-                const nome = button.dataset.nome;
-                document.getElementById('hidden-text').value = `Pedido de Assinatura:\nTipo: ${nome}\nPreço: ${preco} Kz\nID do Jogador: ID_DO_JOGADOR\nNome do Jogador: NOME\nMétodo de Pagamento: MÉTODO_DE_PAGAMENTO`;
-            });
-        });
-
-        document.getElementById('pedido-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const tipo = document.querySelector('.select-btn[data-preco]').dataset.nome;
-            const preco = document.querySelector('.select-btn[data-preco]').dataset.preco;
-            const idJogador = document.getElementById('id-jogador').value;
-            const nomeJogador = document.getElementById('nome-jogador').value;
-            const metodoPagamento = document.getElementById('metodo-pagamento').value;
-
-            const mensagem = `Pedido de Assinatura:\nTipo: ${tipo}\nPreço: ${preco} Kz\nID do Jogador: ${idJogador}\nNome do Jogador: ${nomeJogador}\nMétodo de Pagamento: ${metodoPagamento}`;
-            const linkWhatsApp = `https://wa.me/244930441438?text=${encodeURIComponent(mensagem)}`;
-            
-            window.location.href = linkWhatsApp;
-        });
-    </script>
-
 </body>
-    </html>
+</html>

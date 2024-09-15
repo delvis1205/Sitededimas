@@ -46,32 +46,6 @@
             width: 150px;
             height: auto;
         }
-        .form-container {
-            display: none; /* Inicialmente escondido */
-            margin-top: 20px;
-            background-color: #282828;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        }
-        .form-container input, .form-container select {
-            padding: 10px;
-            margin: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 80%;
-        }
-        .form-container button {
-            padding: 10px 20px;
-            background-color: #ff4500;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .form-container button:hover {
-            background-color: #ff8500;
-        }
     </style>
 </head>
 <body>
@@ -89,7 +63,7 @@
             </div>
             <h3>100 Diamantes</h3>
             <p class="price">1340 Kz</p>
-            <p class="select-btn" data-preco="1340" data-nome="100 Diamantes">Selecionar</p>
+            <a href="formulario.html?produto=100&preco=1340" class="select-btn">Selecionar</a>
         </div>
 
         <div class="product-card">
@@ -98,7 +72,7 @@
             </div>
             <h3>310 Diamantes</h3>
             <p class="price">4240 Kz</p>
-            <p class="select-btn" data-preco="4240" data-nome="310 Diamantes">Selecionar</p>
+            <a href="formulario.html?produto=310&preco=4240" class="select-btn">Selecionar</a>
         </div>
 
         <div class="product-card">
@@ -107,7 +81,7 @@
             </div>
             <h3>520 Diamantes</h3>
             <p class="price">6960 Kz</p>
-            <p class="select-btn" data-preco="6960" data-nome="520 Diamantes">Selecionar</p>
+            <a href="formulario.html?produto=520&preco=6960" class="select-btn">Selecionar</a>
         </div>
 
         <div class="product-card">
@@ -116,7 +90,7 @@
             </div>
             <h3>1060 Diamantes</h3>
             <p class="price">14500 Kz</p>
-            <p class="select-btn" data-preco="14500" data-nome="1060 Diamantes">Selecionar</p>
+            <a href="formulario.html?produto=1060&preco=14500" class="select-btn">Selecionar</a>
         </div>
 
         <div class="product-card">
@@ -125,7 +99,7 @@
             </div>
             <h3>2180 Diamantes</h3>
             <p class="price">29709 Kz</p>
-            <p class="select-btn" data-preco="29709" data-nome="2180 Diamantes">Selecionar</p>
+            <a href="formulario.html?produto=2180&preco=29709" class="select-btn">Selecionar</a>
         </div>
 
         <div class="product-card">
@@ -134,55 +108,9 @@
             </div>
             <h3>5600 Diamantes</h3>
             <p class="price">75800 Kz</p>
-            <p class="select-btn" data-preco="75800" data-nome="5600 Diamantes">Selecionar</p>
-        </div>
-
-        <!-- Formulário de Pedido -->
-        <div class="form-container" id="form-container">
-            <form id="pedido-form" action="#" method="get" target="_blank">
-                <h3>Preencha seus dados para o Pedido de Diamantes</h3>
-                <input type="text" id="id-jogador" name="id" placeholder="ID do Jogador" required>
-                <input type="text" id="nome-jogador" name="name" placeholder="Nome" required>
-                <select id="metodo-pagamento" name="payment" required>
-                    <option value="" disabled selected>Método de Pagamento</option>
-                    <option value="Multicaixa Express: 930441438">Multicaixa Express: 930441438</option>
-                    <option value="Transferência Bancária: 0040.0000.9841.5347.1016.4">Transferência Bancária: 0040.0000.9841.5347.1016.4</option>
-                </select>
-                <input type="hidden" id="hidden-text" name="text">
-                <button type="submit">Obter Agora</button>
-            </form>
+            <a href="formulario.html?produto=5600&preco=75800" class="select-btn">Selecionar</a>
         </div>
     </div>
 
-    <script>
-        document.querySelectorAll('.select-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const preco = button.dataset.preco;
-                const nome = button.dataset.nome;
-                
-                // Exibe o formulário ao selecionar um produto
-                document.getElementById('form-container').style.display = 'block';
-                
-                // Preenche o campo oculto do formulário
-                document.getElementById('hidden-text').value = `Pedido de Diamantes:\nTipo: ${nome}\nPreço: ${preco} Kz\nID do Jogador: ID_DO_JOGADOR\nNome do Jogador: NOME\nMétodo de Pagamento: MÉTODO_DE_PAGAMENTO`;
-            });
-        });
-
-        document.getElementById('pedido-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const tipo = document.querySelector('.select-btn[data-preco]').dataset.nome;
-            const preco = document.querySelector('.select-btn[data-preco]').dataset.preco;
-            const idJogador = document.getElementById('id-jogador').value;
-            const nomeJogador = document.getElementById('nome-jogador').value;
-            const metodoPagamento = document.getElementById('metodo-pagamento').value;
-
-            const mensagem = `Pedido de Diamantes:\nTipo: ${tipo}\nPreço: ${preco} Kz\nID do Jogador: ${idJogador}\nNome do Jogador: ${nomeJogador}\nMétodo de Pagamento: ${metodoPagamento}`;
-            const linkWhatsApp = `https://wa.me/244930441438?text=${encodeURIComponent(mensagem)}`;
-            
-            window.location.href = linkWhatsApp;
-        });
-    </script>
-
 </body>
-    </html>
+                </html>

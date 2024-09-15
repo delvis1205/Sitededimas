@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diamantes - Dimas FF Angola</title>
+    <title>Diamantes - Dimas FF DM</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -47,6 +47,7 @@
             height: auto;
         }
         .form-container {
+            display: none; /* Inicialmente escondido */
             margin-top: 20px;
             background-color: #282828;
             padding: 20px;
@@ -137,8 +138,8 @@
         </div>
 
         <!-- Formulário de Pedido -->
-        <div class="form-container">
-            <form id="pedido-form" action="https://wa.me/244930441438" method="get" target="_blank">
+        <div class="form-container" id="form-container">
+            <form id="pedido-form" action="#" method="get" target="_blank">
                 <h3>Preencha seus dados para o Pedido de Diamantes</h3>
                 <input type="text" id="id-jogador" name="id" placeholder="ID do Jogador" required>
                 <input type="text" id="nome-jogador" name="name" placeholder="Nome" required>
@@ -158,6 +159,11 @@
             button.addEventListener('click', () => {
                 const preco = button.dataset.preco;
                 const nome = button.dataset.nome;
+                
+                // Exibe o formulário ao selecionar um produto
+                document.getElementById('form-container').style.display = 'block';
+                
+                // Preenche o campo oculto do formulário
                 document.getElementById('hidden-text').value = `Pedido de Diamantes:\nTipo: ${nome}\nPreço: ${preco} Kz\nID do Jogador: ID_DO_JOGADOR\nNome do Jogador: NOME\nMétodo de Pagamento: MÉTODO_DE_PAGAMENTO`;
             });
         });
@@ -179,4 +185,4 @@
     </script>
 
 </body>
-                  </html>
+    </html>

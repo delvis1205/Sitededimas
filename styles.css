@@ -1,42 +1,40 @@
 body {
-    font-family: Arial, sans-serif;
-    background: url('images/logo.png') no-repeat center center fixed;
+    background: url('logo.png') no-repeat center center fixed;
     background-size: cover;
-    color: #fff;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-header {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
+header, footer {
+    background-color: #ff8c00; /* Cor do Free Fire */
+    color: white;
     text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-header h2 {
-    margin: 10px 0 0;
-    font-size: 1.5em;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-}
-
-.option, .product-card {
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    margin: 10px;
     padding: 10px;
-    text-align: center;
-    width: 250px;
 }
 
-.product-card img {
+form {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input, select {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #ff8c00; /* Cor do Free Fire */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
+}

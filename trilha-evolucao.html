@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilha da Evolução - Dimas FF DM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1f1f1f;
+            color: white;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #ffbe00;
+        }
+        .container {
+            margin: 20px;
+        }
+        .product-card {
+            background-color: #282828;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .price {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #00ff00;
+        }
+        .select-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #ff4500;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .select-btn:hover {
+            background-color: #ff8500;
+        }
+        .img-container img {
+            width: 150px;
+            height: auto;
+        }
+        .form-container {
+            margin-top: 20px;
+            background-color: #282828;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .form-container input, .form-container select {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 80%;
+        }
+        .form-container button {
+            padding: 10px 20px;
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #ff8500;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Trilha da Evolução - Dimas FF DM</h1>
+        <h2>Escolha o tipo de Trilha da Evolução</h2>
+    </header>
+
+    <div class="container">
+        <!-- Exemplo de produto -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="images/trilha-evolucao1.png" alt="3 Dias">
+            </div>
+            <h3>3 Dias</h3>
+            <p class="price">1320 Kz</p>
+            <p class="select-btn">Selecionar</p>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container">
+                <img src="images/trilha-evolucao2.png" alt="1 Semana">
+            </div>
+            <h3>1 Semana</h3>
+            <p class="price">3060 Kz</p>
+            <p class="select-btn">Selecionar</p>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container">
+                <img src="images/trilha-evolucao3.png" alt="1 Mês">
+            </div>
+            <h3>1 Mês</h3>
+            <p class="price">13340 Kz</p>
+            <p class="select-btn">Selecionar</p>
+        </div>
+
+        <!-- Formulário de Pedido -->
+        <div class="form-container">
+            <form action="https://wa.me/244930441438" method="get" target="_blank">
+                <h3>Preencha seus dados para o Pedido de Trilha da Evolução</h3>
+                <input type="text" name="id" placeholder="ID do Jogador" required>
+                <input type="text" name="name" placeholder="Nome" required>
+                <select name="payment" required>
+                    <option value="" disabled selected>Método de Pagamento</option>
+                    <option value="Multicaixa Express: 930441438">Multicaixa Express: 930441438</option>
+                    <option value="Transferência Bancária: 0040.0000.9841.5347.1016.4">Transferência Bancária: 0040.0000.9841.5347.1016.4</option>
+                </select>
+                <input type="hidden" name="text" value="Gostaria%20de%20comprar%20uma%20trilha%20da%20evolução.%20Por%20favor,%20preencha%20os%20dados%20abaixo:%20%0AID%20de%20jogador:%20ID_DO_JOGADOR%20%0ANome:%20NOME%20%0AMétodo%20de%20pagamento:%20MÉTODO_DE_PAGAMENTO">
+                <button type="submit">Obter Agora</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -11,7 +11,7 @@
             color: white;
             text-align: center;
         }
-        h1, h2 {
+        h1 {
             color: #ffbe00;
         }
         .container {
@@ -46,85 +46,43 @@
             width: 150px;
             height: auto;
         }
-        .form-container {
-            margin-top: 20px;
-            background-color: #282828;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        }
-        .form-container input, .form-container select {
-            padding: 10px;
-            margin: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 80%;
-        }
-        .form-container button {
-            padding: 10px 20px;
-            background-color: #ff4500;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .form-container button:hover {
-            background-color: #ff8500;
-        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Trilha da Evolução - Dimas FF DM</h1>
-        <h2>Escolha o tipo de Trilha da Evolução</h2>
+        <h2>Selecione a Trilha</h2>
     </header>
 
     <div class="container">
-        <!-- Exemplo de produto -->
         <div class="product-card">
             <div class="img-container">
-                <img src="images/trilha-evolucao1.png" alt="3 Dias">
+                <img src="images/trilha-evolucao1.png" alt="Trilha da Evolução 3 dias">
             </div>
-            <h3>3 Dias</h3>
+            <h3>Trilha da Evolução - 3 dias</h3>
             <p class="price">1320 Kz</p>
-            <p class="select-btn">Selecionar</p>
+            <a href="formulario.html?produto=Trilha da Evolução 3 dias&preco=1320" class="select-btn">Selecionar</a>
         </div>
 
         <div class="product-card">
             <div class="img-container">
-                <img src="images/trilha-evolucao2.png" alt="1 Semana">
+                <img src="images/trilha-evolucao2.png" alt="Trilha da Evolução 1 semana">
             </div>
-            <h3>1 Semana</h3>
+            <h3>Trilha da Evolução - 1 semana</h3>
             <p class="price">3060 Kz</p>
-            <p class="select-btn">Selecionar</p>
+            <a href="formulario.html?produto=Trilha da Evolução 1 semana&preco=3060" class="select-btn">Selecionar</a>
         </div>
 
         <div class="product-card">
             <div class="img-container">
-                <img src="images/trilha-evolucao3.png" alt="1 Mês">
+                <img src="images/trilha-evolucao3.png" alt="Trilha da Evolução 1 mês">
             </div>
-            <h3>1 Mês</h3>
+            <h3>Trilha da Evolução - 1 mês</h3>
             <p class="price">13340 Kz</p>
-            <p class="select-btn">Selecionar</p>
-        </div>
-
-        <!-- Formulário de Pedido -->
-        <div class="form-container">
-            <form action="https://wa.me/244930441438" method="get" target="_blank">
-                <h3>Preencha seus dados para o Pedido de Trilha da Evolução</h3>
-                <input type="text" name="id" placeholder="ID do Jogador" required>
-                <input type="text" name="name" placeholder="Nome" required>
-                <select name="payment" required>
-                    <option value="" disabled selected>Método de Pagamento</option>
-                    <option value="Multicaixa Express: 930441438">Multicaixa Express: 930441438</option>
-                    <option value="Transferência Bancária: 0040.0000.9841.5347.1016.4">Transferência Bancária: 0040.0000.9841.5347.1016.4</option>
-                </select>
-                <input type="hidden" name="text" value="Gostaria%20de%20comprar%20uma%20trilha%20da%20evolução.%20Por%20favor,%20preencha%20os%20dados%20abaixo:%20%0AID%20de%20jogador:%20ID_DO_JOGADOR%20%0ANome:%20NOME%20%0AMétodo%20de%20pagamento:%20MÉTODO_DE_PAGAMENTO">
-                <button type="submit">Obter Agora</button>
-            </form>
+            <a href="formulario.html?produto=Trilha da Evolução 1 mês&preco=13340" class="select-btn">Selecionar</a>
         </div>
     </div>
 
 </body>
-                    </html>
+                                                                                                                    </html>

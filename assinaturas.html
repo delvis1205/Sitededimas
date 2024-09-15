@@ -88,7 +88,7 @@
             </div>
             <h3>3 Dias</h3>
             <p class="price">700 Kz</p>
-            <p class="select-btn">Selecionar</p>
+            <p class="select-btn" data-preco="700" data-nome="3 Dias">Selecionar</p>
         </div>
 
         <div class="product-card">
@@ -97,7 +97,7 @@
             </div>
             <h3>1 Semana</h3>
             <p class="price">1300 Kz</p>
-            <p class="select-btn">Selecionar</p>
+            <p class="select-btn" data-preco="1300" data-nome="1 Semana">Selecionar</p>
         </div>
 
         <div class="product-card">
@@ -106,25 +106,50 @@
             </div>
             <h3>1 Mês</h3>
             <p class="price">5200 Kz</p>
-            <p class="select-btn">Selecionar</p>
+            <p class="select-btn" data-preco="5200" data-nome="1 Mês">Selecionar</p>
         </div>
 
         <!-- Formulário de Pedido -->
         <div class="form-container">
-            <form action="https://wa.me/244930441438" method="get" target="_blank">
+            <form id="pedido-form" action="#" method="get" target="_blank">
                 <h3>Preencha seus dados para o Pedido de Assinatura</h3>
-                <input type="text" name="id" placeholder="ID do Jogador" required>
-                <input type="text" name="name" placeholder="Nome" required>
-                <select name="payment" required>
+                <input type="text" id="id-jogador" name="id" placeholder="ID do Jogador" required>
+                <input type="text" id="nome-jogador" name="name" placeholder="Nome" required>
+                <select id="metodo-pagamento" name="payment" required>
                     <option value="" disabled selected>Método de Pagamento</option>
                     <option value="Multicaixa Express: 930441438">Multicaixa Express: 930441438</option>
                     <option value="Transferência Bancária: 0040.0000.9841.5347.1016.4">Transferência Bancária: 0040.0000.9841.5347.1016.4</option>
                 </select>
-                <input type="hidden" name="text" value="Gostaria%20de%20comprar%20uma%20assinatura.%20Por%20favor,%20preencha%20os%20dados%20abaixo:%20%0AID%20de%20jogador:%20ID_DO_JOGADOR%20%0ANome:%20NOME%20%0AMétodo%20de%20pagamento:%20MÉTODO_DE_PAGAMENTO">
+                <input type="hidden" id="hidden-text" name="text">
                 <button type="submit">Obter Agora</button>
             </form>
         </div>
     </div>
 
+    <script>
+        document.querySelectorAll('.select-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const preco = button.dataset.preco;
+                const nome = button.dataset.nome;
+                document.getElementById('hidden-text').value = `Pedido de Assinatura:\nTipo: ${nome}\nPreço: ${preco} Kz\nID do Jogador: ID_DO_JOGADOR\nNome do Jogador: NOME\nMétodo de Pagamento: MÉTODO_DE_PAGAMENTO`;
+            });
+        });
+
+        document.getElementById('pedido-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const tipo = document.querySelector('.select-btn[data-preco]').dataset.nome;
+            const preco = document.querySelector('.select-btn[data-preco]').dataset.preco;
+            const idJogador = document.getElementById('id-jogador').value;
+            const nomeJogador = document.getElementById('nome-jogador').value;
+            const metodoPagamento = document.getElementById('metodo-pagamento').value;
+
+            const mensagem = `Pedido de Assinatura:\nTipo: ${tipo}\nPreço: ${preco} Kz\nID do Jogador: ${idJogador}\nNome do Jogador: ${nomeJogador}\nMétodo de Pagamento: ${metodoPagamento}`;
+            const linkWhatsApp = `https://wa.me/244930441438?text=${encodeURIComponent(mensagem)}`;
+            
+            window.location.href = linkWhatsApp;
+        });
+    </script>
+
 </body>
-</html>
+    </html>

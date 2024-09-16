@@ -17,31 +17,29 @@
         .container {
             margin: 20px;
         }
-        .form-container {
+        .product-card {
             background-color: #282828;
             padding: 20px;
             margin: 15px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         }
-        label {
-            display: block;
-            margin: 10px 0 5px;
+        .price {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #00ff00;
         }
-        input, select, button {
-            margin: 10px 0;
-            padding: 10px;
-            width: 100%;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        button {
+        .select-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
             background-color: #ff4500;
             color: white;
+            border-radius: 5px;
+            text-decoration: none;
             cursor: pointer;
-            border: none;
         }
-        button:hover {
+        .select-btn:hover {
             background-color: #ff8500;
         }
         .img-container img {
@@ -54,89 +52,67 @@
 
     <header>
         <h1>Diamantes - FF Angola</h1>
-        <h2>Preencha seus dados para receber o pedido.</h2>
+        <h2>Selecione a Quantidade de Diamantes</h2>
     </header>
 
     <div class="container">
-        <div class="form-container">
-            <form id="pedido-form">
-                <label for="diamantes">Quantidade de Diamantes:</label>
-                <select id="diamantes" name="diamantes">
-                    <option value="100" data-preco="1340">100 Diamantes</option>
-                    <option value="310" data-preco="4240">310 Diamantes</option>
-                    <option value="520" data-preco="6960">520 Diamantes</option>
-                    <option value="1060" data-preco="14500">1060 Diamantes</option>
-                    <option value="2180" data-preco="29709">2180 Diamantes</option>
-                    <option value="5600" data-preco="75800">5600 Diamantes</option>
-                </select>
-                <br>
-                <label for="id-jogador">ID do Jogador:</label>
-                <input type="text" id="id-jogador" name="id-jogador">
-                <br>
-                <label for="nome-jogador">Nome do Jogador:</label>
-                <input type="text" id="nome-jogador" name="nome-jogador">
-                <br>
-                <label for="metodo-pagamento">Método de Pagamento:</label>
-                <select id="metodo-pagamento" name="metodo-pagamento">
-                    <option value="Multicaixa Express">Multicaixa Express</option>
-                    <option value="Banco">Banco</option>
-                    <!-- Adicione mais opções se necessário -->
-                </select>
-                <br>
-                <button type="submit">Obter Agora</button>
-            </form>
+        <div class="product-card">
+            <div class="img-container">
+                <img src="images/diamante1.png" alt="Diamantes 100">
+            </div>
+            <h3>100 Diamantes</h3>
+            <p class="price">1340 Kz</p>
+            <a href="formulario.html?produto=100 Diamantes&preco=1340" class="select-btn">Selecionar</a>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container">
+                <img src="images/diamante2.png" alt="Diamantes 310">
+            </div>
+            <h3>310 Diamantes</h3>
+            <p class="price">4240 Kz</p>
+            <a href="formulario.html?produto=310 Diamantes&preco=4240" class="select-btn">Selecionar</a>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container">
+                <img src="images/diamante3.png" alt="Diamantes 520">
+            </div>
+            <h3>520 Diamantes</h3>
+            <p class="price">6960 Kz</p>
+            <a href="formulario.html?produto=520 Diamantes&preco=6960" class="select-btn">Selecionar</a>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container">
+                <img src="images/diamante4.png" alt="Diamantes 1060">
+            </div>
+            <h3>1060 Diamantes</h3>
+            <p class="price">14500 Kz</p>
+            <a href="formulario.html?produto=1060 Diamantes&preco=14500" class="select-btn">Selecionar</a>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container">
+                <img src="images/diamante5.png" alt="Diamantes 2180">
+            </div>
+            <h3>2180 Diamantes</h3>
+            <p class="price">29709 Kz</p>
+            <a href="formulario.html?produto=2180 Diamantes&preco=29709" class="select-btn">Selecionar</a>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container">
+                <img src="images/diamante6.png" alt="Diamantes 5600">
+            </div>
+            <h3>5600 Diamantes</h3>
+            <p class="price">75800 Kz</p>
+            <a href="formulario.html?produto=5600 Diamantes&preco=75800" class="select-btn">Selecionar</a>
         </div>
     </div>
-
-    <footer>
-        <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animação de parabéns
-            function showCongratulations() {
-                const congratulations = document.createElement('div');
-                congratulations.innerHTML = '<h2>Parabéns!</h2><p>Seu pedido foi enviado com sucesso.</p>';
-                congratulations.style.position = 'fixed';
-                congratulations.style.top = '50%';
-                congratulations.style.left = '50%';
-                congratulations.style.transform = 'translate(-50%, -50%)';
-                congratulations.style.backgroundColor = '#00ff00';
-                congratulations.style.color = '#fff';
-                congratulations.style.padding = '20px';
-                congratulations.style.borderRadius = '10px';
-                congratulations.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
-                congratulations.style.zIndex = '1000';
-                document.body.appendChild(congratulations);
-
-                setTimeout(() => {
-                    document.body.removeChild(congratulations);
-                }, 3000); // Remover a mensagem após 3 segundos
-            }
-
-            // Código para o formulário de pedido de diamantes
-            document.getElementById('pedido-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                
-                const diamantes = document.getElementById('diamantes').value;
-                const preco = document.querySelector(`#diamantes option[value="${diamantes}"]`).dataset.preco;
-                const idJogador = document.getElementById('id-jogador').value;
-                const nomeJogador = document.getElementById('nome-jogador').value;
-                const metodoPagamento = document.getElementById('metodo-pagamento').value;
-                
-                const mensagem = `Pedido de Diamantes:\nQuantidade: ${diamantes} Diamantes\nPreço: ${preco} Kz\nID do Jogador: ${idJogador}\nNome do Jogador: ${nomeJogador}\nMétodo de Pagamento: ${metodoPagamento}`;
-                
-                showCongratulations(); // Exibir animação de parabéns
-
-                // Redirecionar para o WhatsApp após a animação
-                setTimeout(() => {
-                    const linkWhatsApp = `whatsapp://send/?phone=244930441438&text=${encodeURIComponent(mensagem)}&type=phone_number&app_absent=0`;
-                    window.location.href = linkWhatsApp;
-                }, 3000); // Redirecionar após 3 segundos
-            });
-        });
-    </script>
-
+<footer>
+    <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
+</footer>
+    
 </body>
 </html>

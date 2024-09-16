@@ -10,6 +10,8 @@
             background-color: #1f1f1f;
             color: white;
             text-align: center;
+            margin: 0;
+            padding: 0;
         }
         h1 {
             color: #ffbe00;
@@ -34,22 +36,17 @@
             width: 150px;
             height: auto;
         }
-        /* CSS para o chatbot */
-        #chatbot {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 300px;
-            height: 400px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-        }
-        #chatbot iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        /* Estilo para o rodapé */
+        footer {
+            background-color: #282828; /* Cor de fundo do rodapé */
+            color: white; /* Cor do texto do rodapé */
+            text-align: center; /* Alinha o texto ao centro */
+            padding: 10px 0; /* Espaçamento interno */
+            position: fixed; /* Fixa o rodapé na parte inferior da página */
+            width: 100%; /* Faz o rodapé ocupar toda a largura da página */
+            bottom: 0; /* Posiciona o rodapé na parte inferior */
+            left: 0; /* Alinha o rodapé à esquerda */
+            font-size: 14px; /* Tamanho da fonte do texto */
         }
     </style>
 </head>
@@ -86,11 +83,6 @@
         </div>
         <h2>Trilha da Evolução</h2>
     </div>
-</div>
-
-<!-- Chatbot -->
-<div id="chatbot">
-    <iframe src="URL_DO_SEU_CHATBOT" title="Chatbot"></iframe>
 </div>
 
 <footer>

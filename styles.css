@@ -4,9 +4,9 @@ body {
         to bottom right,
         blue 33%, /* Azul no topo */
         blue 33%, /* Azul no topo */
-        yellow 33%, /* Amarelo no meio */
-        yellow 66%, /* Amarelo no meio */
-        red 66% /* Vermelho na parte inferior */
+        red 33%, /* Vermelho no meio */
+        red 66%, /* Vermelho no meio */
+        yellow 66% /* Amarelo na parte inferior */
     );
     color: white;
     text-align: center;

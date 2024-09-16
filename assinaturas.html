@@ -10,6 +10,10 @@
             background-color: #1f1f1f;
             color: white;
             text-align: center;
+            margin: 0;
+            padding: 0;
+            background: url('logo.png') no-repeat center center fixed;
+            background-size: cover;
         }
         h1 {
             color: #ffbe00;
@@ -45,6 +49,57 @@
         .img-container img {
             width: 150px;
             height: auto;
+        }
+        /* Estilos para o chatbot */
+        #chatbot-container {
+            position: fixed;
+            bottom: 20px; /* Distância do rodapé */
+            right: 20px; /* Distância da borda direita */
+            width: 300px; /* Largura do chatbot */
+            height: 400px; /* Altura do chatbot */
+            background-color: #ffffff; /* Cor de fundo do chatbot */
+            border: 2px solid #ff8c00; /* Borda com a cor do Free Fire */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra do chatbot */
+            z-index: 1000; /* Garante que o chatbot esteja acima de outros elementos */
+        }
+        /* Estilos para o título do chatbot */
+        #chatbot-header {
+            background-color: #ff8c00; /* Cor do Free Fire */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        /* Estilos para o corpo do chatbot */
+        #chatbot-body {
+            height: calc(100% - 40px); /* Altura do corpo do chatbot */
+            overflow-y: auto; /* Permite rolagem vertical */
+            padding: 10px;
+        }
+        /* Estilos para o input de mensagens */
+        #chatbot-input {
+            width: calc(100% - 20px); /* Ajusta a largura do input */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 0; /* Posiciona o input no fundo */
+            left: 10px; /* Ajuste a distância do input */
+        }
+        /* Estilo para o rodapé */
+        footer {
+            background-color: #282828; /* Cor de fundo do rodapé */
+            color: white; /* Cor do texto do rodapé */
+            text-align: center; /* Alinha o texto ao centro */
+            padding: 10px 0; /* Espaçamento interno */
+            position: fixed; /* Fixa o rodapé na parte inferior da página */
+            width: 100%; /* Faz o rodapé ocupar toda a largura da página */
+            bottom: 0; /* Posiciona o rodapé na parte inferior */
+            left: 0; /* Alinha o rodapé à esquerda */
+            font-size: 14px; /* Tamanho da fonte do texto */
         }
     </style>
 </head>
@@ -83,9 +138,19 @@
             <a href="formulario.html?produto=Assinatura 1 mês&preco=5200" class="select-btn">Selecionar</a>
         </div>
     </div>
-<footer>
-    <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
-</footer>
-    
+
+    <footer>
+        <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Código do chatbot -->
+    <div id="chatbot-container">
+        <div id="chatbot-header">Chatbot</div>
+        <div id="chatbot-body">
+            <!-- Mensagens do chatbot aparecerão aqui -->
+        </div>
+        <input type="text" id="chatbot-input" placeholder="Digite sua mensagem...">
+    </div>
+
 </body>
 </html>

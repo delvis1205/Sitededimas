@@ -8,12 +8,6 @@ body {
     background-position: center; /* Centraliza a imagem de fundo */
 }
 
-
-    background: url('logo.png') no-repeat center center fixed;
-    background-size: cover;
-    font-family: Arial, sans-serif;
-}
-
 header, footer {
     background-color: #ff8c00; /* Cor do Free Fire */
     color: white;
@@ -48,6 +42,7 @@ button {
 button:hover {
     background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
 }
+
 /* Adicionando estilo para o logotipo de fundo no cabeçalho */
 header {
     position: relative;
@@ -81,46 +76,4 @@ footer {
     bottom: 0; /* Posiciona o rodapé na parte inferior */
     left: 0; /* Alinha o rodapé à esquerda */
     font-size: 14px; /* Tamanho da fonte do texto */
-}
-/* Estilos para o chatbot */
-#chatbot-container {
-    position: fixed;
-    bottom: 20px; /* Distância do rodapé */
-    right: 20px; /* Distância da borda direita */
-    width: 300px; /* Largura do chatbot */
-    height: 400px; /* Altura do chatbot */
-    background-color: #ffffff; /* Cor de fundo do chatbot */
-    border: 2px solid #ff8c00; /* Borda com a cor do Free Fire */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra do chatbot */
-    z-index: 1000; /* Garante que o chatbot esteja acima de outros elementos */
-}
-
-/* Estilos para o título do chatbot */
-#chatbot-header {
-    background-color: #ff8c00; /* Cor do Free Fire */
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-/* Estilos para o corpo do chatbot */
-#chatbot-body {
-    height: calc(100% - 40px); /* Altura do corpo do chatbot */
-    overflow-y: auto; /* Permite rolagem vertical */
-    padding: 10px;
-}
-
-/* Estilos para o input de mensagens */
-#chatbot-input {
-    width: calc(100% - 20px); /* Ajusta a largura do input */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    position: absolute;
-    bottom: 0; /* Posiciona o input no fundo */
-    left: 10px; /* Ajuste a distância do input */
 }

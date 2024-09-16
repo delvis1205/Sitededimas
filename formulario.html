@@ -7,16 +7,25 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1f1f1f;
+            background: linear-gradient(
+                to bottom right,
+                blue 33%, /* Azul no topo */
+                blue 33%, /* Azul no topo */
+                red 33%, /* Vermelho no meio */
+                red 66%, /* Vermelho no meio */
+                yellow 66% /* Amarelo na parte inferior */
+            );
             color: white;
             text-align: center;
+            margin: 0;
+            padding: 0;
         }
         h1 {
-            color: #ffbe00;
+            color: #ff8c00; /* Cor do Free Fire */
         }
         .form-container {
             margin-top: 20px;
-            background-color: #282828;
+            background-color: #282828; /* Cor de fundo dos formulários */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -30,14 +39,14 @@
         }
         .form-container button {
             padding: 10px 20px;
-            background-color: #ff4500;
+            background-color: #ff8c00; /* Cor do Free Fire */
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
         .form-container button:hover {
-            background-color: #ff8500;
+            background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
         }
     </style>
 </head>
@@ -85,4 +94,4 @@
     </script>
 
 </body>
-  </html>
+</html>

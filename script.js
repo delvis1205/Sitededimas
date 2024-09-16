@@ -1,4 +1,4 @@
-// Código para o formulário de pedido de diamantes
+// Código para o formulário 
 document.getElementById('pedido-form').addEventListener('submit', function(event) {
     event.preventDefault();
     

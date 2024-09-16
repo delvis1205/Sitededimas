@@ -1,4 +1,14 @@
 body {
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    background-image: url('images/logo.png'); /* Caminho para o seu logo */
+    background-size: cover; /* Ajusta a imagem para cobrir toda a área de fundo */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-position: center; /* Centraliza a imagem de fundo */
+}
+
+
     background: url('logo.png') no-repeat center center fixed;
     background-size: cover;
     font-family: Arial, sans-serif;

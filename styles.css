@@ -1,11 +1,20 @@
+/* Adiciona este código no seu arquivo CSS */
 body {
     font-family: Arial, sans-serif;
     color: white;
     text-align: center;
-    background-image: url('images/logo.png'); /* Caminho para o seu logo */
-    background-size: cover; /* Ajusta a imagem para cobrir toda a área de fundo */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
-    background-position: center; /* Centraliza a imagem de fundo */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(
+        to bottom right,
+        black 33%, /* Preto no topo */
+        yellow 33%, /* Amarelo no meio */
+        yellow 66%, /* Amarelo no meio */
+        red 66% /* Vermelho na parte inferior */
+    );
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 header, footer {
@@ -43,29 +52,6 @@ button:hover {
     background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
 }
 
-/* Adicionando estilo para o logotipo de fundo no cabeçalho */
-header {
-    position: relative;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.logo-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px; /* Ajuste conforme necessário */
-    overflow: hidden;
-    z-index: -1; /* Faz com que o logotipo fique atrás do texto */
-}
-
-.logo-container img {
-    width: 100%;
-    height: auto;
-}
-
-/* Estilo para o rodapé */
 footer {
     background-color: #282828; /* Cor de fundo do rodapé */
     color: white; /* Cor do texto do rodapé */

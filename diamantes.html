@@ -23,6 +23,7 @@
         }
         .container {
             margin: 20px;
+            flex: 1; /* Faz com que o container ocupe todo o espaço disponível */
         }
         .product-card {
             background-color: #282828; /* Cor de fundo dos produtos */
@@ -59,82 +60,89 @@
             color: white; /* Cor do texto do rodapé */
             text-align: center; /* Alinha o texto ao centro */
             padding: 10px 0; /* Espaçamento interno */
-            position: fixed; /* Fixa o rodapé na parte inferior da página */
+            position: relative; /* Remove a fixação do rodapé */
             width: 100%; /* Faz o rodapé ocupar toda a largura da página */
             bottom: 0; /* Posiciona o rodapé na parte inferior */
             left: 0; /* Alinha o rodapé à esquerda */
             font-size: 14px; /* Tamanho da fonte do texto */
         }
+        /* Estilo do wrapper para garantir que o rodapé fique no final */
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Garante que a página ocupe toda a altura */
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Diamantes - FF Angola</h1>
-        <h2>Selecione a Quantidade de Diamantes</h2>
-    </header>
+    <div class="wrapper">
+        <header>
+            <h1>Diamantes - FF Angola</h1>
+            <h2>Selecione a Quantidade de Diamantes</h2>
+        </header>
 
-    <div class="container">
-        <div class="product-card">
-            <div class="img-container">
-                <img src="images/diamante1.png" alt="Diamantes 100">
+        <div class="container">
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="images/diamante1.png" alt="Diamantes 100">
+                </div>
+                <h3>100 Diamantes</h3>
+                <p class="price">1340 Kz</p>
+                <a href="formulario.html?produto=100 Diamantes&preco=1340" class="select-btn">Selecionar</a>
             </div>
-            <h3>100 Diamantes</h3>
-            <p class="price">1340 Kz</p>
-            <a href="formulario.html?produto=100 Diamantes&preco=1340" class="select-btn">Selecionar</a>
+
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="images/diamante2.png" alt="Diamantes 310">
+                </div>
+                <h3>310 Diamantes</h3>
+                <p class="price">4240 Kz</p>
+                <a href="formulario.html?produto=310 Diamantes&preco=4240" class="select-btn">Selecionar</a>
+            </div>
+
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="images/diamante3.png" alt="Diamantes 520">
+                </div>
+                <h3>520 Diamantes</h3>
+                <p class="price">6960 Kz</p>
+                <a href="formulario.html?produto=520 Diamantes&preco=6960" class="select-btn">Selecionar</a>
+            </div>
+
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="images/diamante4.png" alt="Diamantes 1060">
+                </div>
+                <h3>1060 Diamantes</h3>
+                <p class="price">14500 Kz</p>
+                <a href="formulario.html?produto=1060 Diamantes&preco=14500" class="select-btn">Selecionar</a>
+            </div>
+
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="images/diamante5.png" alt="Diamantes 2180">
+                </div>
+                <h3>2180 Diamantes</h3>
+                <p class="price">29709 Kz</p>
+                <a href="formulario.html?produto=2180 Diamantes&preco=29709" class="select-btn">Selecionar</a>
+            </div>
+
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="images/diamante6.png" alt="Diamantes 5600">
+                </div>
+                <h3>5600 Diamantes</h3>
+                <p class="price">75800 Kz</p>
+                <a href="formulario.html?produto=5600 Diamantes&preco=75800" class="select-btn">Selecionar</a>
+            </div>
         </div>
 
-        <div class="product-card">
-            <div class="img-container">
-                <img src="images/diamante2.png" alt="Diamantes 310">
-            </div>
-            <h3>310 Diamantes</h3>
-            <p class="price">4240 Kz</p>
-            <a href="formulario.html?produto=310 Diamantes&preco=4240" class="select-btn">Selecionar</a>
-        </div>
-
-        <div class="product-card">
-            <div class="img-container">
-                <img src="images/diamante3.png" alt="Diamantes 520">
-            </div>
-            <h3>520 Diamantes</h3>
-            <p class="price">6960 Kz</p>
-            <a href="formulario.html?produto=520 Diamantes&preco=6960" class="select-btn">Selecionar</a>
-        </div>
-
-        <div class="product-card">
-            <div class="img-container">
-                <img src="images/diamante4.png" alt="Diamantes 1060">
-            </div>
-            <h3>1060 Diamantes</h3>
-            <p class="price">14500 Kz</p>
-            <a href="formulario.html?produto=1060 Diamantes&preco=14500" class="select-btn">Selecionar</a>
-        </div>
-
-        <div class="product-card">
-            <div class="img-container">
-                <img src="images/diamante5.png" alt="Diamantes 2180">
-            </div>
-            <h3>2180 Diamantes</h3>
-            <p class="price">29709 Kz</p>
-            <a href="formulario.html?produto=2180 Diamantes&preco=29709" class="select-btn">Selecionar</a>
-        </div>
-
-        <div class="product-card">
-            <div class="img-container">
-                <img src="images/diamante6.png" alt="Diamantes 5600">
-            </div>
-            <h3>5600 Diamantes</h3>
-            <p class="price">75800 Kz</p>
-            <a href="formulario.html?produto=5600 Diamantes&preco=75800" class="select-btn">Selecionar</a>
-        </div>
+        <footer>
+            <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
+            <p>INFLUENCER 930441438</p>  
+        </footer>
     </div>
-    
-    <!-- Rodapé -->
-    <footer>
-        <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
-                          <p>INFLUENCER 930441438</p>
-    </footer>
-  
+
 </body>
-    </html>
+                    </html>

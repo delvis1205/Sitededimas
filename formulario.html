@@ -3,98 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Pedido</title>
+    <title>Pedido de Diamantes</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(
-                135deg, /* Direção do gradiente */
-                rgba(0, 0, 255, 0.6) 0%, /* Azul claro */
-                rgba(255, 0, 0, 0.6) 50%, /* Vermelho claro */
-                rgba(255, 255, 0, 0.6) 100% /* Amarelo claro */
+                135deg, 
+                rgba(0, 0, 255, 0.6) 0%, 
+                rgba(255, 0, 0, 0.6) 50%, 
+                rgba(255, 255, 0, 0.6) 100%
             );
             color: white;
             text-align: center;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-        h1 {
-            color: #ff8c00; /* Cor do Free Fire */
+        .container {
+            margin: 20px;
+            flex: 1; /* Faz com que o conteúdo principal ocupe o espaço disponível */
         }
-        .form-container {
-            margin-top: 20px;
-            background-color: #282828; /* Cor de fundo dos formulários */
+        form {
+            background-color: #282828;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            display: inline-block; /* Ajusta o tamanho do container ao conteúdo */
-            width: 90%; /* Ajusta a largura do formulário */
-            max-width: 500px; /* Define uma largura máxima para o formulário */
         }
-        .form-container input, .form-container select {
+        input, select {
             padding: 10px;
-            margin: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: calc(100% - 22px); /* Ajusta a largura dos campos */
+            margin: 10px 0;
+            width: 100%;
         }
-        .form-container button {
-            padding: 10px 20px;
-            background-color: #ff8c00; /* Cor do Free Fire */
+        button {
+            padding: 10px;
+            background-color: #ff6f00;
             color: white;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
-            width: 100%; /* Ajusta a largura do botão */
-            font-size: 16px; /* Ajusta o tamanho da fonte do botão */
         }
-        .form-container button:hover {
-            background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
+        button:hover {
+            background-color: #ff8c00;
+        }
+        /* Estilo para o rodapé */
+        footer {
+            background-color: #282828;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Preencha seus dados para receber o Pedido</h1>
+<div class="container">
+    <h2 id="produto-info">Pedido de Diamantes</h2>
+    <form id="pedido-form">
+        <label for="id-jogador">ID do Jogador:</label>
+        <input type="text" id="id-jogador" name="id-jogador" required>
 
-    <div class="form-container">
-        <form id="pedido-form" action="#" method="get" target="_blank">
-            <h3 id="produto-info"></h3>
-            <input type="text" id="id-jogador" name="id" placeholder="ID do Jogador" required>
-            <input type="text" id="nome-jogador" name="name" placeholder="Nome" required>
-            <select id="metodo-pagamento" name="payment" required>
-                <option value="" disabled selected>Método de Pagamento</option>
-                <option value="Multicaixa Express: 930441438">Multicaixa Express: 930441438</option>
-                <option value="Transferência Bancária: 0040.0000.9841.5347.1016.4">Transferência Bancária: 0040.0000.9841.5347.1016.4</option>
-            </select>
-            <input type="hidden" id="hidden-text" name="text">
-            <button type="submit">Obter Agora</button>
-        </form>
-    </div>
+        <label for="nome-jogador">Nome do Jogador:</label>
+        <input type="text" id="nome-jogador" name="nome-jogador" required>
 
-    <script>
-        // Obtém os parâmetros da URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const produto = urlParams.get('produto');
-        const preco = urlParams.get('preco');
+        <label for="metodo-pagamento">Método de Pagamento:</label>
+        <select id="metodo-pagamento" name="metodo-pagamento" required>
+            <option value="Multicaixa Express">Multicaixa Express</option>
+            <option value="Bancos de Angola">Bancos de Angola</option>
+        </select>
 
-        // Atualiza as informações do produto no formulário
-        document.getElementById('produto-info').textContent = `${produto} Diamantes - ${preco} Kz`;
+        <input type="hidden" id="hidden-text" name="text">
+        <button type="submit">Obter Agora</button>
+    </form>
+</div>
 
-        // Envia o formulário para o WhatsApp
-        document.getElementById('pedido-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const idJogador = document.getElementById('id-jogador').value;
-            const nomeJogador = document.getElementById('nome-jogador').value;
-            const metodoPagamento = document.getElementById('metodo-pagamento').value;
+<script>
+    // Obtém os parâmetros da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const produto = urlParams.get('produto');
+    const preco = urlParams.get('preco');
 
-            const mensagem = `Novo Pedido:\nTipo: ${produto} Diamantes\nPreço: ${preco} Kz\nID do Jogador: ${idJogador}\nNome do Jogador: ${nomeJogador}\nMétodo de Pagamento: ${metodoPagamento}`;
-            const linkWhatsApp = `https://wa.me/244930441438?text=${encodeURIComponent(mensagem)}`;
-            
-            window.location.href = linkWhatsApp;
-        });
-    </script>
+    // Atualiza as informações do produto no formulário
+    document.getElementById('produto-info').textContent = `${produto} Diamantes - ${preco} Kz`;
+
+    // Envia o formulário para o WhatsApp
+    document.getElementById('pedido-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const idJogador = document.getElementById('id-jogador').value;
+        const nomeJogador = document.getElementById('nome-jogador').value;
+        const metodoPagamento = document.getElementById('metodo-pagamento').value;
+
+        const mensagem = `Novo Pedido:\nTipo: ${produto} Diamantes\nPreço: ${preco} Kz\nID do Jogador: ${idJogador}\nNome do Jogador: ${nomeJogador}\nMétodo de Pagamento: ${metodoPagamento}`;
+        const linkWhatsApp = `https://wa.me/244930441438?text=${encodeURIComponent(mensagem)}`;
+        
+        window.location.href = linkWhatsApp;
+    });
+</script>
+
+<!-- Rodapé -->
+<footer>
+    <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
+    <p>INFLUENCER 930441438</p>
+</footer>
 
 </body>
 </html>

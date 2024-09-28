@@ -17,6 +17,9 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            display: flex; /* Usar flexbox para empurrar o rodapé */
+            flex-direction: column; /* Colocar os itens em coluna */
+            min-height: 100vh; /* Garantir que o conteúdo ocupe a altura total */
         }
         header {
             padding: 20px;
@@ -33,6 +36,7 @@
         }
         .container {
             margin: 20px;
+            flex: 1; /* Faz o conteúdo ocupar o espaço disponível */
         }
         .product-card {
             background-color: #282828; /* Cor de fundo dos produtos */
@@ -71,10 +75,6 @@
             color: white; /* Cor do texto do rodapé */
             text-align: center; /* Alinha o texto ao centro */
             padding: 10px 0; /* Espaçamento interno */
-            position: fixed; /* Fixa o rodapé na parte inferior da página */
-            width: 100%; /* Faz o rodapé ocupar toda a largura da página */
-            bottom: 0; /* Posiciona o rodapé na parte inferior */
-            left: 0; /* Alinha o rodapé à esquerda */
             font-size: 14px; /* Tamanho da fonte do texto */
         }
     </style>
@@ -115,11 +115,10 @@
         </div>
     </div>
 
-    <!-- Rodapé -->
     <footer>
         <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
         <p>INFLUENCER 930441438</p>
     </footer>
 
 </body>
-            </html>
+    </html>

@@ -17,12 +17,16 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            min-height: 100vh; /* Garante que a página ocupe pelo menos a altura da tela */
+            display: flex;
+            flex-direction: column;
         }
         h1 {
             color: #ff8c00; /* Cor do Free Fire */
         }
         .container {
             margin: 20px;
+            flex: 1; /* Faz com que o conteúdo principal ocupe o espaço disponível */
         }
         .option-card {
             background-color: #282828; /* Cor de fundo das opções */
@@ -47,10 +51,6 @@
             color: white; /* Cor do texto do rodapé */
             text-align: center; /* Alinha o texto ao centro */
             padding: 10px 0; /* Espaçamento interno */
-            position: fixed; /* Fixa o rodapé na parte inferior da página */
-            width: 100%; /* Faz o rodapé ocupar toda a largura da página */
-            bottom: 0; /* Posiciona o rodapé na parte inferior */
-            left: 0; /* Alinha o rodapé à esquerda */
             font-size: 14px; /* Tamanho da fonte do texto */
         }
     </style>
@@ -87,9 +87,14 @@
             <img src="images/trilha-evolucao.png" alt="Trilha da Evolução">
         </div>
         <h2>Trilha da Evolução</h2>
+    </div>
+</div>
 
-
-    
+<!-- Rodapé -->
+<footer>
+    <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
+    <p>INFLUENCER 930441438</p>  
+</footer>
 
 </body>
 </html>

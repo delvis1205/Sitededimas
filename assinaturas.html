@@ -80,8 +80,18 @@
             background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
         }
         .whatsapp-icon {
-            margin-top: 20px; /* Espaço acima do ícone */
-            display: inline-block;
+            position: fixed; /* Mantém o ícone do WhatsApp fixo */
+            bottom: 20px; /* Distância do fundo */
+            right: 20px; /* Distância da direita */
+            background-color: #25D366; /* Cor de fundo do ícone */
+            border-radius: 50%; /* Formato circular */
+            padding: 15px; /* Espaçamento interno */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra do ícone */
+            cursor: pointer; /* Cursor de ponteiro */
+        }
+        .whatsapp-icon img {
+            width: 50px; /* Largura do ícone */
+            height: 50px; /* Altura do ícone */
         }
         footer {
             background-color: #282828; /* Cor de fundo do rodapé */
@@ -129,9 +139,9 @@
     </div>
 
     <!-- Ícone do WhatsApp -->
-    <a href="https://wa.me/244930441438" class="whatsapp-icon" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/WhatsApp_icon.png" alt="WhatsApp" width="50" height="50">
-    </a>
+    <div class="whatsapp-icon" onclick="window.open('https://wa.me/244930441438', '_blank');">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/WhatsApp_icon.png" alt="WhatsApp">
+    </div>
 
     <footer>
         <p>2024 FF Dimas Angola - Todos os direitos reservados</p>

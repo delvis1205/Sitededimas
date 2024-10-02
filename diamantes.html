@@ -8,10 +8,10 @@
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(
-                135deg, /* Direção do gradiente */
-                rgba(0, 0, 255, 0.6) 0%, /* Azul claro */
-                rgba(255, 0, 0, 0.6) 50%, /* Vermelho claro */
-                rgba(255, 255, 0, 0.6) 100% /* Amarelo claro */
+                135deg,
+                rgba(0, 0, 255, 0.6) 0%,
+                rgba(255, 0, 0, 0.6) 50%,
+                rgba(255, 255, 0, 0.6) 100%
             );
             color: white;
             text-align: center;
@@ -19,14 +19,14 @@
             padding: 0;
         }
         h1 {
-            color: #ff8c00; /* Cor do Free Fire */
+            color: #ff8c00;
         }
         .container {
             margin: 20px;
-            flex: 1; /* Faz com que o container ocupe todo o espaço disponível */
+            flex: 1;
         }
         .product-card {
-            background-color: #282828; /* Cor de fundo dos produtos */
+            background-color: #282828;
             padding: 20px;
             margin: 15px;
             border-radius: 10px;
@@ -35,42 +35,63 @@
         .price {
             font-size: 18px;
             margin-top: 10px;
-            color: #00ff00; /* Cor verde dos preços */
+            color: #00ff00;
         }
         .select-btn {
             display: inline-block;
             padding: 10px 20px;
             margin-top: 10px;
-            background-color: #ff8c00; /* Cor do Free Fire */
+            background-color: #ff8c00;
             color: white;
             border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
         }
         .select-btn:hover {
-            background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
+            background-color: #ff6f00;
         }
         .img-container img {
             width: 150px;
             height: auto;
         }
-        /* Estilo para o rodapé */
-        footer {
-            background-color: #282828; /* Cor de fundo do rodapé */
-            color: white; /* Cor do texto do rodapé */
-            text-align: center; /* Alinha o texto ao centro */
-            padding: 10px 0; /* Espaçamento interno */
-            position: relative; /* Remove a fixação do rodapé */
-            width: 100%; /* Faz o rodapé ocupar toda a largura da página */
-            bottom: 0; /* Posiciona o rodapé na parte inferior */
-            left: 0; /* Alinha o rodapé à esquerda */
-            font-size: 14px; /* Tamanho da fonte do texto */
+        .search-container {
+            margin: 20px;
         }
-        /* Estilo do wrapper para garantir que o rodapé fique no final */
+        .search-input {
+            padding: 10px;
+            width: 70%;
+            border: none;
+            border-radius: 5px;
+        }
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+        .whatsapp-icon img {
+            width: 50px;
+            height: 50px;
+        }
+        footer {
+            background-color: #282828;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            font-size: 14px;
+        }
         .wrapper {
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Garante que a página ocupe toda a altura */
+            min-height: 100vh;
         }
     </style>
 </head>
@@ -80,6 +101,9 @@
         <header>
             <h1>Diamantes - FF Angola</h1>
             <h2>Selecione a Quantidade de Diamantes</h2>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Pesquisar...">
+            </div>
         </header>
 
         <div class="container">
@@ -138,11 +162,15 @@
             </div>
         </div>
 
+        <div class="whatsapp-icon" onclick="window.open('https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP')">
+            <img src="images/whatsapp-icon.png" alt="WhatsApp">
+        </div>
+
         <footer>
-            <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
-            <p>INFLUENCER 930441438</p>  
+            <p>&copy;2024 FF Dimas Angola - Todos os direitos reservados</p>
+             <p>&copy;INFLUENCER 930441438.</p>  
         </footer>
     </div>
 
 </body>
-                    </html>
+</html>

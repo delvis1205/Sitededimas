@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Pesquisa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #282828;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff8c00; /* Cor do Free Fire */
+        }
+        .result {
+            background-color: #383838;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .product-link {
+            color: #ff8c00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Resultados da Pesquisa</h1>
+</header>
+
+<div id="results-container"></div>
+
+<script>
+    // Função para obter parâmetros da URL
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // Função para exibir os resultados
+    function displayResults(query) {
+        const resultsContainer = document.getElementById('results-container');
+        resultsContainer.innerHTML = ''; // Limpa resultados anteriores
+
+        // Lista de produtos do site
+        const products = [
+            { name: 'Diamantes', link: 'diamantes.html' },
+            { name: 'Assinaturas', link: 'assinaturas.html' },
+            { name: 'Trilha da Evolução', link: 'trilha-evolucao.html' },
+            { name: 'Contas', link: 'contas.html' },
+            { name: 'Codiguins', link: 'codiguins.html' },
+            { name: 'Regedits', link: 'regedits.html' },
+            { name: 'Skins', link: 'skins.html' }
+        ];
+
+        // Filtra produtos com base na consulta
+        const results = products.filter(product => product.name.toLowerCase().includes(query.toLowerCase()));
+
+        if (results.length > 0) {
+            results.forEach(product => {
+                resultsContainer.innerHTML += `
+                    <div class="result">
+                        <a href="${product.link}" class="product-link">${product.name}</a>
+                    </div>
+                `;
+            });
+        } else {
+            resultsContainer.innerHTML = `<div class="result">Nenhum resultado encontrado para "${query}".</div>`;
+        }
+    }
+
+    // Ao carregar a página, obtenha a consulta da URL e exiba os resultados
+    const query = getQueryParam('q');
+    displayResults(query);
+</script>
+
+</body>
+</html>

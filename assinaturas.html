@@ -21,7 +21,7 @@
             flex-direction: column; /* Colocar os itens em coluna */
             min-height: 100vh; /* Garantir que o conteúdo ocupe a altura total */
         }
-
+       
         h1, h2 {
             margin: 0;
         }
@@ -30,40 +30,6 @@
         }
         h2 {
             color: #ffffff; /* Cor branca para o subtítulo */
-        }
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-            background-color: rgba(40, 40, 40, 0.8); /* Fundo do cabeçalho */
-        }
-        .logo-container img {
-            width: 100px; /* Ajuste o tamanho do logotipo */
-            height: auto;
-        }
-        .site-title {
-            flex: 1;
-            text-align: center;
-        }
-        .search-container {
-            display: flex;
-            align-items: center;
-        }
-        .search-container input[type="text"] {
-            padding: 8px;
-            border: none;
-            border-radius: 5px;
-        }
-        .search-container button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            margin-left: 5px;
-        }
-        .search-container img {
-            width: 20px; /* Ajuste o tamanho do ícone da lupa */
-            height: auto;
         }
         .container {
             margin: 20px;
@@ -112,70 +78,44 @@
 </head>
 <body>
 
-<!-- Cabeçalho -->
-<div class="header">
-    <div class="logo-container">
-        <img src="images/logo.png" alt="Logotipo">
-    </div>
-    <div class="site-title">
-        <h1>FF Dimas Angola</h1>
-    </div>
-    <div class="search-container">
-        <input type="text" placeholder="Pesquisar..." id="search-input">
-        <button onclick="search()">
-            <img src="images/lupa.png" alt="Pesquisar">
-        </button>
-        <a href="https://wa.me/930441438" target="_blank">
-            <img src="images/whatsapp-icon.png" alt="WhatsApp">
-        </a>
-    </div>
-</div>
+    <header>
+        <h1>Assinaturas - FF Angola</h1>
+        <h2>Selecione o Plano de Assinatura</h2>
+    </header>
 
-<header>
-    <h1>Assinaturas - FF Angola</h1>
-    <h2>Selecione o Plano de Assinatura</h2>
-</header>
-
-<div class="container">
-    <div class="product-card">
-        <div class="img-container">
-            <img src="images/assinatura1.png" alt="Assinatura 3 dias">
+    <div class="container">
+        <div class="product-card">
+            <div class="img-container">
+                <img src="images/assinatura1.png" alt="Assinatura 3 dias">
+            </div>
+            <h3>Assinatura - 3 dias</h3>
+            <p class="price">1300 Kz</p>
+            <a href="formulario.html?produto=Assinatura 3 dias&preco=1300" class="select-btn">Selecionar</a>
         </div>
-        <h3>Assinatura - 3 dias</h3>
-        <p class="price">1300 Kz</p>
-        <a href="formulario.html?produto=Assinatura 3 dias&preco=1300" class="select-btn">Selecionar</a>
-    </div>
 
-    <div class="product-card">
-        <div class="img-container">
-            <img src="images/assinatura2.png" alt="Assinatura 1 semana">
+        <div class="product-card">
+            <div class="img-container">
+                <img src="images/assinatura2.png" alt="Assinatura 1 semana">
+            </div>
+            <h3>Assinatura - 1 semana</h3>
+            <p class="price">3000 Kz</p>
+            <a href="formulario.html?produto=Assinatura 1 semana&preco=3000" class="select-btn">Selecionar</a>
         </div>
-        <h3>Assinatura - 1 semana</h3>
-        <p class="price">3000 Kz</p>
-        <a href="formulario.html?produto=Assinatura 1 semana&preco=3000" class="select-btn">Selecionar</a>
-    </div>
 
-    <div class="product-card">
-        <div class="img-container">
-            <img src="images/assinatura3.png" alt="Assinatura 1 mês">
+        <div class="product-card">
+            <div class="img-container">
+                <img src="images/assinatura3.png" alt="Assinatura 1 mês">
+            </div>
+            <h3>Assinatura - 1 mês</h3>
+            <p class="price">8200 Kz</p>
+            <a href="formulario.html?produto=Assinatura 1 mês&preco=8200" class="select-btn">Selecionar</a>
         </div>
-        <h3>Assinatura - 1 mês</h3>
-        <p class="price">8200 Kz</p>
-        <a href="formulario.html?produto=Assinatura 1 mês&preco=8200" class="select-btn">Selecionar</a>
     </div>
-</div>
 
-<footer>
-    <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
-    <p>INFLUENCER 930441438</p>
-</footer>
-
-<script>
-    function search() {
-        const query = document.getElementById('search-input').value;
-        window.location.href = 'search-results.html?q=' + encodeURIComponent(query);
-    }
-</script>
+    <footer>
+        <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
+        <p>INFLUENCER 930441438</p>
+    </footer>
 
 </body>
-</html>
+    </html>

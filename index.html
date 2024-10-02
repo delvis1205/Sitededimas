@@ -45,13 +45,30 @@
             width: 150px;
             height: auto;
         }
-        .search-bar {
+        .search-bar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin: 20px;
+        }
+        .search-bar {
             padding: 10px;
-            width: 80%;
-            border-radius: 5px;
+            width: 300px;
+            border-radius: 5px 0 0 5px;
             border: none;
             font-size: 16px;
+            outline: none;
+        }
+        .search-button {
+            background-color: #ff6f00;
+            border: none;
+            padding: 10px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        .search-button img {
+            width: 20px;
+            height: 20px;
         }
         .whatsapp-icon {
             position: fixed;
@@ -75,11 +92,25 @@
             font-size: 14px;
         }
     </style>
+    <script>
+        function searchProducts() {
+            var query = document.getElementById('search-input').value;
+            if (query) {
+                // Redireciona para uma página de resultados, pode ser ajustada conforme o backend.
+                window.location.href = 'search-results.html?q=' + encodeURIComponent(query);
+            }
+        }
+    </script>
 </head>
 <body>
 
-<!-- Barra de pesquisa -->
-<input type="text" class="search-bar" placeholder="Procure aqui...">
+<!-- Barra de pesquisa com lupa -->
+<div class="search-bar-container">
+    <input type="text" id="search-input" class="search-bar" placeholder="Procure aqui...">
+    <button class="search-button" onclick="searchProducts()">
+        <img src="images/lupa.png" alt="Pesquisar">
+    </button>
+</div>
 
 <!-- Container para o logotipo de fundo -->
 <div class="logo-container">

@@ -69,13 +69,9 @@
         .search-button img {
             width: 20px;
             height: 20px;
-            }
-
-<button class="search-button">
-    <img src="images/lupa-icon.png" alt="Lupa">
-</button>
         }
-       .whatsapp-icon {
+
+        .whatsapp-icon {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -90,18 +86,17 @@
             height: 50px;
         }
         footer {
-            background-color: #282828; /* Cor de fundo do rodapé */
-            color: white; /* Cor do texto do rodapé */
-            text-align: center; /* Alinha o texto ao centro */
-            padding: 10px 0; /* Espaçamento interno */
-            font-size: 14px; /* Tamanho da fonte do texto */
+            background-color: #282828;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
         }
     </style>
     <script>
         function searchProducts() {
             var query = document.getElementById('search-input').value;
             if (query) {
-                // Redireciona para uma página de resultados, pode ser ajustada conforme o backend.
                 window.location.href = 'search-results.html?q=' + encodeURIComponent(query);
             }
         }
@@ -179,18 +174,17 @@
     </div>
 </div>
 
+<!-- Ícone do WhatsApp -->
 <div class="whatsapp-icon">
     <a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" target="_blank">
-        <img src="images/whatsapp-icon.png" alt="WhatsApp" width="50" height="50">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp">
     </a>
 </div>
-
-
 
 <!-- Rodapé -->
 <footer>
      <p>&copy;2024 FF Dimas Angola - Todos os direitos reservados</p>
-             <p>&copy;INFLUENCER 930441438.</p>   
+     <p>&copy;INFLUENCER 930441438.</p>   
 </footer>
 
 </body>

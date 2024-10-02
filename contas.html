@@ -41,6 +41,15 @@
         .account-card p {
             margin: 5px 0;
         }
+        .select-button {
+            background-color: #ff6f00;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
         .search-bar-container {
             display: flex;
             justify-content: center;
@@ -95,6 +104,12 @@
                 window.location.href = 'search-results.html?q=' + encodeURIComponent(query);
             }
         }
+
+        function redirectToForm(price, characters) {
+            // Redirecionar para a página de formulário com dados auto-preenchidos
+            var url = `formulario.html?price=${encodeURIComponent(price)}&characters=${encodeURIComponent(characters)}`;
+            window.location.href = url;
+        }
     </script>
 </head>
 <body>
@@ -117,6 +132,7 @@
         <p>⭐Personagens: Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly</p>
         <p>⭐Possui no mínimo 26.000 de ouro 💰</p>
         <p>Preço: 2500 kz</p>
+        <button class="select-button" onclick="redirectToForm('2500 kz', 'Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly')">Selecionar</button>
     </div>
 
     <div class="account-card">
@@ -124,6 +140,7 @@
         <p>⭐Personagens: Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly</p>
         <p>⭐Possui no mínimo 26.000 de ouro 💰</p>
         <p>Preço: 3500 kz</p>
+        <button class="select-button" onclick="redirectToForm('3500 kz', 'Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly')">Selecionar</button>
     </div>
 
     <div class="account-card">
@@ -131,6 +148,7 @@
         <p>⭐Personagens: Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly</p>
         <p>⭐Possui no mínimo 26.000 de ouro 💰</p>
         <p>Preço: 3500 kz</p>
+        <button class="select-button" onclick="redirectToForm('3500 kz', 'Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly')">Selecionar</button>
     </div>
 
     <div class="account-card">
@@ -138,6 +156,7 @@
         <p>⭐Personagens: Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly</p>
         <p>⭐Possui no mínimo 26.000 de ouro 💰</p>
         <p>Preço: 4000 kz</p>
+        <button class="select-button" onclick="redirectToForm('4000 kz', 'Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly')">Selecionar</button>
     </div>
 
     <div class="account-card">
@@ -145,6 +164,7 @@
         <p>⭐Personagem: Andrew</p>
         <p>⭐Possui no mínimo 2.500 de ouro 💰</p>
         <p>Preço: 4500 kz</p>
+        <button class="select-button" onclick="redirectToForm('4500 kz', 'Andrew')">Selecionar</button>
     </div>
 
     <div class="account-card">
@@ -152,6 +172,7 @@
         <p>⭐Personagem: Andrew</p>
         <p>⭐Possui no mínimo 2.500 de ouro 💰</p>
         <p>Preço: 5000 kz</p>
+        <button class="select-button" onclick="redirectToForm('5000 kz', 'Andrew')">Selecionar</button>
     </div>
 
     <div class="account-card">
@@ -159,6 +180,7 @@
         <p>⭐Personagem: Andrew</p>
         <p>⭐Possui no mínimo 2.500 de ouro 💰</p>
         <p>Preço: 6000 kz</p>
+        <button class="select-button" onclick="redirectToForm('6000 kz', 'Andrew')">Selecionar</button>
     </div>
 
     <div class="account-card">
@@ -166,41 +188,7 @@
         <p>⭐Personagens: Andrew, Alok, Luna, Leon, Antonio e Kelly</p>
         <p>⭐Possui no mínimo 13.000 de ouro 💰</p>
         <p>Preço: 6000 kz</p>
-    </div>
-
-    <div class="account-card">
-        <h2>NÍVEL 24 COM 50 DIAMANTES (VIA GOOGLE)</h2>
-        <p>⭐Personagens: Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly</p>
-        <p>⭐Possui no mínimo 26.000 de ouro 💰</p>
-        <p>Preço: 6000 kz</p>
-    </div>
-
-    <div class="account-card">
-        <h2>NÍVEL 15 + SKINS NITROADRENALINA E REI CAVEIRA (VIA GOOGLE)</h2>
-        <p>⭐Personagens: Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly</p>
-        <p>⭐Possui no mínimo 26.000 de ouro 💰</p>
-        <p>Preço: 6000 kz</p>
-    </div>
-
-    <div class="account-card">
-        <h2>NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + SKINS SYLMANO E REI CAVEIRA</h2>
-        <p>⭐Personagens: Andrew, Alok, Luna, Leon, Antonio e Kelly</p>
-        <p>⭐Possui no mínimo 13.000 de ouro 💰</p>
-        <p>Preço: 6000 kz</p>
-    </div>
-
-    <div class="account-card">
-        <h2>NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + SKINS MANOSAURO E REI CAVEIRA</h2>
-        <p>⭐Personagens: Andrew, Alok, Luna, Leon, Antonio e Kelly</p>
-        <p>⭐Possui no mínimo 13.000 de ouro 💰</p>
-        <p>Preço: 6000 kz</p>
-    </div>
-
-    <div class="account-card">
-        <h2>NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + SKINS REI CAVEIRA</h2>
-        <p>⭐Personagens: Andrew, Alok, Luna, Leon, Antonio e Kelly</p>
-        <p>⭐Possui no mínimo 13.000 de ouro 💰</p>
-        <p>Preço: 6000 kz</p>
+        <button class="select-button" onclick="redirectToForm('6000 kz', 'Andrew, Alok, Luna, Leon, Antonio e Kelly')">Selecionar</button>
     </div>
 </div>
 

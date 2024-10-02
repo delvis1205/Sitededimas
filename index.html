@@ -22,7 +22,41 @@
             flex-direction: column;
         }
         h1 {
-            color: #ff8c00;
+            color: #ff8c00; /* Cor do Free Fire */
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: rgba(40, 40, 40, 0.8); /* Fundo do cabeçalho */
+        }
+        .logo-container img {
+            width: 100px; /* Ajuste o tamanho do logotipo */
+            height: auto;
+        }
+        .site-title {
+            flex: 1;
+            text-align: center;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-container input[type="text"] {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+        }
+        .search-container button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        .search-container img {
+            width: 20px; /* Ajuste o tamanho do ícone da lupa */
+            height: auto;
         }
         .container {
             margin: 20px;
@@ -45,45 +79,6 @@
             width: 150px;
             height: auto;
         }
-        .search-bar-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px;
-        }
-        .search-bar {
-            padding: 10px;
-            width: 300px;
-            border-radius: 5px 0 0 5px;
-            border: none;
-            font-size: 16px;
-            outline: none;
-        }
-        .search-button {
-            background-color: #ff6f00;
-            border: none;
-            padding: 10px;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-        }
-        .search-button img {
-            width: 20px;
-            height: 20px;
-        }
-        .whatsapp-icon {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366;
-            border-radius: 50%;
-            padding: 15px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            cursor: pointer;
-        }
-        .whatsapp-icon img {
-            width: 50px;
-            height: 50px;
-        }
         footer {
             background-color: #282828;
             color: white;
@@ -92,35 +87,29 @@
             font-size: 14px;
         }
     </style>
-    <script>
-        function searchProducts() {
-            var query = document.getElementById('search-input').value;
-            if (query) {
-                // Redireciona para uma página de resultados, pode ser ajustada conforme o backend.
-                window.location.href = 'search-results.html?q=' + encodeURIComponent(query);
-            }
-        }
-    </script>
 </head>
 <body>
 
-<!-- Barra de pesquisa com lupa -->
-<div class="search-bar-container">
-    <input type="text" id="search-input" class="search-bar" placeholder="Procure aqui...">
-    <button class="search-button" onclick="searchProducts()">
-        <img src="images/lupa.png" alt="Pesquisar">
-    </button>
+<!-- Cabeçalho -->
+<div class="header">
+    <div class="logo-container">
+        <img src="images/logo.png" alt="Logotipo">
+    </div>
+    <div class="site-title">
+        <h1>FF Dimas Angola</h1>
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="Pesquisar..." id="search-input">
+        <button onclick="search()">
+            <img src="images/lupa.png" alt="Pesquisar">
+        </button>
+        <a href="https://wa.me/930441438" target="_blank">
+            <img src="images/whatsapp-icon.png" alt="WhatsApp">
+        </a>
+    </div>
 </div>
 
-<!-- Container para o logotipo de fundo -->
-<div class="logo-container">
-    <img src="images/logo.png" alt="Logotipo">
-</div>
-
-<header>
-    <h1>FF Dimas Angola</h1>
-    <h2>O Que Vai Querer Hoje?</h2>
-</header>
+<h2>O Que Vai Querer Hoje?</h2>
 
 <div class="container">
     <div class="option-card" onclick="window.location.href='diamantes.html';">
@@ -143,40 +132,6 @@
         </div>
         <h2>Trilha da Evolução</h2>
     </div>
-
-    <!-- Novas categorias -->
-    <div class="option-card" onclick="window.location.href='contas.html';">
-        <div class="img-container">
-            <img src="images/contas.png" alt="Contas">
-        </div>
-        <h2>Contas</h2>
-    </div>
-
-    <div class="option-card" onclick="window.location.href='codiguins.html';">
-        <div class="img-container">
-            <img src="images/codiguins.png" alt="Codiguins">
-        </div>
-        <h2>Codiguins</h2>
-    </div>
-
-    <div class="option-card" onclick="window.location.href='regedits.html';">
-        <div class="img-container">
-            <img src="images/regedits.png" alt="Regedits">
-        </div>
-        <h2>Regedits</h2>
-    </div>
-
-    <div class="option-card" onclick="window.location.href='skins.html';">
-        <div class="img-container">
-            <img src="images/skins.png" alt="Skins">
-        </div>
-        <h2>Skins</h2>
-    </div>
-</div>
-
-<!-- Ícone do WhatsApp -->
-<div class="whatsapp-icon" onclick="window.location.href='https://chat.whatsapp.com/seu_link_do_grupo';">
-    <img src="images/whatsapp-icon.png" alt="WhatsApp">
 </div>
 
 <!-- Rodapé -->
@@ -184,6 +139,13 @@
     <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
     <p>INFLUENCER 930441438</p>  
 </footer>
+
+<script>
+    function search() {
+        const query = document.getElementById('search-input').value;
+        window.location.href = 'search-results.html?q=' + encodeURIComponent(query);
+    }
+</script>
 
 </body>
 </html>

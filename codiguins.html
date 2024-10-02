@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF Dimas Angola - Codiguin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(
+                135deg,
+                rgba(0, 0, 255, 0.6) 0%,
+                rgba(255, 0, 0, 0.6) 50%,
+                rgba(255, 255, 0, 0.6) 100%
+            );
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            color: #ff8c00;
+        }
+        .container {
+            margin: 20px;
+            flex: 1;
+        }
+        .codiguin-card {
+            background-color: #282828;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .codiguin-card h2 {
+            margin: 10px 0;
+        }
+        .quantity-select {
+            width: 50px;
+            margin-top: 10px;
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        .select-button {
+            background-color: #ff6f00;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+        .whatsapp-icon img {
+            width: 50px;
+            height: 50px;
+        }
+        footer {
+            background-color: #282828;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        function redirectToForm(quantity) {
+            var price = 500; // Preço fixo do codiguin
+            var url = `formulario.html?price=${encodeURIComponent(price * quantity + ' kz')}&quantity=${encodeURIComponent(quantity)}`;
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>FF Dimas Angola - Codiguin</h1>
+</header>
+
+<div class="container">
+    <div class="codiguin-card">
+        <h2>CODIGUIN SKIN TRIDENTE FREE FIRE</h2>
+        <p>⭐ Adquira o codiguin para a skin Tridente do Free Fire.</p>
+        <p>⭐ Preço: 700 kz por unidade</p>
+        <label for="quantity">Quantidade:</label>
+        <select id="quantity" class="quantity-select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <button class="select-button" onclick="redirectToForm(document.getElementById('quantity').value)">Selecionar</button>
+    </div>
+</div>
+
+<div class="whatsapp-icon" onclick="window.open('https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP')">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp">
+</div>
+
+<footer>
+    <p>&copy; 2024 FF Dimas Angola. Todos os direitos reservados.</p>
+    <p>&copy; INFLUENCER 930441438.</p>
+  
+</footer>
+
+</body>
+</html>

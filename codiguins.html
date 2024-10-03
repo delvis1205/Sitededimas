@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FF Dimas Angola - Codiguin</title>
+    <title>Codiguins - FF Angola</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(
-                135deg,
-                rgba(0, 0, 255, 0.6) 0%,
-                rgba(255, 0, 0, 0.6) 50%,
+                135deg, 
+                rgba(0, 0, 255, 0.6) 0%, 
+                rgba(255, 0, 0, 0.6) 50%, 
                 rgba(255, 255, 0, 0.6) 100%
             );
             color: white;
@@ -22,39 +22,40 @@
             flex-direction: column;
         }
         h1 {
-            color: #ff8c00;
+            color: #ff8c00; /* Cor do Free Fire */
         }
         .container {
             margin: 20px;
-            flex: 1;
+            flex: 1; /* Faz com que o conteúdo principal ocupe o espaço disponível */
         }
-        .codiguin-card {
-            background-color: #282828;
+        .item-card {
+            background-color: #282828; /* Cor de fundo dos produtos */
             padding: 20px;
             margin: 15px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        }
-        .codiguin-card h2 {
-            margin: 10px 0;
-        }
-        .quantity-select {
-            width: 50px;
-            margin-top: 10px;
-            padding: 5px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: none;
-            outline: none;
-        }
-        .select-button {
-            background-color: #ff6f00;
             color: white;
+        }
+        .item-card:hover {
+            background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
+        }
+        .item-card img {
+            width: 150px; /* Largura da imagem */
+            height: auto; /* Altura automática para manter proporção */
+            margin-bottom: 10px; /* Margem inferior para espaçamento */
+        }
+        .item-card button {
+            background-color: #ff8c00; /* Cor do Free Fire */
             border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
+            color: white;
+            padding: 10px 20px;
             margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .item-card button:hover {
+            background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
         }
         .whatsapp-icon {
             position: fixed;
@@ -71,52 +72,73 @@
             height: 50px;
         }
         footer {
-            background-color: #282828;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            font-size: 14px;
+            background-color: #282828; /* Cor de fundo do rodapé */
+            color: white; /* Cor do texto do rodapé */
+            text-align: center; /* Alinha o texto ao centro */
+            padding: 10px 0; /* Espaçamento interno */
+            font-size: 14px; /* Tamanho da fonte do texto */
         }
     </style>
-    <script>
-        function redirectToForm(quantity) {
-            var price = 500; // Preço fixo do codiguin
-            var url = `formulario.html?price=${encodeURIComponent(price * quantity + ' kz')}&quantity=${encodeURIComponent(quantity)}`;
-            window.location.href = url;
-        }
-    </script>
 </head>
 <body>
 
 <header>
-    <h1>FF Dimas Angola - Codiguin</h1>
+    <h1>Codiguins - FF Angola</h1>
+    <h2>Escolha o Codiguin Desejado</h2>
 </header>
 
 <div class="container">
-    <div class="codiguin-card">
-        <h2>CODIGUIN SKIN TRIDENTE FREE FIRE</h2>
-        <p>⭐ Adquira o codiguin para a skin Tridente do Free Fire.</p>
-        <p>⭐ Preço: 700 kz por unidade</p>
-        <label for="quantity">Quantidade:</label>
-        <select id="quantity" class="quantity-select">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-        <button class="select-button" onclick="redirectToForm(document.getElementById('quantity').value)">Selecionar</button>
+    <div class="item-card">
+        <img src="images/codiguin1.png" alt="Codiguin 1">
+        <h2>Codiguin Skin Tridente Free Fire</h2>
+        <p>Preço: 3000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=Codiguin Skin Tridente Free Fire&preco=3000'">Selecionar</button>
+    </div>
+
+    <div class="item-card">
+        <img src="images/codiguin2.png" alt="Codiguin 2">
+        <h2>Codiguin Skin Eterna</h2>
+        <p>Preço: 4000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=Codiguin Skin Eterna&preco=4000'">Selecionar</button>
+    </div>
+
+    <div class="item-card">
+        <img src="images/codiguin3.png" alt="Codiguin 3">
+        <h2>Codiguin Skin Lendária</h2>
+        <p>Preço: 5000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=Codiguin Skin Lendária&preco=5000'">Selecionar</button>
+    </div>
+
+    <div class="item-card">
+        <img src="images/codiguin4.png" alt="Codiguin 4">
+        <h2>Codiguin Skin Celestial</h2>
+        <p>Preço: 6000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=Codiguin Skin Celestial&preco=6000'">Selecionar</button>
+    </div>
+
+    <div class="item-card">
+        <img src="images/codiguin5.png" alt="Codiguin 5">
+        <h2>Codiguin Skin Feroz</h2>
+        <p>Preço: 7000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=Codiguin Skin Feroz&preco=7000'">Selecionar</button>
+    </div>
+
+    <div class="item-card">
+        <img src="images/codiguin6.png" alt="Codiguin 6">
+        <h2>Codiguin Skin do Dragão</h2>
+        <p>Preço: 8000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=Codiguin Skin do Dragão&preco=8000'">Selecionar</button>
     </div>
 </div>
 
-<div class="whatsapp-icon" onclick="window.open('https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP')">
-    <img src="images/whatsapp-icon.png" alt="WhatsApp">
+<div class="whatsapp-icon">
+    <a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" target="_blank">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp">
+    </a>
 </div>
 
 <footer>
-    <p>&copy; 2024 FF Dimas Angola. Todos os direitos reservados.</p>
-    <p>&copy; INFLUENCER 930441438.</p>
-  
+    <p>&copy; 2024 FF Dimas Angola - Todos os direitos reservados</p>
 </footer>
 
 </body>

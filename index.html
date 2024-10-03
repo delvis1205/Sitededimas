@@ -103,6 +103,16 @@
     </script>
 </head>
 <body>
+    <audio id="background-music" loop>
+    <source src="music/free.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento audio.
+</audio>
+
+<script>
+    const music = document.getElementById('background-music');
+    music.volume = 0.1; // Ajusta o volume para 10%
+    music.play(); // Inicia a reprodução da música
+</script>
 
 <!-- Barra de pesquisa com lupa -->
 <div class="search-bar-container">

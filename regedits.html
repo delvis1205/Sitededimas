@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FF Dimas Angola - Regedits</title>
+    <title>Regedits - FF Angola</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(
-                135deg,
-                rgba(0, 0, 255, 0.6) 0%,
-                rgba(255, 0, 0, 0.6) 50%,
+                135deg, 
+                rgba(0, 0, 255, 0.6) 0%, 
+                rgba(255, 0, 0, 0.6) 50%, 
                 rgba(255, 255, 0, 0.6) 100%
             );
             color: white;
@@ -22,34 +22,36 @@
             flex-direction: column;
         }
         h1 {
-            color: #ff8c00;
+            color: #ff8c00; /* Cor do Free Fire */
         }
         .container {
             margin: 20px;
-            flex: 1;
+            flex: 1; /* Faz com que o conteúdo principal ocupe o espaço disponível */
         }
-        .regedit-card {
-            background-color: #282828;
+        .item-card {
+            background-color: #282828; /* Cor de fundo dos produtos */
             padding: 20px;
             margin: 15px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        }
-        .regedit-card h2 {
-            margin: 10px 0;
-        }
-        .price {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        .select-button {
-            background-color: #ff6f00;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
             cursor: pointer;
+            color: white;
+        }
+        .item-card:hover {
+            background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
+        }
+        .item-card button {
+            background-color: #ff8c00; /* Cor do Free Fire */
+            border: none;
+            color: white;
+            padding: 10px 20px;
             margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .item-card button:hover {
+            background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
         }
         .whatsapp-icon {
             position: fixed;
@@ -66,58 +68,50 @@
             height: 50px;
         }
         footer {
-            background-color: #282828;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            font-size: 14px;
+            background-color: #282828; /* Cor de fundo do rodapé */
+            color: white; /* Cor do texto do rodapé */
+            text-align: center; /* Alinha o texto ao centro */
+            padding: 10px 0; /* Espaçamento interno */
+            font-size: 14px; /* Tamanho da fonte do texto */
         }
     </style>
-    <script>
-        function redirectToForm(product, price) {
-            var url = `formulario.html?product=${encodeURIComponent(product)}&price=${encodeURIComponent(price)}`;
-            window.location.href = url;
-        }
-    </script>
 </head>
 <body>
 
 <header>
-    <h1>FF Dimas Angola - Regedits</h1>
+    <h1>Regedits - FF Angola</h1>
+    <h2>Escolha o Regedit Desejado</h2>
 </header>
 
 <div class="container">
-    <div class="regedit-card">
-        <h2> Regedits Mobile da Nova Atualização</h2>
-        <p>A REGEDIT FF é um apk que se conecta com sua conta do Free Fire e permite algumas melhorias, como auto headshot e alterações de mira como leve, agachado, com scoop, aperfeiçoando o seu jogo.</p>
-    </div>
-
-    <div class="regedit-card">
+    <div class="item-card">
         <h2>Regedit Básica FF</h2>
-        <p class="price">Preço: 3000 kz</p>
-        <button class="select-button" onclick="redirectToForm('Regedit Básica FF', 3000)">Selecionar</button>
+        <p>3000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=Regedit Básica FF&preco=3000'">Selecionar</button>
     </div>
 
-    <div class="regedit-card">
+    <div class="item-card">
         <h2>Regedit Média FF</h2>
-        <p class="price">Preço: 4500 kz</p>
-        <button class="select-button" onclick="redirectToForm('Regedit Média FF', 4500)">Selecionar</button>
+        <p>4500 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=Regedit Média FF&preco=4500'">Selecionar</button>
     </div>
 
-    <div class="regedit-card">
+    <div class="item-card">
         <h2>Regedit Alta Full FF</h2>
-        <p class="price">Preço: 7000 kz</p>
-        <button class="select-button" onclick="redirectToForm('Regedit Alta Full FF', 7000)">Selecionar</button>
+        <p>7000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=Regedit Alta Full FF&preco=7000'">Selecionar</button>
     </div>
 </div>
 
-<div class="whatsapp-icon" onclick="window.open('https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP')">
-    <img src="images/whatsapp-icon.png" alt="WhatsApp">
+<div class="whatsapp-icon">
+    <a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" target="_blank">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp">
+    </a>
 </div>
 
+<!-- Rodapé -->
 <footer>
-    <p>&copy; 2024 FF Dimas Angola. Todos os direitos reservados.</p>
-      <p>&copy;INFLUENCER 930441438.</p>
+    <p>&copy; 2024 FF Dimas Angola - Todos os direitos reservados</p>
 </footer>
 
 </body>

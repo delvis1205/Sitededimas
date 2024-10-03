@@ -50,7 +50,7 @@
         const resultsContainer = document.getElementById('results-container');
         resultsContainer.innerHTML = ''; // Limpa resultados anteriores
 
-        // Lista de produtos do site
+        // Lista de produtos do site (incluindo todos os produtos de todos os arquivos)
         const products = [
             { name: 'Diamantes', link: 'diamantes.html' },
             { name: 'Assinaturas', link: 'assinaturas.html' },
@@ -58,7 +58,49 @@
             { name: 'Contas', link: 'contas.html' },
             { name: 'Codiguins', link: 'codiguins.html' },
             { name: 'Regedits', link: 'regedits.html' },
-            { name: 'Skins', link: 'skins.html' }
+            { name: 'Skins', link: 'skins.html' },
+            { name: 'Conjunto Spacefarer', link: 'itens.html' },
+            { name: 'Conjunto Diabinha', link: 'itens.html' },
+            { name: 'Passe Booyah Premium', link: 'itens.html' },
+            { name: 'Conjunto Velho Rabujento', link: 'itens.html' },
+            { name: 'Ninja Preto - Assassino das Sombras', link: 'itens.html' },
+            { name: 'Ninja Branco - Águia Branca', link: 'itens.html' },
+            { name: 'Conjunto Coalho', link: 'itens.html' },
+            { name: 'Conjunto Campo de Batalha', link: 'itens.html' },
+            { name: 'Conjunto Submundo', link: 'itens.html' },
+            { name: 'Conjunto Beisebol', link: 'itens.html' },
+            { name: 'Conjunto Paleolítico', link: 'itens.html' },
+            { name: 'Conjunto Vermelho Quente', link: 'itens.html' },
+            { name: 'Conjunto Neolítico', link: 'itens.html' },
+            { name: 'Conjunto Capitão Maneiro', link: 'itens.html' },
+            { name: 'Conjunto de Verão', link: 'itens.html' },
+            { name: 'Conjunto Roupa de Banho', link: 'itens.html' },
+            { name: 'Tatuagem', link: 'itens.html' },
+            { name: 'Camisa Tatuagem Braço Cheio', link: 'itens.html' },
+            { name: 'Calças Red Hot Chili', link: 'itens.html' },
+            { name: 'Calças Terno Preto', link: 'itens.html' },
+            { name: 'Calças Elemental Água', link: 'itens.html' },
+            { name: 'Calças Líder de Torcida', link: 'itens.html' },
+            { name: 'Calças Techwear', link: 'itens.html' },
+            { name: 'Calças Skatista', link: 'itens.html' },
+            { name: 'Calças de Combate', link: 'itens.html' },
+            // Produtos da página "Contas"
+            { name: 'Nível 15 com 50 Diamantes', link: 'contas.html' },
+            { name: 'Nível 15 com 300 Diamantes', link: 'contas.html' },
+            { name: 'Nível 15 com 50 Diamantes + Skin Rei Caveira', link: 'contas.html' },
+            { name: 'Nível 15 com 300 Diamantes + Skin Rei Caveira', link: 'contas.html' },
+            { name: 'Nível 2 com 300 Diamantes', link: 'contas.html' },
+            { name: 'Nível 2 + 300 Diamantes + Rei Caveira', link: 'contas.html' },
+            { name: 'Nível 2 + 300 Diamantes + Tengen Uzui + Rei Caveira', link: 'contas.html' },
+            { name: 'Nível 6 + 300 Diamantes + Cubo Mágico + Rei Caveira + 1 Sala', link: 'contas.html' },
+            { name: 'Nível 24 com 50 Diamantes', link: 'contas.html' },
+            { name: 'Nível 15 + Skins NitroAdrenalina e Rei Caveira', link: 'contas.html' },
+            { name: 'Nível 6 + 300 Diamantes + Cubo Mágico + Skins Sylmano e Rei Caveira', link: 'contas.html' },
+            { name: 'Nível 6 + 300 Diamantes + Cubo Mágico + Skins Manosauro e Rei Caveira', link: 'contas.html' },
+            { name: 'Nível 6 + 300 Diamantes + Cubo Mágico + Skins Charmano e Rei Caveira', link: 'contas.html' },
+            // Produtos da página "Codiguins"
+            { name: 'Codiguin Skin Tridente Free Fire', link: 'codiguins.html' },
+            // Adicione mais produtos conforme necessário
         ];
 
         // Filtra produtos com base na consulta
@@ -73,7 +115,14 @@
                 `;
             });
         } else {
-            resultsContainer.innerHTML = `<div class="result">Nenhum resultado encontrado para "${query}".</div>`;
+            const whatsappMessage = `Influencer, não achei o produto "${query}". Será que tem?`;
+            const whatsappLink = `https://wa.me/930441438?text=${encodeURIComponent(whatsappMessage)}`;
+            resultsContainer.innerHTML = `
+                <div class="result">
+                    Nenhum resultado encontrado para "${query}". 
+                    <br>
+                    <a href="${whatsappLink}" class="product-link">Clique aqui para perguntar no WhatsApp</a>
+                </div>`;
         }
     }
 
@@ -81,6 +130,10 @@
     const query = getQueryParam('q');
     displayResults(query);
 </script>
+<footer>
+    <p>&copy; 2024 FF Dimas Angola - Todos os direitos reservados</p>
+    <p>&copy; INFLUENCER 930441438</p>
+</footer>
 
 </body>
 </html>

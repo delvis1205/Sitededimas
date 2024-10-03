@@ -69,9 +69,9 @@
 
         <label for="metodo-pagamento">Método de Pagamento:</label>
         <select id="metodo-pagamento" name="metodo-pagamento" required>
-            <option value="Express: 930 441 438">Express: 930 441 438</option>
+            <option value="Express: 930441438">Express: 930 441 438</option>
             <option value="Tranf. BAI 0040.0000.9841.5347.1016.4">Tranf. BAI 0040.0000.9841.5347.1016.4</option>
-            <option value="PAYPAY AO: 930 441 438">PAYPAY AO: 930 441 438</option>
+            <option value="PAYPAY AO: 930441438">PAYPAY AO: 930 441 438</option>
         </select>
 
         <input type="hidden" id="hidden-text" name="text">
@@ -86,9 +86,7 @@
     const preco = urlParams.get('preco');
 
     // Atualiza as informações do produto no formulário
-    if (produto && preco) {
-        document.getElementById('produto-info').textContent = `${produto} Diamantes - ${preco} Kz`;
-    }
+    document.getElementById('produto-info').textContent = `${produto} Diamantes - ${preco} Kz`;
 
     // Envia o formulário para o WhatsApp
     document.getElementById('pedido-form').addEventListener('submit', function(event) {
@@ -107,8 +105,8 @@
 
 <!-- Rodapé -->
 <footer>
-     <p>&copy; 2024 FF Dimas Angola - Todos os Direitos Reservados</p>
-    <p>&copy; INFLUENCER 930441438</p>
+    <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
+    <p>INFLUENCER 930441438</p>
 </footer>
 
 </body>

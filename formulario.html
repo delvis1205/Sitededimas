@@ -31,6 +31,9 @@
             border-radius: 10px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7); /* Aumenta o efeito de sombra */
             transition: transform 0.3s; /* Efeito de animação ao focar */
+            width: 100%; /* Garante que o formulário ocupe toda a largura */
+            max-width: 400px; /* Define uma largura máxima para o formulário */
+            margin: 0 auto; /* Centraliza o formulário */
         }
         form:hover {
             transform: scale(1.02); /* Leve aumento de tamanho ao passar o mouse */
@@ -38,7 +41,7 @@
         input, select {
             padding: 15px; /* Aumenta o espaço interno dos campos */
             margin: 10px 0;
-            width: 100%;
+            width: calc(100% - 30px); /* Ajusta a largura para não ultrapassar as margens */
             border: 2px solid #ff8c00; /* Borda estilizada */
             border-radius: 5px; /* Bordas arredondadas */
             background-color: #383838; /* Fundo dos campos */

@@ -75,6 +75,12 @@
             font-size: 14px;
         }
     </style>
+    <script>
+        function selecionarProduto(nome, preco) {
+            // Redirecionar para o formulário com os parâmetros do produto
+            window.location.href = `formulario.html?produto=${encodeURIComponent(nome)}&preco=${encodeURIComponent(preco)}`;
+        }
+    </script>
 </head>
 <body>
 
@@ -87,162 +93,137 @@
     <div class="item-card">
         <h2>Conjunto Spacefarer</h2>
         <p>6700 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Conjunto Spacefarer', '6700 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Conjunto Diabinha</h2>
         <p>6500 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Conjunto Diabinha', '6500 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Passe Booyah Premium</h2>
         <p>3200 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Passe Booyah Premium', '3200 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Conjunto Velho Rabujento</h2>
         <p>6500 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Conjunto Velho Rabujento', '6500 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Ninja Preto - Assassino das Sombras</h2>
         <p>7500 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Ninja Preto - Assassino das Sombras', '7500 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Ninja Branco - Águia Branca</h2>
         <p>7500 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Ninja Branco - Águia Branca', '7500 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Conjunto Coalho</h2>
         <p>6500 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Conjunto Coalho', '6500 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Conjunto Campo de Batalha</h2>
         <p>6000 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Conjunto Campo de Batalha', '6000 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Conjunto Submundo</h2>
         <p>5200 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Conjunto Submundo', '5200 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
-        <h2>Conjunto Beisebol (999 em estoque)</h2>
+        <h2>Conjunto Beisebol</h2>
         <p>5000 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Conjunto Beisebol', '5000 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Conjunto Paleolítico</h2>
         <p>6000 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Conjunto Paleolítico', '6000 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Conjunto Vermelho Quente</h2>
         <p>6000 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Conjunto Vermelho Quente', '6000 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Conjunto Neolítico</h2>
         <p>6000 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Conjunto Neolítico', '6000 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Conjunto Capitão Maneiro</h2>
         <p>4000 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Conjunto Capitão Maneiro', '4000 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Conjunto de Verão</h2>
         <p>5700 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Conjunto de Verão', '5700 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Conjunto Roupa de Banho</h2>
         <p>5000 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Conjunto Roupa de Banho', '5000 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Tatuagem</h2>
         <p>3500 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Tatuagem', '3500 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Camisa Tatuagem Braço Cheio</h2>
         <p>5000 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Camisa Tatuagem Braço Cheio', '5000 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Calças Red Hot Chili</h2>
         <p>2500 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Calças Red Hot Chili', '2500 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
         <h2>Calças Terno Preto</h2>
-        <p>2200 Kz</p>
-        <button>Selecionar</button>
-    </div>
-
-    <div class="item-card">
-        <h2>Calças Elemental Água</h2>
-        <p>3100 Kz</p>
-        <button>Selecionar</button>
-    </div>
-
-    <div class="item-card">
-        <h2>Calças Líder de Torcida</h2>
         <p>2500 Kz</p>
-        <button>Selecionar</button>
+        <button onclick="selecionarProduto('Calças Terno Preto', '2500 Kz')">Selecionar</button>
     </div>
 
     <div class="item-card">
-        <h2>Calças Techwear</h2>
-        <p>5300 Kz</p>
-        <button>Selecionar</button>
-    </div>
-
-    <div class="item-card">
-        <h2>Calças Skatista</h2>
-        <p>4000 Kz</p>
-        <button>Selecionar</button>
-    </div>
-
-    <div class="item-card">
-        <h2>Calças de Combate</h2>
-        <p>2500 Kz</p>
-        <button>Selecionar</button>
+        <h2>Moicano Azul</h2>
+        <p>5500 Kz</p>
+        <button onclick="selecionarProduto('Moicano Azul', '5500 Kz')">Selecionar</button>
     </div>
 </div>
 
-<div class="whatsapp-icon">
-    <a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" target="_blank">
-        <img src="images/whatsapp-icon.png" alt="WhatsApp">
-    </a>
-</div>
+<a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" class="whatsapp-icon">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
 
 <footer>
-    <p>&copy;2024 FF Dimas Angola - Todos os direitos reservados</p>
+    <p>&copy; 2024 FF Dimas Angola - Todos os Direitos Reservados</p>
+     <p>&copy; INFLUENCER 930441438</p>
 </footer>
 
 </body>

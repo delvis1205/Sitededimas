@@ -103,19 +103,6 @@
     </script>
 </head>
 <body>
-     
-<!-- Conteúdo da sua página -->
-
-<audio id="background-music" loop>
-    <source src="music/free.mp3" type="audio/mpeg">
-    Seu navegador não suporta o elemento audio.
-</audio>
-
-<script>
-    const music = document.getElementById('background-music');
-    music.volume = 0.1; // Ajusta o volume para 10%
-    music.play(); // Inicia a reprodução da música
-</script>
 
 <!-- Barra de pesquisa com lupa -->
 <div class="search-bar-container">
@@ -179,13 +166,25 @@
         <h2>Regedits</h2>
     </div>
 
-    <div class="option-card" onclick="window.location.href='Itens.html';">
+    <div class="option-card" onclick="window.location.href='itens.html';">
         <div class="img-container">
             <img src="images/Passe.png" alt="Outros Itens">
         </div>
         <h2>Outros Itens</h2>
     </div>
 </div>
+
+<!-- Música de fundo -->
+<audio id="background-music" loop>
+    <source src="music/free.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento audio.
+</audio>
+
+<script>
+    const music = document.getElementById('background-music');
+    music.volume = 0.1; // Ajusta o volume para 10%
+    music.play(); // Inicia a reprodução da música
+</script>
 
 <!-- Ícone do WhatsApp -->
 <div class="whatsapp-icon">
@@ -196,8 +195,8 @@
 
 <!-- Rodapé -->
 <footer>
-     <p>&copy;2024 FF Dimas Angola - Todos os direitos reservados</p>
-     <p>&copy;INFLUENCER 930441438.</p>   
+    <p>&copy;2024 FF Dimas Angola - Todos os direitos reservados</p>
+    <p>&copy;INFLUENCER 930441438.</p>   
 </footer>
 
 </body>

@@ -86,7 +86,9 @@
     const preco = urlParams.get('preco');
 
     // Atualiza as informações do produto no formulário
-    document.getElementById('produto-info').textContent = `${produto} Diamantes - ${preco} Kz`;
+    if (produto && preco) {
+        document.getElementById('produto-info').textContent = `${produto} Diamantes - ${preco} Kz`;
+    }
 
     // Envia o formulário para o WhatsApp
     document.getElementById('pedido-form').addEventListener('submit', function(event) {
@@ -105,8 +107,8 @@
 
 <!-- Rodapé -->
 <footer>
-    <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
-    <p>INFLUENCER 930441438</p>
+     <p>&copy; 2024 FF Dimas Angola - Todos os Direitos Reservados</p>
+    <p>&copy; INFLUENCER 930441438</p>
 </footer>
 
 </body>

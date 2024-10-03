@@ -12,6 +12,9 @@
             text-align: center;
             margin: 0;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Garante que o corpo ocupe a altura total */
         }
         h1 {
             color: #ff8c00; /* Cor do Free Fire */
@@ -27,6 +30,28 @@
             color: #ff8c00;
             text-decoration: none;
             font-weight: bold;
+        }
+        footer {
+            background-color: #282828; /* Cor de fundo do rodapé */
+            color: white; /* Cor do texto do rodapé */
+            text-align: center; /* Alinha o texto ao centro */
+            padding: 10px 0; /* Espaçamento interno */
+            font-size: 14px; /* Tamanho da fonte do texto */
+            margin-top: auto; /* Faz o rodapé sempre ficar no final */
+        }
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+        .whatsapp-icon img {
+            width: 50px;
+            height: 50px;
         }
     </style>
 </head>
@@ -130,6 +155,13 @@
     const query = getQueryParam('q');
     displayResults(query);
 </script>
+
+<!-- Ícone do WhatsApp -->
+<div class="whatsapp-icon" onclick="window.open('https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP')">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp">
+</div>
+
+<!-- Rodapé -->
 <footer>
     <p>&copy; 2024 FF Dimas Angola - Todos os direitos reservados</p>
     <p>&copy; INFLUENCER 930441438</p>

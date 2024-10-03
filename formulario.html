@@ -27,21 +27,37 @@
         }
         form {
             background-color: #282828;
-            padding: 20px;
+            padding: 30px; /* Aumenta o espaço de preenchimento */
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7); /* Aumenta o efeito de sombra */
+            transition: transform 0.3s; /* Efeito de animação ao focar */
+        }
+        form:hover {
+            transform: scale(1.02); /* Leve aumento de tamanho ao passar o mouse */
         }
         input, select {
-            padding: 10px;
+            padding: 15px; /* Aumenta o espaço interno dos campos */
             margin: 10px 0;
             width: 100%;
+            border: 2px solid #ff8c00; /* Borda estilizada */
+            border-radius: 5px; /* Bordas arredondadas */
+            background-color: #383838; /* Fundo dos campos */
+            color: white; /* Cor do texto */
+            transition: border-color 0.3s; /* Efeito de transição na borda */
+        }
+        input:focus, select:focus {
+            border-color: #ff6f00; /* Muda a cor da borda ao focar */
+            outline: none; /* Remove o contorno padrão do navegador */
         }
         button {
-            padding: 10px;
+            padding: 15px;
             background-color: #ff6f00;
             color: white;
             border: none;
             cursor: pointer;
+            border-radius: 5px; /* Bordas arredondadas */
+            transition: background-color 0.3s; /* Efeito de transição */
+            font-size: 16px; /* Aumenta o tamanho da fonte */
         }
         button:hover {
             background-color: #ff8c00;

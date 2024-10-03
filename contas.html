@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FF Dimas Angola - Contas</title>
+    <title>Contas - FF Angola</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(
-                135deg,
-                rgba(0, 0, 255, 0.6) 0%,
-                rgba(255, 0, 0, 0.6) 50%,
+                135deg, 
+                rgba(0, 0, 255, 0.6) 0%, 
+                rgba(255, 0, 0, 0.6) 50%, 
                 rgba(255, 255, 0, 0.6) 100%
             );
             color: white;
@@ -22,33 +22,36 @@
             flex-direction: column;
         }
         h1 {
-            color: #ff8c00;
+            color: #ff8c00; /* Cor do Free Fire */
         }
         .container {
             margin: 20px;
-            flex: 1;
+            flex: 1; /* Faz com que o conteúdo principal ocupe o espaço disponível */
         }
-        .account-card {
-            background-color: #282828;
+        .item-card {
+            background-color: #282828; /* Cor de fundo dos produtos */
             padding: 20px;
             margin: 15px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        }
-        .account-card h2 {
-            margin: 10px 0;
-        }
-        .account-card p {
-            margin: 5px 0;
-        }
-        .select-button {
-            background-color: #ff6f00;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
             cursor: pointer;
+            color: white;
+        }
+        .item-card:hover {
+            background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
+        }
+        .item-card button {
+            background-color: #ff8c00; /* Cor do Free Fire */
+            border: none;
+            color: white;
+            padding: 10px 20px;
             margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .item-card button:hover {
+            background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
         }
         .search-bar-container {
             display: flex;
@@ -90,116 +93,127 @@
             height: 50px;
         }
         footer {
-            background-color: #282828;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            font-size: 14px;
+            background-color: #282828; /* Cor de fundo do rodapé */
+            color: white; /* Cor do texto do rodapé */
+            text-align: center; /* Alinha o texto ao centro */
+            padding: 10px 0; /* Espaçamento interno */
+            font-size: 14px; /* Tamanho da fonte do texto */
         }
     </style>
     <script>
         function searchProducts() {
             var query = document.getElementById('search-input').value;
             if (query) {
+                // Redireciona para uma página de resultados, pode ser ajustada conforme o backend.
                 window.location.href = 'search-results.html?q=' + encodeURIComponent(query);
             }
-        }
-
-        function redirectToForm(price, characters) {
-            // Redirecionar para a página de formulário com dados auto-preenchidos
-            var url = `formulario.html?price=${encodeURIComponent(price)}&characters=${encodeURIComponent(characters)}`;
-            window.location.href = url;
         }
     </script>
 </head>
 <body>
 
+<header>
+    <h1>Contas - FF Angola</h1>
+    <h2>Escolha a Conta Desejada</h2>
+</header>
+
 <!-- Barra de pesquisa com lupa -->
 <div class="search-bar-container">
     <input type="text" id="search-input" class="search-bar" placeholder="Procure aqui...">
     <button class="search-button" onclick="searchProducts()">
-        <img src="images/lupa.png" alt="Pesquisar">
+        <img src="images/lupa-icon.png" alt="Pesquisar">
     </button>
 </div>
 
-<header>
-    <h1>FF Dimas Angola - Contas</h1>
-</header>
-
 <div class="container">
-    <div class="account-card">
+    <div class="item-card">
         <h2>NÍVEL 15 COM 50 DIAMANTES (VIA GOOGLE)</h2>
-        <p>⭐Personagens: Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly</p>
-        <p>⭐Possui no mínimo 26.000 de ouro 💰</p>
-        <p>Preço: 2500 kz</p>
-        <button class="select-button" onclick="redirectToForm('2500 kz', 'Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly')">Selecionar</button>
+        <p>2600 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=NÍVEL 15 COM 50 DIAMANTES (VIA GOOGLE)&preco=2600'">Selecionar</button>
     </div>
 
-    <div class="account-card">
+    <div class="item-card">
         <h2>NÍVEL 15 COM 300 DIAMANTES (VIA GOOGLE)</h2>
-        <p>⭐Personagens: Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly</p>
-        <p>⭐Possui no mínimo 26.000 de ouro 💰</p>
-        <p>Preço: 3500 kz</p>
-        <button class="select-button" onclick="redirectToForm('3500 kz', 'Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly')">Selecionar</button>
+        <p>3500 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=NÍVEL 15 COM 300 DIAMANTES (VIA GOOGLE)&preco=3500'">Selecionar</button>
     </div>
 
-    <div class="account-card">
+    <div class="item-card">
         <h2>NÍVEL 15 COM 50 DIAMANTES + SKIN REI CAVEIRA (VIA GOOGLE)</h2>
-        <p>⭐Personagens: Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly</p>
-        <p>⭐Possui no mínimo 26.000 de ouro 💰</p>
-        <p>Preço: 3500 kz</p>
-        <button class="select-button" onclick="redirectToForm('3500 kz', 'Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly')">Selecionar</button>
+        <p>3500 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=NÍVEL 15 COM 50 DIAMANTES + SKIN REI CAVEIRA (VIA GOOGLE)&preco=3500'">Selecionar</button>
     </div>
 
-    <div class="account-card">
+    <div class="item-card">
         <h2>NÍVEL 15 COM 300 DIAMANTES + SKIN REI CAVEIRA (VIA GOOGLE)</h2>
-        <p>⭐Personagens: Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly</p>
-        <p>⭐Possui no mínimo 26.000 de ouro 💰</p>
-        <p>Preço: 4000 kz</p>
-        <button class="select-button" onclick="redirectToForm('4000 kz', 'Andrew, Alok, Luna, Moco, Hayato, Antonio, Maxim e Kelly')">Selecionar</button>
+        <p>4000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=NÍVEL 15 COM 300 DIAMANTES + SKIN REI CAVEIRA (VIA GOOGLE)&preco=4000'">Selecionar</button>
     </div>
 
-    <div class="account-card">
+    <div class="item-card">
         <h2>NÍVEL 2 COM 300 DIAMANTES (VIA GOOGLE)</h2>
-        <p>⭐Personagem: Andrew</p>
-        <p>⭐Possui no mínimo 2.500 de ouro 💰</p>
-        <p>Preço: 4500 kz</p>
-        <button class="select-button" onclick="redirectToForm('4500 kz', 'Andrew')">Selecionar</button>
+        <p>4500 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=NÍVEL 2 COM 300 DIAMANTES (VIA GOOGLE)&preco=4500'">Selecionar</button>
     </div>
 
-    <div class="account-card">
+    <div class="item-card">
         <h2>NÍVEL 2 + 300 DIAMANTES + REI CAVEIRA (VIA GOOGLE)</h2>
-        <p>⭐Personagem: Andrew</p>
-        <p>⭐Possui no mínimo 2.500 de ouro 💰</p>
-        <p>Preço: 5000 kz</p>
-        <button class="select-button" onclick="redirectToForm('5000 kz', 'Andrew')">Selecionar</button>
+        <p>5000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=NÍVEL 2 + 300 DIAMANTES + REI CAVEIRA (VIA GOOGLE)&preco=5000'">Selecionar</button>
     </div>
 
-    <div class="account-card">
+    <div class="item-card">
         <h2>NÍVEL 2 + 300 DIAMANTES + TENGEN UZUI + REI CAVEIRA</h2>
-        <p>⭐Personagem: Andrew</p>
-        <p>⭐Possui no mínimo 2.500 de ouro 💰</p>
-        <p>Preço: 6000 kz</p>
-        <button class="select-button" onclick="redirectToForm('6000 kz', 'Andrew')">Selecionar</button>
+        <p>5000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=NÍVEL 2 + 300 DIAMANTES + TENGEN UZUI + REI CAVEIRA&preco=5000'">Selecionar</button>
     </div>
 
-    <div class="account-card">
+    <div class="item-card">
         <h2>NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + REI CAVEIRA + 1 SALA</h2>
-        <p>⭐Personagens: Andrew, Alok, Luna, Leon, Antonio e Kelly</p>
-        <p>⭐Possui no mínimo 13.000 de ouro 💰</p>
-        <p>Preço: 7500 kz</p>
-        <button class="select-button" onclick="redirectToForm('6000 kz', 'Andrew, Alok, Luna, Leon, Antonio e Kelly')">Selecionar</button>
+        <p>6000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + REI CAVEIRA + 1 SALA&preco=6000'">Selecionar</button>
+    </div>
+
+    <div class="item-card">
+        <h2>NÍVEL 24 COM 50 DIAMANTES (VIA GOOGLE)</h2>
+        <p>7000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=NÍVEL 24 COM 50 DIAMANTES (VIA GOOGLE)&preco=7000'">Selecionar</button>
+    </div>
+
+    <div class="item-card">
+        <h2>NÍVEL 15 + SKINS NITROADRENALINA E REI CAVEIRA (VIA GOOGLE)</h2>
+        <p>8000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=NÍVEL 15 + SKINS NITROADRENALINA E REI CAVEIRA (VIA GOOGLE)&preco=8000'">Selecionar</button>
+    </div>
+
+    <div class="item-card">
+        <h2>NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + SKINS SYLMANO E REI CAVEIRA</h2>
+        <p>9000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + SKINS SYLMANO E REI CAVEIRA&preco=9000'">Selecionar</button>
+    </div>
+
+    <div class="item-card">
+        <h2>NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + SKINS MANOSAURO E REI CAVEIRA</h2>
+        <p>10000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + SKINS MANOSAURO E REI CAVEIRA&preco=10000'">Selecionar</button>
+    </div>
+
+    <div class="item-card">
+        <h2>NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + SKINS CHARMANO E REI CAVEIRA</h2>
+        <p>11000 Kz</p>
+        <button onclick="window.location.href='formulario.html?produto=NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + SKINS CHARMANO E REI CAVEIRA&preco=11000'">Selecionar</button>
     </div>
 </div>
 
-<div class="whatsapp-icon" onclick="window.open('https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP')">
-    <img src="images/whatsapp-icon.png" alt="WhatsApp">
+<div class="whatsapp-icon">
+    <a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" target="_blank">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp">
+    </a>
 </div>
 
 <footer>
-    <p>&copy; 2024 FF Dimas Angola. Todos os direitos reservados.</p>
-           <p>&copy; INFLUENCER 930441438.</p>
-    
+    <p>&copy; 2024 FF Dimas Angola - Todos os direitos reservados</p>
+     <p>&copy; INFLUENCER 930441438</p>
 </footer>
 
 </body>

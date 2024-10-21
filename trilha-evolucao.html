@@ -5,37 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trilha da Evolução - FF Angola</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:wght@400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(
-                135deg, /* Direção do gradiente */
-                rgba(0, 0, 255, 0.6) 0%, /* Azul claro */
-                rgba(255, 0, 0, 0.6) 50%, /* Vermelho claro */
-                rgba(255, 255, 0, 0.6) 100% /* Amarelo claro */
-            );
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff6600, #ff3300, #ff9900, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: white;
             text-align: center;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
         h1 {
-            color: #ff8c00; /* Cor do Free Fire */
+            color: #ffffff; /* Cor branca para o título */
+            font-size: 4em;
+            text-shadow: 4px 4px 0px #ff6600, 8px 8px 0px #ff3300;
+            letter-spacing: 2px;
+            transform: skew(-5deg);
+            margin: 0;
         }
-        .container {
+
+        h2 {
+            color: #ffffff; /* Cor branca para o subtítulo */
+        }
+
+        .login-area {
+            text-align: right;
             margin: 20px;
         }
+
+        .login-area a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .login-area a:hover {
+            color: #ff6600;
+        }
+
+        .container {
+            margin: 20px;
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .product-card {
             background-color: #282828; /* Cor de fundo dos cartões */
             padding: 20px;
             margin: 15px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
+
         .price {
             font-size: 18px;
             margin-top: 10px;
-            color: #ff8c00; /* Cor do Free Fire */
+            color: #00ff00; /* Cor verde para preço */
         }
+
         .select-btn {
             display: inline-block;
             padding: 10px 20px;
@@ -46,13 +92,16 @@
             text-decoration: none;
             cursor: pointer;
         }
+
         .select-btn:hover {
             background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
         }
+
         .img-container img {
             width: 150px;
             height: auto;
         }
+
         /* Estilo para o rodapé */
         footer {
             background-color: #282828;
@@ -69,6 +118,10 @@
         <h1>Trilha da Evolução - FF Angola</h1>
         <h2>Selecione a Trilha</h2>
     </header>
+
+    <div class="login-area" id="login-section">
+        <!-- Esta área será atualizada dependendo do status de login -->
+    </div>
 
     <div class="container">
         <div class="product-card">
@@ -101,9 +154,22 @@
 
     <!-- Rodapé -->
     <footer>
-        <p>2024 FF Dimas Angola - Todos os direitos reservados</p>
-        <p>INFLUENCER 930441438</p>
+        <p>&copy;2024 FF Dimas Angola - Todos os direitos reservados</p>
+        <p>&copy;INFLUENCER 930441438</p>
     </footer>
+
+    <script>
+        // Simulando login (substitua esta parte por uma verificação real)
+        const isLoggedIn = false; // Aqui você pode substituir com a lógica real de verificação de login
+
+        const loginSection = document.getElementById('login-section');
+
+        if (isLoggedIn) {
+            loginSection.innerHTML = '<p>Bem-vindo, Usuário! <a href="/logout">Logout</a></p>';
+        } else {
+            loginSection.innerHTML = '<a href="/login">Login</a> | <a href="/register">Registrar</a>';
+        }
+    </script>
 
 </body>
 </html>

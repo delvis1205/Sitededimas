@@ -5,29 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codiguins - FF Angola</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:wght@400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(
-                135deg, 
-                rgba(0, 0, 255, 0.6) 0%, 
-                rgba(255, 0, 0, 0.6) 50%, 
-                rgba(255, 255, 0, 0.6) 100%
-            );
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff6600, #ff3300, #ff9900, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: white;
             text-align: center;
             margin: 0;
             padding: 0;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
+            min-height: 100vh;
         }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
         h1 {
-            color: #ff8c00; /* Cor do Free Fire */
+            color: #ffffff; /* Cor branca para o título */
+            font-size: 4em;
+            text-shadow: 4px 4px 0px #ff6600, 8px 8px 0px #ff3300;
+            letter-spacing: 2px;
+            margin: 0;
         }
+
+        h2 {
+            color: #000000; /* Cor preta para o subtítulo */
+        }
+
         .container {
             margin: 20px;
-            flex: 1; /* Faz com que o conteúdo principal ocupe o espaço disponível */
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
+
         .item-card {
             background-color: #282828; /* Cor de fundo dos produtos */
             padding: 20px;
@@ -35,17 +54,24 @@
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             color: white;
+            width: 30%; /* Tamanho fixo para os cartões */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
         .item-card:hover {
-            background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
+            background-color: #ff6f00; /* Cor ao passar o mouse */
         }
+
         .item-card img {
             width: 150px; /* Largura da imagem */
             height: auto; /* Altura automática para manter proporção */
             margin-bottom: 10px; /* Margem inferior para espaçamento */
         }
+
         .item-card button {
-            background-color: #ff8c00; /* Cor do Free Fire */
+            background-color: #ff8c00; /* Cor ao fundo do botão */
             border: none;
             color: white;
             padding: 10px 20px;
@@ -54,9 +80,11 @@
             border-radius: 5px;
             font-size: 16px;
         }
+
         .item-card button:hover {
-            background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
+            background-color: #ff6f00; /* Cor ao passar o mouse */
         }
+
         .whatsapp-icon {
             position: fixed;
             bottom: 20px;
@@ -67,10 +95,12 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             cursor: pointer;
         }
+
         .whatsapp-icon img {
             width: 50px;
             height: 50px;
         }
+
         footer {
             background-color: #282828; /* Cor de fundo do rodapé */
             color: white; /* Cor do texto do rodapé */
@@ -78,69 +108,106 @@
             padding: 10px 0; /* Espaçamento interno */
             font-size: 14px; /* Tamanho da fonte do texto */
         }
+
+        .login-area {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .login-area a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .login-area a:hover {
+            color: #ff6600;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Codiguins - FF Angola</h1>
-    <h2>Escolha o Codiguin Desejado</h2>
-</header>
+    <header>
+        <h1>Codiguins - FF Angola</h1>
+        <h2>Escolha o Codiguin Desejado</h2>
+    </header>
 
-<div class="container">
-    <div class="item-card">
-        <img src="images/codiguin1.png" alt="Codiguin 1">
-        <h2>Codiguin Skin Tridente Free Fire</h2>
-        <p>Preço: 3000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Codiguin Skin Tridente Free Fire&preco=3000'">Selecionar</button>
+    <div class="login-area" id="login-section">
+        <!-- Esta área será atualizada dependendo do status de login -->
     </div>
 
-    <div class="item-card">
-        <img src="images/codiguin2.png" alt="Codiguin 2">
-        <h2>Codiguin Skin Eterna</h2>
-        <p>Preço: 4000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Codiguin Skin Eterna&preco=4000'">Selecionar</button>
+    <div class="container">
+        <div class="item-card">
+            <img src="images/codiguin1.png" alt="Codiguin 1">
+            <h2>Codiguin Skin Tridente Free Fire</h2>
+            <p>Preço: 3000 Kz</p>
+            <button onclick="window.location.href='formulario.html?produto=Codiguin Skin Tridente Free Fire&preco=3000'">Selecionar</button>
+        </div>
+
+        <div class="item-card">
+            <img src="images/codiguin2.png" alt="Codiguin 2">
+            <h2>Codiguin Skin Eterna</h2>
+            <p>Preço: 4000 Kz</p>
+            <button onclick="window.location.href='formulario.html?produto=Codiguin Skin Eterna&preco=4000'">Selecionar</button>
+        </div>
+
+        <div class="item-card">
+            <img src="images/codiguin3.png" alt="Codiguin 3">
+            <h2>Codiguin Skin Lendária</h2>
+            <p>Preço: 5000 Kz</p>
+            <button onclick="window.location.href='formulario.html?produto=Codiguin Skin Lendária&preco=5000'">Selecionar</button>
+        </div>
+
+        <div class="item-card">
+            <img src="images/codiguin4.png" alt="Codiguin 4">
+            <h2>Codiguin Skin Celestial</h2>
+            <p>Preço: 6000 Kz</p>
+            <button onclick="window.location.href='formulario.html?produto=Codiguin Skin Celestial&preco=6000'">Selecionar</button>
+        </div>
+
+        <div class="item-card">
+            <img src="images/codiguin5.png" alt="Codiguin 5">
+            <h2>Codiguin Skin Feroz</h2>
+            <p>Preço: 7000 Kz</p>
+            <button onclick="window.location.href='formulario.html?produto=Codiguin Skin Feroz&preco=7000'">Selecionar</button>
+        </div>
+
+        <div class="item-card">
+            <img src="images/codiguin6.png" alt="Codiguin 6">
+            <h2>Codiguin Skin do Dragão</h2>
+            <p>Preço: 8000 Kz</p>
+            <button onclick="window.location.href='formulario.html?produto=Codiguin Skin do Dragão&preco=8000'">Selecionar</button>
+        </div>
     </div>
 
-    <div class="item-card">
-        <img src="images/codiguin3.png" alt="Codiguin 3">
-        <h2>Codiguin Skin Lendária</h2>
-        <p>Preço: 5000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Codiguin Skin Lendária&preco=5000'">Selecionar</button>
+    <!-- Ícone do WhatsApp -->
+    <div class="whatsapp-icon">
+        <a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" target="_blank">
+            <img src="images/whatsapp-icon.png" alt="WhatsApp">
+        </a>
     </div>
 
-    <div class="item-card">
-        <img src="images/codiguin4.png" alt="Codiguin 4">
-        <h2>Codiguin Skin Celestial</h2>
-        <p>Preço: 6000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Codiguin Skin Celestial&preco=6000'">Selecionar</button>
-    </div>
+    <footer>
+        <p>&copy; 2024 FF Dimas Angola - Todos os direitos reservados</p>
+        <p>&copy; INFLUENCER 930441438</p>  
+    </footer>
 
-    <div class="item-card">
-        <img src="images/codiguin5.png" alt="Codiguin 5">
-        <h2>Codiguin Skin Feroz</h2>
-        <p>Preço: 7000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Codiguin Skin Feroz&preco=7000'">Selecionar</button>
-    </div>
+    <script>
+        // Simulando login (substitua esta parte por uma verificação real)
+        const isLoggedIn = false; // Aqui você pode substituir com a lógica real de verificação de login
 
-    <div class="item-card">
-        <img src="images/codiguin6.png" alt="Codiguin 6">
-        <h2>Codiguin Skin do Dragão</h2>
-        <p>Preço: 8000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Codiguin Skin do Dragão&preco=8000'">Selecionar</button>
-    </div>
-</div>
+        const loginSection = document.getElementById('login-section');
 
-<div class="whatsapp-icon">
-    <a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" target="_blank">
-        <img src="images/whatsapp-icon.png" alt="WhatsApp">
-    </a>
-</div>
-
-<footer>
-    <p>&copy; 2024 FF Dimas Angola - Todos os direitos reservados</p>
-    <p>&copy; INFLUENCER 930441438</p>
-</footer>
+        if (isLoggedIn) {
+            loginSection.innerHTML = '<p>Bem-vindo, Usuário! <a href="/logout">Logout</a></p>';
+        } else {
+            loginSection.innerHTML = '<a href="/login">Login</a> | <a href="/register">Registrar</a>';
+        }
+    </script>
 
 </body>
 </html>

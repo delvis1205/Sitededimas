@@ -5,79 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contas - FF Angola</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(
-                135deg, 
-                rgba(0, 0, 255, 0.6) 0%, 
-                rgba(255, 0, 0, 0.6) 50%, 
-                rgba(255, 255, 0, 0.6) 100%
-            );
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff6600, #ff3300, #ff9900, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: white;
             text-align: center;
             margin: 0;
             padding: 0;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
+            min-height: 100vh;
         }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
         h1 {
-            color: #ff8c00; /* Cor do Free Fire */
+            color: #ffffff; /* Cor branca para o título */
+            font-size: 4em;
+            text-shadow: 4px 4px 0px #ff6600, 8px 8px 0px #ff3300;
+            letter-spacing: 2px;
+            transform: skew(-5deg);
+            margin: 0;
         }
+
+        h2 {
+            color: #ffffff; /* Cor branca para o subtítulo */
+        }
+
+        .login-area {
+            text-align: right;
+            margin: 20px;
+        }
+
+        .login-area a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .login-area a:hover {
+            color: #ff6600;
+        }
+
         .container {
             margin: 20px;
-            flex: 1; /* Faz com que o conteúdo principal ocupe o espaço disponível */
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        .item-card {
-            background-color: #282828; /* Cor de fundo dos produtos */
+
+        .product-card {
+            background-color: #282828; /* Cor de fundo dos cartões */
             padding: 20px;
             margin: 15px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            cursor: pointer;
-            color: white;
+            text-align: center;
         }
-        .item-card:hover {
-            background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
+
+        .price {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #00ff00; /* Cor verde para preço */
         }
-        .item-card button {
-            background-color: #ff8c00; /* Cor do Free Fire */
-            border: none;
-            color: white;
+
+        .select-btn {
+            display: inline-block;
             padding: 10px 20px;
             margin-top: 10px;
-            cursor: pointer;
+            background-color: #ff8c00; /* Cor do Free Fire */
+            color: white;
             border-radius: 5px;
-            font-size: 16px;
+            text-decoration: none;
+            cursor: pointer;
         }
-        .item-card button:hover {
+
+        .select-btn:hover {
             background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
         }
-        .search-bar-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px;
+
+        .img-container {
+            border-radius: 50%; /* Faz o contêiner da imagem ser redondo */
+            overflow: hidden; /* Esconde as partes da imagem que saem do contêiner redondo */
+            width: 150px; /* Define a largura do contêiner */
+            height: 150px; /* Define a altura do contêiner */
+            display: flex; /* Permite centralizar a imagem dentro do contêiner */
+            align-items: center; /* Alinha a imagem verticalmente no centro */
+            justify-content: center; /* Alinha a imagem horizontalmente no centro */
+            margin: 0 auto; /* Centraliza o contêiner na página */
         }
-        .search-bar {
-            padding: 10px;
-            width: 300px;
-            border-radius: 5px 0 0 5px;
-            border: none;
-            font-size: 16px;
-            outline: none;
+
+        .img-container img {
+            width: 100%; /* Faz a imagem ocupar 100% do contêiner */
+            height: auto; /* Mantém a proporção da imagem */
         }
-        .search-button {
-            background-color: #ff6f00;
-            border: none;
-            padding: 10px;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
+
+        /* Estilo para o rodapé */
+        footer {
+            background-color: #282828;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
         }
-        .search-button img {
-            width: 20px;
-            height: 20px;
-        }
+
         .whatsapp-icon {
             position: fixed;
             bottom: 20px;
@@ -88,16 +132,10 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             cursor: pointer;
         }
+
         .whatsapp-icon img {
             width: 50px;
             height: 50px;
-        }
-        footer {
-            background-color: #282828; /* Cor de fundo do rodapé */
-            color: white; /* Cor do texto do rodapé */
-            text-align: center; /* Alinha o texto ao centro */
-            padding: 10px 0; /* Espaçamento interno */
-            font-size: 14px; /* Tamanho da fonte do texto */
         }
     </style>
     <script>
@@ -117,7 +155,10 @@
     <h2>Melhores Contas do Mercado Escolha a Conta Desejada</h2>
 </header>
 
-<!-- Barra de pesquisa com lupa -->
+<div class="login-area" id="login-section">
+    <!-- Esta área será atualizada dependendo do status de login -->
+</div>
+
 <div class="search-bar-container">
     <input type="text" id="search-input" class="search-bar" placeholder="Procure aqui...">
     <button class="search-button" onclick="searchProducts()">
@@ -126,83 +167,35 @@
 </div>
 
 <div class="container">
-    <div class="item-card">
-        <h2>NÍVEL 15 COM 50 DIAMANTES (VIA GOOGLE)</h2>
-        <p>2600 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=NÍVEL 15 COM 50 DIAMANTES (VIA GOOGLE)&preco=2600'">Selecionar</button>
+    <div class="product-card">
+        <div class="img-container">
+            <img src="images/conta1.png" alt="Nível 15 com 50 Diamantes">
+        </div>
+        <h3>NÍVEL 15 COM 50 DIAMANTES (VIA GOOGLE)</h3>
+        <p class="price">2600 Kz</p>
+        <a href="formulario.html?produto=NÍVEL 15 COM 50 DIAMANTES (VIA GOOGLE)&preco=2600" class="select-btn">Selecionar</a>
     </div>
 
-    <div class="item-card">
-        <h2>NÍVEL 15 COM 300 DIAMANTES (VIA GOOGLE)</h2>
-        <p>3500 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=NÍVEL 15 COM 300 DIAMANTES (VIA GOOGLE)&preco=3500'">Selecionar</button>
+    <div class="product-card">
+        <div class="img-container">
+            <img src="images/conta2.png" alt="Nível 15 com 300 Diamantes">
+        </div>
+        <h3>NÍVEL 15 COM 300 DIAMANTES (VIA GOOGLE)</h3>
+        <p class="price">3500 Kz</p>
+        <a href="formulario.html?produto=NÍVEL 15 COM 300 DIAMANTES (VIA GOOGLE)&preco=3500" class="select-btn">Selecionar</a>
     </div>
 
-    <div class="item-card">
-        <h2>NÍVEL 15 COM 50 DIAMANTES + SKIN REI CAVEIRA (VIA GOOGLE)</h2>
-        <p>3500 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=NÍVEL 15 COM 50 DIAMANTES + SKIN REI CAVEIRA (VIA GOOGLE)&preco=3500'">Selecionar</button>
+    <div class="product-card">
+        <div class="img-container">
+            <img src="images/conta3.png" alt="Nível 15 com 50 Diamantes + Skin Rei Caveira">
+        </div>
+        <h3>NÍVEL 15 COM 50 DIAMANTES + SKIN REI CAVEIRA (VIA GOOGLE)</h3>
+        <p class="price">3500 Kz</p>
+        <a href="formulario.html?produto=NÍVEL 15 COM 50 DIAMANTES + SKIN REI CAVEIRA (VIA GOOGLE)&preco=3500" class="select-btn">Selecionar</a>
     </div>
 
-    <div class="item-card">
-        <h2>NÍVEL 15 COM 300 DIAMANTES + SKIN REI CAVEIRA (VIA GOOGLE)</h2>
-        <p>4000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=NÍVEL 15 COM 300 DIAMANTES + SKIN REI CAVEIRA (VIA GOOGLE)&preco=4000'">Selecionar</button>
-    </div>
+    <!-- Adicione mais cartões de produtos conforme necessário -->
 
-    <div class="item-card">
-        <h2>NÍVEL 2 COM 300 DIAMANTES (VIA GOOGLE)</h2>
-        <p>4500 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=NÍVEL 2 COM 300 DIAMANTES (VIA GOOGLE)&preco=4500'">Selecionar</button>
-    </div>
-
-    <div class="item-card">
-        <h2>NÍVEL 2 + 300 DIAMANTES + REI CAVEIRA (VIA GOOGLE)</h2>
-        <p>5000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=NÍVEL 2 + 300 DIAMANTES + REI CAVEIRA (VIA GOOGLE)&preco=5000'">Selecionar</button>
-    </div>
-
-    <div class="item-card">
-        <h2>NÍVEL 2 + 300 DIAMANTES + TENGEN UZUI + REI CAVEIRA</h2>
-        <p>5000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=NÍVEL 2 + 300 DIAMANTES + TENGEN UZUI + REI CAVEIRA&preco=5000'">Selecionar</button>
-    </div>
-
-    <div class="item-card">
-        <h2>NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + REI CAVEIRA + 1 SALA</h2>
-        <p>6000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + REI CAVEIRA + 1 SALA&preco=6000'">Selecionar</button>
-    </div>
-
-    <div class="item-card">
-        <h2>NÍVEL 24 COM 50 DIAMANTES (VIA GOOGLE)</h2>
-        <p>7000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=NÍVEL 24 COM 50 DIAMANTES (VIA GOOGLE)&preco=7000'">Selecionar</button>
-    </div>
-
-    <div class="item-card">
-        <h2>NÍVEL 15 + SKINS NITROADRENALINA E REI CAVEIRA (VIA GOOGLE)</h2>
-        <p>8000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=NÍVEL 15 + SKINS NITROADRENALINA E REI CAVEIRA (VIA GOOGLE)&preco=8000'">Selecionar</button>
-    </div>
-
-    <div class="item-card">
-        <h2>NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + SKINS SYLMANO E REI CAVEIRA</h2>
-        <p>9000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + SKINS SYLMANO E REI CAVEIRA&preco=9000'">Selecionar</button>
-    </div>
-
-    <div class="item-card">
-        <h2>NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + SKINS MANOSAURO E REI CAVEIRA</h2>
-        <p>10000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + SKINS MANOSAURO E REI CAVEIRA&preco=10000'">Selecionar</button>
-    </div>
-
-    <div class="item-card">
-        <h2>NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + SKINS CHARMANO E REI CAVEIRA</h2>
-        <p>11000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=NÍVEL 6 + 300 DIAMANTES + CUBO MÁGICO + SKINS CHARMANO E REI CAVEIRA&preco=11000'">Selecionar</button>
-    </div>
 </div>
 
 <div class="whatsapp-icon">
@@ -211,10 +204,24 @@
     </a>
 </div>
 
+<!-- Rodapé -->
 <footer>
     <p>&copy; 2024 FF Dimas Angola - Todos os direitos reservados</p>
-     <p>&copy; INFLUENCER 930441438</p>
+    <p>&copy; INFLUENCER 930441438</p>
 </footer>
+
+<script>
+    // Simulando login (substitua esta parte por uma verificação real)
+    const isLoggedIn = false; // Aqui você pode substituir com a lógica real de verificação de login
+
+    const loginSection = document.getElementById('login-section');
+
+    if (isLoggedIn) {
+        loginSection.innerHTML = '<p>Bem-vindo, Usuário! <a href="/logout">Logout</a></p>';
+    } else {
+        loginSection.innerHTML = '<a href="/login">Login</a> | <a href="/register">Registrar</a>';
+    }
+</script>
 
 </body>
 </html>

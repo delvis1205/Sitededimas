@@ -5,26 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diamantes - FF Angola</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:wght@400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(
-                135deg,
-                rgba(0, 0, 255, 0.6) 0%,
-                rgba(255, 0, 0, 0.6) 50%,
-                rgba(255, 255, 0, 0.6) 100%
-            );
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff6600, #ff3300, #ff9900, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: white;
             text-align: center;
             margin: 0;
             padding: 0;
         }
-        h1 {
-            color: #ff8c00;
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
         }
+
+        h1 {
+            font-family: 'Bowlby One SC', cursive;
+            color: #ffffff; /* Cor branca para o título */
+            margin: 0;
+            font-size: 4em;
+            text-shadow: 4px 4px 0px #ff6600, 8px 8px 0px #ff3300;
+            letter-spacing: 2px;
+            transform: skew(-5deg);
+        }
+
+        h2 {
+            color: #000000; /* Cor preta para o subtítulo */
+        }
+
         .container {
             margin: 20px;
             flex: 1;
         }
+
         .product-card {
             background-color: #282828;
             padding: 20px;
@@ -32,11 +50,13 @@
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         }
+
         .price {
             font-size: 18px;
             margin-top: 10px;
             color: #00ff00;
         }
+
         .select-btn {
             display: inline-block;
             padding: 10px 20px;
@@ -47,19 +67,23 @@
             text-decoration: none;
             cursor: pointer;
         }
+
         .select-btn:hover {
             background-color: #ff6f00;
         }
+
         .img-container img {
             width: 150px;
             height: auto;
         }
+
         .search-bar-container {
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 20px;
         }
+
         .search-bar {
             padding: 10px;
             width: 300px;
@@ -68,6 +92,7 @@
             font-size: 16px;
             outline: none;
         }
+
         .search-button {
             background-color: #ff6f00;
             border: none;
@@ -75,10 +100,12 @@
             border-radius: 0 5px 5px 0;
             cursor: pointer;
         }
+
         .search-button img {
             width: 20px;
             height: 20px;
         }
+
         .whatsapp-icon {
             position: fixed;
             bottom: 20px;
@@ -89,10 +116,12 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             cursor: pointer;
         }
+
         .whatsapp-icon img {
             width: 50px;
             height: 50px;
         }
+
         footer {
             background-color: #282828;
             color: white;
@@ -104,10 +133,30 @@
             left: 0;
             font-size: 14px;
         }
+
         .wrapper {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+        }
+
+        .login-area {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .login-area a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .login-area a:hover {
+            color: #ff6600;
         }
     </style>
 </head>
@@ -124,6 +173,10 @@
                 </button>
             </div>
         </header>
+
+        <div class="login-area" id="login-section">
+            <!-- Esta área será atualizada dependendo do status de login -->
+        </div>
 
         <div class="container">
             <div class="product-card">
@@ -190,6 +243,19 @@
              <p>&copy;INFLUENCER 930441438.</p>  
         </footer>
     </div>
+
+    <script>
+        // Simulando login (substitua esta parte por uma verificação real)
+        const isLoggedIn = false; // Aqui você pode substituir com a lógica real de verificação de login
+
+        const loginSection = document.getElementById('login-section');
+
+        if (isLoggedIn) {
+            loginSection.innerHTML = '<p>Bem-vindo, Usuário! <a href="/logout">Logout</a></p>';
+        } else {
+            loginSection.innerHTML = '<a href="/login">Login</a> | <a href="/register">Registrar</a>';
+        }
+    </script>
 
 </body>
 </html>

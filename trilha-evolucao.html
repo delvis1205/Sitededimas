@@ -97,9 +97,20 @@
             background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
         }
 
+        .img-container {
+            border-radius: 50%; /* Faz o contêiner da imagem ser redondo */
+            overflow: hidden; /* Esconde as partes da imagem que saem do contêiner redondo */
+            width: 150px; /* Define a largura do contêiner */
+            height: 150px; /* Define a altura do contêiner */
+            display: flex; /* Permite centralizar a imagem dentro do contêiner */
+            align-items: center; /* Alinha a imagem verticalmente no centro */
+            justify-content: center; /* Alinha a imagem horizontalmente no centro */
+            margin: 0 auto; /* Centraliza o contêiner na página */
+        }
+
         .img-container img {
-            width: 150px;
-            height: auto;
+            width: 100%; /* Faz a imagem ocupar 100% do contêiner */
+            height: auto; /* Mantém a proporção da imagem */
         }
 
         /* Estilo para o rodapé */

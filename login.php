@@ -5,19 +5,26 @@ session_start(); // Iniciar a sessão
 include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Obter os dados do formulário
+    // Verificar se os campos estão preenchidos
+    if (empty($_POST['username']) || empty($_POST['password'])) {
+        echo "Por favor, preencha todos os campos.";
+        exit;
+    }
+    
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Consultar o banco de dados
-    $sql = "SELECT * FROM usuarios WHERE username='$username'";
-    $result = $conn->query($sql);
+    // Usar prepared statements para prevenir SQL Injection
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         // Verificar a senha
         if (password_verify($password, $row['password'])) {
-            $_SESSION['username'] = $username; // Armazenar nome de usuário na sessão
+            $_SESSION['username'] = $username;
             echo "Login bem-sucedido!";
         } else {
             echo "Senha incorreta!";
@@ -25,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         echo "Usuário não encontrado!";
     }
+    $stmt->close();
 }
 
 $conn->close();

@@ -28,7 +28,7 @@
         }
 
         h1 {
-            color: #ffffff; /* Cor branca para o título */
+            color: #ffffff;
             font-size: 4em;
             text-shadow: 4px 4px 0px #ff6600, 8px 8px 0px #ff3300;
             letter-spacing: 2px;
@@ -36,7 +36,7 @@
         }
 
         h2 {
-            color: #000000; /* Cor preta para o subtítulo */
+            color: #000000;
         }
 
         .container {
@@ -48,30 +48,31 @@
         }
 
         .item-card {
-            background-color: #282828; /* Cor de fundo dos produtos */
+            background-color: #282828;
             padding: 20px;
             margin: 15px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             color: white;
-            width: 30%; /* Tamanho fixo para os cartões */
+            width: 30%;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .item-card:hover {
-            background-color: #ff6f00; /* Cor ao passar o mouse */
+            background-color: #ff6f00;
         }
 
         .item-card img {
-            width: 150px; /* Largura da imagem */
-            height: auto; /* Altura automática para manter proporção */
-            margin-bottom: 10px; /* Margem inferior para espaçamento */
+            width: 150px;
+            height: 150px; /* Altura ajustada para ser quadrada */
+            border-radius: 50%; /* Para torná-las redondas */
+            margin-bottom: 10px;
         }
 
         .item-card button {
-            background-color: #ff8c00; /* Cor ao fundo do botão */
+            background-color: #ff8c00;
             border: none;
             color: white;
             padding: 10px 20px;
@@ -82,7 +83,7 @@
         }
 
         .item-card button:hover {
-            background-color: #ff6f00; /* Cor ao passar o mouse */
+            background-color: #ff6f00;
         }
 
         .whatsapp-icon {
@@ -102,11 +103,11 @@
         }
 
         footer {
-            background-color: #282828; /* Cor de fundo do rodapé */
-            color: white; /* Cor do texto do rodapé */
-            text-align: center; /* Alinha o texto ao centro */
-            padding: 10px 0; /* Espaçamento interno */
-            font-size: 14px; /* Tamanho da fonte do texto */
+            background-color: #282828;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
         }
 
         .login-area {
@@ -205,7 +206,7 @@
         if (isLoggedIn) {
             loginSection.innerHTML = '<p>Bem-vindo, Usuário! <a href="/logout">Logout</a></p>';
         } else {
-            loginSection.innerHTML = '<a href="/login">Login</a> | <a href="/register">Registrar</a>';
+            loginSection.innerHTML = '<a href="login.html">Login</a> | <a href="registro.html">Registrar</a>';
         }
     </script>
 

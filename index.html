@@ -5,52 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FF Dimas Angola</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:wght@400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(
-                135deg,
-                rgba(0, 0, 255, 0.6) 0%,
-                rgba(255, 0, 0, 0.6) 50%,
-                rgba(255, 255, 0, 0.6) 100%
-            );
-            color: white;
-            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff6600, #ff3300, #ff9900, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ffffff;
             margin: 0;
             padding: 0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
-        h1 {
-            color: #ff8c00;
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
         }
+
+        header {
+            background: url('header-bg.jpg') center/cover no-repeat;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-family: 'Bowlby One SC', cursive;
+            margin: 0;
+            font-size: 4em;
+            text-shadow: 4px 4px 0px #ff6600, 8px 8px 0px #ff3300;
+            letter-spacing: 2px;
+            transform: skew(-5deg);
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
         .container {
             margin: 20px;
             flex: 1;
         }
-        .option-card {
-            background-color: #282828;
-            padding: 20px;
-            margin: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            cursor: pointer;
-            text-decoration: none;
-            color: white;
+
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
         }
+
+        .option-card {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 250px;
+            cursor: pointer;
+        }
+
         .option-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             background-color: #ff6f00;
         }
+
         .img-container img {
-            width: 150px;
-            height: auto;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 4px solid #ff6600;
+            transition: transform 0.3s ease;
         }
+
+        .option-card:hover img {
+            transform: scale(1.1);
+        }
+
         .search-bar-container {
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 20px;
         }
+
         .search-bar {
             padding: 10px;
             width: 300px;
@@ -59,6 +133,7 @@
             font-size: 16px;
             outline: none;
         }
+
         .search-button {
             background-color: #ff6f00;
             border: none;
@@ -66,6 +141,7 @@
             border-radius: 0 5px 5px 0;
             cursor: pointer;
         }
+
         .search-button img {
             width: 20px;
             height: 20px;
@@ -81,10 +157,12 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             cursor: pointer;
         }
+
         .whatsapp-icon img {
             width: 50px;
             height: 50px;
         }
+
         footer {
             background-color: #282828;
             color: white;
@@ -103,111 +181,99 @@
     </script>
 </head>
 <body>
-
-<!-- Iframe adicionado antes do conteúdo -->
-<div style="max-width: 100%; overflow: hidden; margin: 0 auto; padding: 20px;">
-    <iframe width="760px" height="500px" src="https://sway.cloud.microsoft/s/wGVnuoVhKYHYnC0W/embed" 
-        frameborder="0" marginheight="0" marginwidth="0" 
-        style="border: none; max-width: 100%; height: auto;" 
-        sandbox="allow-forms allow-modals allow-orientation-lock allow-popups allow-same-origin allow-scripts" 
-        scrolling="no" allowfullscreen mozallowfullscreen msallowfullscreen webkitallowfullscreen>
-    </iframe>
-</div>
-
-<!-- Barra de pesquisa com lupa -->
-<div class="search-bar-container">
-    <input type="text" id="search-input" class="search-bar" placeholder="Procure aqui...">
-    <button class="search-button" onclick="searchProducts()">
-        <img src="images/lupa-icon.png" alt="Pesquisar">
-    </button>
-</div>
-
-<!-- Container para o logotipo de fundo -->
-<div class="logo-container">
-    <img src="images/logo.png" alt="Logotipo">
-</div>
-
-<header>
-    <h1>FF Dimas Angola</h1>
-    <h2>O Que Vai Querer Hoje?</h2>
-</header>
-
-<div class="container">
-    <div class="option-card" onclick="window.location.href='diamantes.html';">
-        <div class="img-container">
-            <img src="images/diamantes.png" alt="Diamantes">
+    <header>
+        <div class="header-content">
+            <h1>FF Dimas Angola</h1>
+            <h2>O Que Vai Querer Hoje?</h2>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="contatos.html">Contatos</a>
+                <a href="login.html">Login</a>
+                <a href="registro.html">Registro</a>
+            </nav>
         </div>
-        <h2>Diamantes</h2>
-    </div>
-    
-    <div class="option-card" onclick="window.location.href='assinaturas.html';">
-        <div class="img-container">
-            <img src="images/assinaturas.png" alt="Assinaturas">
-        </div>
-        <h2>Assinaturas</h2>
-    </div>
-    
-    <div class="option-card" onclick="window.location.href='trilha-evolucao.html';">
-        <div class="img-container">
-            <img src="images/trilha-evolucao.png" alt="Trilha da Evolução">
-        </div>
-        <h2>Trilha da Evolução</h2>
+    </header>
+
+    <div class="search-bar-container">
+        <input type="text" id="search-input" class="search-bar" placeholder="Procure aqui...">
+        <button class="search-button" onclick="searchProducts()">
+            <img src="images/lupa-icon.png" alt="Pesquisar">
+        </button>
     </div>
 
-    <!-- Novas categorias -->
-    <div class="option-card" onclick="window.location.href='contas.html';">
-        <div class="img-container">
-            <img src="images/contas.png" alt="Contas Free Fire">
+    <div class="container">
+        <div class="categories">
+            <div class="option-card" onclick="window.location.href='diamantes.html';">
+                <div class="img-container">
+                    <img src="images/diamantes.png" alt="Diamantes">
+                </div>
+                <h2>Diamantes</h2>
+            </div>
+            <div class="option-card" onclick="window.location.href='assinaturas.html';">
+                <div class="img-container">
+                    <img src="images/assinaturas.png" alt="Assinaturas">
+                </div>
+                <h2>Assinaturas</h2>
+            </div>
+            <div class="option-card" onclick="window.location.href='trilha-evolucao.html';">
+                <div class="img-container">
+                    <img src="images/trilha-evolucao.png" alt="Trilha da Evolução">
+                </div>
+                <h2>Trilha da Evolução</h2>
+            </div>
+            <div class="option-card" onclick="window.location.href='contas.html';">
+                <div class="img-container">
+                    <img src="images/contas.png" alt="Contas Free Fire">
+                </div>
+                <h2>Contas Free Fire</h2>
+            </div>
+            <div class="option-card" onclick="window.location.href='codiguins.html';">
+                <div class="img-container">
+                    <img src="images/codiguins.png" alt="Skins & Codiguins">
+                </div>
+                <h2>Skins & Codiguins</h2>
+            </div>
+            <div class="option-card" onclick="window.location.href='regedits.html';">
+                <div class="img-container">
+                    <img src="images/regedits.png" alt="Regedits">
+                </div>
+                <h2>Regedits</h2>
+            </div>
+            <div class="option-card" onclick="window.location.href='itens.html';">
+                <div class="img-container">
+                    <img src="images/Passe.png" alt="Outros Itens">
+                </div>
+                <h2>Outros Itens</h2>
+            </div>
         </div>
-        <h2>Contas Free Fire</h2>
     </div>
 
-    <div class="option-card" onclick="window.location.href='codiguins.html';">
-        <div class="img-container">
-            <img src="images/codiguins.png" alt="Skins & Codiguins">
-        </div>
-        <h2>Skins & Codiguins</h2>
+    <audio id="background-music" autoplay loop>
+        <source src="music/free.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    <script>
+        const music = document.getElementById('background-music');
+        music.volume = 0.1; // Ajusta o volume para 10%
+        music.play(); // Inicia a reprodução da música
+    </script>
+
+    <div class="whatsapp-icon">
+        <a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" target="_blank">
+            <img src="images/whatsapp-icon.png" alt="WhatsApp">
+        </a>
     </div>
 
-    <div class="option-card" onclick="window.location.href='regedits.html';">
-        <div class="img-container">
-            <img src="images/regedits.png" alt="Regedits">
-        </div>
-        <h2>Regedits</h2>
+        <div class="whatsapp-icon">
+        <a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" target="_blank">
+            <img src="images/whatsapp-icon.png" alt="WhatsApp">
+        </a>
     </div>
 
-    <div class="option-card" onclick="window.location.href='itens.html';">
-        <div class="img-container">
-            <img src="images/Passe.png" alt="Outros Itens">
-        </div>
-        <h2>Outros Itens</h2>
-    </div>
-</div>
-
-<!-- Música de fundo -->
-<audio id="background-music" autoplay loop>
-    <source src="music/free.mp3" type="audio/mpeg">
-    Seu navegador não suporta o elemento de áudio.
-</audio>
-<script>
-    const music = document.getElementById('background-music');
-    music.volume = 0.1; // Ajusta o volume para 10%
-    music.play(); // Inicia a reprodução da música
-</script>
-
-<!-- Ícone do WhatsApp -->
-<div class="whatsapp-icon">
-    <a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" target="_blank">
-        <img src="images/whatsapp-icon.png" alt="WhatsApp">
-    </a>
-</div>
-
-<!-- Rodapé -->
-<footer>
-    <p>&copy;2024 FF Dimas Angola - Todos os direitos reservados</p>
-    <p>&copy;INFLUENCER 930441438.</p>   
-</footer>
-
-    <script src="redirect.js"></script>
+    <footer>
+        <p>&copy; 2024 FF Dimas Angola - Todos os direitos reservados</p>
+        <p>&copy; INFLUENCER 930441438.</p>
+    </footer>
 </body>
 </html>
+

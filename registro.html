@@ -1,0 +1,175 @@
+<html><head><base href="https://ffdimasangola.com/register">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro - FF Dimas Angola</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:wght@400;700&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(45deg, #ff6600, #ff3300, #ff9900, #ffcc00);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    @keyframes gradientBG {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+    }
+    .register-container {
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 20px;
+        padding: 40px;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+    h1 {
+        font-family: 'Bowlby One SC', cursive;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2.5em;
+        color: #ff6600;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    .input-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+    input:focus {
+        background-color: rgba(255, 255, 255, 0.2);
+        outline: none;
+    }
+    .btn {
+        background-color: #ff6600;
+        color: #ffffff;
+        border: none;
+        padding: 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+        background-color: #ff8533;
+        transform: translateY(-2px);
+    }
+    .links {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .links a {
+        color: #ff6600;
+        text-decoration: none;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+    }
+    .links a:hover {
+        color: #ff8533;
+    }
+    .back-home {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+    .back-home:hover {
+        color: #ff6600;
+    }
+    .terms {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .terms a {
+        color: #ff6600;
+    }
+</style>
+</head>
+<body>
+    <a href="/" class="back-home">← Voltar para a página inicial</a>
+    <div class="register-container">
+        <h1>Criar Conta</h1>
+        <form id="register-form">
+            <div class="input-group">
+                <label for="username">Nome de usuário</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Confirmar Senha</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit" class="btn">Registrar</button>
+        </form>
+        <div class="terms">
+            Ao criar uma conta, você concorda com nossos <a href="/terms">Termos de Serviço</a> e <a href="/privacy">Política de Privacidade</a>.
+        </div>
+        <div class="links">
+            <a href="/login">Já tem uma conta? Faça login</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                alert('As senhas não coincidem. Por favor, tente novamente.');
+                return;
+            }
+            
+            // Aqui você adicionaria a lógica de registro
+            // Por exemplo, uma chamada para uma API de registro
+            
+            console.log('Tentativa de registro com:', username, email);
+            alert('Funcionalidade de registro será implementada em breve!');
+            
+            // Após registro bem-sucedido, você redirecionaria o usuário
+            // window.location.href = '/dashboard';
+        });
+    </script>
+</body>
+</html>

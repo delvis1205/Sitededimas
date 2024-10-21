@@ -124,7 +124,7 @@
     <a href="https://ffdimasangola.netlify.app/" class="back-home">← Voltar para a página inicial</a>
     <div class="register-container">
         <h1>Criar Conta</h1>
-        <form id="register-form">
+        <form id="register-form" action="register.php" method="POST">
             <div class="input-group">
                 <label for="username">Nome de usuário</label>
                 <input type="text" id="username" name="username" required>
@@ -147,33 +147,8 @@
             Ao criar uma conta, você concorda com nossos <a href="termo.html">Termos de Serviço</a> e <a href="politicas.html">Política de Privacidade</a>.
         </div>
         <div class="links">
-            <a href="recuperar.html">Esqueci minha senha</a> | 
             <a href="login.html">Já tem uma conta? Faça login</a>
         </div>
     </div>
-
-    <script>
-        document.getElementById('register-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const username = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirm-password').value;
-            
-            if (password !== confirmPassword) {
-                alert('As senhas não coincidem. Por favor, tente novamente.');
-                return;
-            }
-            
-            // Aqui você adicionaria a lógica de registro
-            // Por exemplo, uma chamada para uma API de registro
-            
-            console.log('Tentativa de registro com:', username, email);
-            alert('Funcionalidade de registro será implementada em breve!');
-            
-            // Após registro bem-sucedido, você redirecionaria o usuário
-            // window.location.href = '/dashboard';
-        });
-    </script>
 </body>
 </html>

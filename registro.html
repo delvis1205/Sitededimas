@@ -21,13 +21,11 @@
             align-items: center;
             min-height: 100vh;
         }
-        
         @keyframes gradientBG {
             0% {background-position: 0% 50%;}
             50% {background-position: 100% 50%;}
             100% {background-position: 0% 50%;}
         }
-        
         .register-container {
             background-color: rgba(0, 0, 0, 0.8);
             border-radius: 20px;
@@ -36,7 +34,6 @@
             max-width: 500px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
         }
-        
         h1 {
             font-family: 'Bowlby One SC', cursive;
             text-align: center;
@@ -45,22 +42,18 @@
             color: #ff6600;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-        
         form {
             display: flex;
             flex-direction: column;
         }
-        
         .input-group {
             margin-bottom: 20px;
         }
-        
         label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
         }
-        
         input {
             width: 100%;
             padding: 12px;
@@ -71,12 +64,10 @@
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
-        
         input:focus {
             background-color: rgba(255, 255, 255, 0.2);
             outline: none;
         }
-        
         .btn {
             background-color: #ff6600;
             color: #ffffff;
@@ -89,28 +80,23 @@
             text-transform: uppercase;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        
         .btn:hover {
             background-color: #ff8533;
             transform: translateY(-2px);
         }
-        
         .links {
             text-align: center;
             margin-top: 20px;
         }
-        
         .links a {
             color: #ff6600;
             text-decoration: none;
             margin: 0 10px;
             transition: color 0.3s ease;
         }
-        
         .links a:hover {
             color: #ff8533;
         }
-        
         .back-home {
             position: absolute;
             top: 20px;
@@ -121,17 +107,14 @@
             font-size: 18px;
             transition: color 0.3s ease;
         }
-        
         .back-home:hover {
             color: #ff6600;
         }
-        
         .terms {
             font-size: 14px;
             text-align: center;
             margin-top: 20px;
         }
-        
         .terms a {
             color: #ff6600;
         }
@@ -164,7 +147,8 @@
             Ao criar uma conta, você concorda com nossos <a href="termo.html">Termos de Serviço</a> e <a href="politicas.html">Política de Privacidade</a>.
         </div>
         <div class="links">
-            <a href="/login">Já tem uma conta? Faça login</a>
+            <a href="recuperar.html">Esqueci minha senha</a> | 
+            <a href="login.html">Já tem uma conta? Faça login</a>
         </div>
     </div>
 
@@ -188,8 +172,7 @@
             alert('Funcionalidade de registro será implementada em breve!');
             
             // Após registro bem-sucedido, você redirecionaria o usuário
-            // Simulando um registro bem-sucedido
-            window.location.href = 'https://ffdimasangola.netlify.app/';
+            // window.location.href = '/dashboard';
         });
     </script>
 </body>

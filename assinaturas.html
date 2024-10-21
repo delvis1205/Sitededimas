@@ -5,81 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assinaturas - FF Angola</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:wght@400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(
-                135deg, /* Direção do gradiente */
-                rgba(0, 0, 255, 0.6) 0%, /* Azul claro */
-                rgba(255, 0, 0, 0.6) 50%, /* Vermelho claro */
-                rgba(255, 255, 0, 0.6) 100% /* Amarelo claro */
-            );
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff6600, #ff3300, #ff9900, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: white;
             text-align: center;
             margin: 0;
             padding: 0;
-            display: flex; /* Usar flexbox para empurrar o rodapé */
-            flex-direction: column; /* Colocar os itens em coluna */
-            min-height: 100vh; /* Garantir que o conteúdo ocupe a altura total */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-       
-        h1, h2 {
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        h1 {
+            color: #ffffff; /* Cor branca para o título */
+            font-size: 4em;
+            text-shadow: 4px 4px 0px #ff6600, 8px 8px 0px #ff3300;
+            letter-spacing: 2px;
+            transform: skew(-5deg);
             margin: 0;
         }
-        h1 {
-            color: #ff8c00; /* Cor do Free Fire */
-        }
+
         h2 {
-            color: #ffffff; /* Cor branca para o subtítulo */
+            color: #000000; /* Cor preta para o subtítulo */
         }
+
         .container {
             margin: 20px;
-            flex: 1; /* Faz o conteúdo ocupar o espaço disponível */
-            display: flex; /* Alinha os cards em linha */
-            flex-wrap: wrap; /* Permite que os cards se movam para a linha seguinte */
-            justify-content: center; /* Centraliza os cards */
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
+
         .product-card {
-            background-color: #282828; /* Cor de fundo dos produtos */
-            padding: 10px; /* Reduz o padding */
+            background-color: #282828;
+            padding: 10px;
             margin: 15px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            width: 30%; /* Ajusta a largura do card */
-            vertical-align: top; /* Alinha os cards verticalmente */
+            width: 30%;
+            vertical-align: top;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centraliza os itens no card */
+            align-items: center;
         }
+
         .img-container {
-            overflow: hidden; /* Esconde o que excede o container */
-            height: 150px; /* Define uma altura fixa para a imagem */
+            overflow: hidden;
+            height: 150px;
             display: flex;
-            justify-content: center; /* Centraliza a imagem horizontalmente */
-            align-items: center; /* Centraliza a imagem verticalmente */
+            justify-content: center;
+            align-items: center;
         }
+
         .img-container img {
-            max-width: 100%; /* Limita a largura máxima da imagem */
-            max-height: 100%; /* Limita a altura máxima da imagem */
+            max-width: 100%;
+            max-height: 100%;
         }
+
         .price {
             font-size: 18px;
             margin-top: 10px;
-            color: #00ff00; /* Cor verde dos preços */
+            color: #00ff00;
         }
+
         .select-btn {
             display: inline-block;
             padding: 10px 20px;
             margin-top: 10px;
-            background-color: #ff8c00; /* Cor do Free Fire */
+            background-color: #ff8c00;
             color: white;
             border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
         }
+
         .select-btn:hover {
-            background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
+            background-color: #ff6f00;
         }
-       .whatsapp-icon {
+
+        .whatsapp-icon {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -89,16 +105,37 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             cursor: pointer;
         }
+
         .whatsapp-icon img {
             width: 50px;
             height: 50px;
         }
+
         footer {
-            background-color: #282828; /* Cor de fundo do rodapé */
-            color: white; /* Cor do texto do rodapé */
-            text-align: center; /* Alinha o texto ao centro */
-            padding: 10px 0; /* Espaçamento interno */
-            font-size: 14px; /* Tamanho da fonte do texto */
+            background-color: #282828;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .login-area {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .login-area a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .login-area a:hover {
+            color: #ff6600;
         }
     </style>
 </head>
@@ -108,6 +145,10 @@
         <h1>Assinaturas - FF Angola</h1>
         <h2>Selecione o Plano de Assinatura</h2>
     </header>
+
+    <div class="login-area" id="login-section">
+        <!-- Esta área será atualizada dependendo do status de login -->
+    </div>
 
     <div class="container">
         <div class="product-card">
@@ -141,14 +182,27 @@
     <!-- Ícone do WhatsApp -->
     <div class="whatsapp-icon">
         <a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" target="_blank">
-            <img src="images/whatsapp-icon.png" alt="WhatsApp" width="50" height="50">
+            <img src="images/whatsapp-icon.png" alt="WhatsApp">
         </a>
     </div>
 
     <footer>
         <p>&copy;2024 FF Dimas Angola - Todos os direitos reservados</p>
-             <p>&copy;INFLUENCER 930441438.</p>  
+        <p>&copy;INFLUENCER 930441438.</p>  
     </footer>
+
+    <script>
+        // Simulando login (substitua esta parte por uma verificação real)
+        const isLoggedIn = false; // Aqui você pode substituir com a lógica real de verificação de login
+
+        const loginSection = document.getElementById('login-section');
+
+        if (isLoggedIn) {
+            loginSection.innerHTML = '<p>Bem-vindo, Usuário! <a href="/logout">Logout</a></p>';
+        } else {
+            loginSection.innerHTML = '<a href="/login">Login</a> | <a href="/register">Registrar</a>';
+        }
+    </script>
 
 </body>
 </html>

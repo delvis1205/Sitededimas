@@ -59,6 +59,33 @@
             color: #ff6600;
         }
 
+        .search-bar-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .search-bar {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+
+        .search-button {
+            background-color: #ff8c00; /* Cor do Free Fire */
+            border: none;
+            padding: 10px 15px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .search-button img {
+            width: 20px; /* Tamanho reduzido da lupa */
+            height: 20px; /* Tamanho reduzido da lupa */
+        }
+
         .container {
             margin: 20px;
             flex: 1;
@@ -74,6 +101,7 @@
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             text-align: center;
+            width: 200px; /* Define uma largura para os cartões */
         }
 
         .price {
@@ -95,22 +123,6 @@
 
         .select-btn:hover {
             background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
-        }
-
-        .img-container {
-            border-radius: 50%; /* Faz o contêiner da imagem ser redondo */
-            overflow: hidden; /* Esconde as partes da imagem que saem do contêiner redondo */
-            width: 150px; /* Define a largura do contêiner */
-            height: 150px; /* Define a altura do contêiner */
-            display: flex; /* Permite centralizar a imagem dentro do contêiner */
-            align-items: center; /* Alinha a imagem verticalmente no centro */
-            justify-content: center; /* Alinha a imagem horizontalmente no centro */
-            margin: 0 auto; /* Centraliza o contêiner na página */
-        }
-
-        .img-container img {
-            width: 100%; /* Faz a imagem ocupar 100% do contêiner */
-            height: auto; /* Mantém a proporção da imagem */
         }
 
         /* Estilo para o rodapé */
@@ -168,46 +180,52 @@
 
 <div class="container">
     <div class="product-card">
-        <div class="img-container">
-            <img src="images/conta1.png" alt="Nível 15 com 50 Diamantes">
-        </div>
         <h3>NÍVEL 15 COM 50 DIAMANTES (VIA GOOGLE)</h3>
         <p class="price">2600 Kz</p>
         <a href="formulario.html?produto=NÍVEL 15 COM 50 DIAMANTES (VIA GOOGLE)&preco=2600" class="select-btn">Selecionar</a>
     </div>
 
     <div class="product-card">
-        <div class="img-container">
-            <img src="images/conta2.png" alt="Nível 15 com 300 Diamantes">
-        </div>
         <h3>NÍVEL 15 COM 300 DIAMANTES (VIA GOOGLE)</h3>
         <p class="price">3500 Kz</p>
         <a href="formulario.html?produto=NÍVEL 15 COM 300 DIAMANTES (VIA GOOGLE)&preco=3500" class="select-btn">Selecionar</a>
     </div>
 
     <div class="product-card">
-        <div class="img-container">
-            <img src="images/conta3.png" alt="Nível 15 com 50 Diamantes + Skin Rei Caveira">
-        </div>
         <h3>NÍVEL 15 COM 50 DIAMANTES + SKIN REI CAVEIRA (VIA GOOGLE)</h3>
         <p class="price">3500 Kz</p>
         <a href="formulario.html?produto=NÍVEL 15 COM 50 DIAMANTES + SKIN REI CAVEIRA (VIA GOOGLE)&preco=3500" class="select-btn">Selecionar</a>
     </div>
 
-    <!-- Adicione mais cartões de produtos conforme necessário -->
+    <div class="product-card">
+        <h3>NÍVEL 25 COM 100 DIAMANTES (VIA GOOGLE)</h3>
+        <p class="price">4000 Kz</p>
+        <a href="formulario.html?produto=NÍVEL 25 COM 100 DIAMANTES (VIA GOOGLE)&preco=4000" class="select-btn">Selecionar</a>
+    </div>
 
-</div>
+    <div class="product-card">
+        <h3>NÍVEL 30 COM 200 DIAMANTES (VIA GOOGLE)</h3>
+        <p class="price">4500 Kz</p>
+        <a href="formulario.html?produto=NÍVEL 30 COM 200 DIAMANTES (VIA GOOGLE)&preco=4500" class="select-btn">Selecionar</a>
+    </div>
 
-<div class="whatsapp-icon">
-    <a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" target="_blank">
-        <img src="images/whatsapp-icon.png" alt="WhatsApp">
-    </a>
+    <div class="product-card">
+        <h3>NÍVEL 35 COM 500 DIAMANTES (VIA GOOGLE)</h3>
+        <p class="price">10000 Kz</p>
+        <a href="formulario.html?produto=NÍVEL 35 COM 500 DIAMANTES (VIA GOOGLE)&preco=10000" class="select-btn">Selecionar</a>
+    </div>
+
+    <div class="product-card">
+        <h3>NÍVEL 40 COM 1000 DIAMANTES (VIA GOOGLE)</h3>
+        <p class="price">20000 Kz</p>
+        <a href="formulario.html?produto=NÍVEL 40 COM 1000 DIAMANTES (VIA GOOGLE)&preco=20000" class="select-btn">Selecionar</a>
+    </div>
 </div>
 
 <!-- Rodapé -->
 <footer>
-    <p>&copy; 2024 FF Dimas Angola - Todos os direitos reservados</p>
-    <p>&copy; INFLUENCER 930441438</p>
+    <p>&copy;2024 FF Dimas Angola - Todos os direitos reservados</p>
+    <p>&copy;INFLUENCER 930441438</p>
 </footer>
 
 <script>
@@ -217,11 +235,15 @@
     const loginSection = document.getElementById('login-section');
 
     if (isLoggedIn) {
-        loginSection.innerHTML = '<p>Bem-vindo, Usuário! <a href="/logout">Logout</a></p>';
+        loginSection.innerHTML = '<a href="#">Perfil</a><a href="#">Sair</a>';
     } else {
-        loginSection.innerHTML = '<a href="/login">Login</a> | <a href="/register">Registrar</a>';
+        loginSection.innerHTML = '<a href="login.html">Login</a><a href="register.html">Registrar</a>';
     }
 </script>
+
+<div class="whatsapp-icon" onclick="window.open('https://api.whatsapp.com/send?phone=YOUR_NUMBER_HERE', '_blank')">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp">
+</div>
 
 </body>
 </html>

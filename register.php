@@ -5,18 +5,36 @@ session_start(); // Iniciar a sessão
 include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Obter os dados do formulário
+    // Verificar se os campos estão preenchidos
+    if (empty($_POST['username']) || empty($_POST['password'])) {
+        echo "Por favor, preencha todos os campos.";
+        exit;
+    }
+
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Criptografar a senha
 
-    // Inserir o usuário no banco de dados
-    $sql = "INSERT INTO usuarios (username, password) VALUES ('$username', '$password')";
-    
-    if ($conn->query($sql) === TRUE) {
-        echo "Registro bem-sucedido!";
+    // Verificar se o nome de usuário já existe
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        echo "Nome de usuário já existe!";
     } else {
-        echo "Erro: " . $sql . "<br>" . $conn->error;
+        // Usar prepared statements para prevenir SQL Injection
+        $stmt = $conn->prepare("INSERT INTO usuarios (username, password) VALUES (?, ?)");
+        $stmt->bind_param("ss", $username, $password);
+
+        if ($stmt->execute()) {
+            echo "Registro bem-sucedido!";
+        } else {
+            echo "Erro: " . $stmt->error;
+        }
     }
+
+    $stmt->close();
 }
 
 $conn->close();

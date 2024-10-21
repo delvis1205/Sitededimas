@@ -1,41 +1,36 @@
 <?php
-session_start(); // Iniciar a sessão
-
-// Incluir o arquivo de conexão
-include 'db.php';
+session_start();
+include('db_connection.php'); // Inclua o arquivo de conexão com o banco de dados
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Verificar se os campos estão preenchidos
-    if (empty($_POST['username']) || empty($_POST['password'])) {
-        echo "Por favor, preencha todos os campos.";
-        exit;
-    }
+    $email = $_POST['email'];
+    $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT); // Hash da senha
 
-    $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Criptografar a senha
-
-    // Verificar se o nome de usuário já existe
-    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE username = ?");
-    $stmt->bind_param("s", $username);
+    // Verifique se o e-mail já está registrado
+    $query = "SELECT * FROM usuarios WHERE email = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        echo "Nome de usuário já existe!";
+        echo "Este e-mail já está registrado.";
     } else {
-        // Usar prepared statements para prevenir SQL Injection
-        $stmt = $conn->prepare("INSERT INTO usuarios (username, password) VALUES (?, ?)");
-        $stmt->bind_param("ss", $username, $password);
+        // Se o e-mail não estiver registrado, insira os dados
+        $query = "INSERT INTO usuarios (email, senha) VALUES (?, ?)";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("ss", $email, $senha);
 
         if ($stmt->execute()) {
-            echo "Registro bem-sucedido!";
+            // Redireciona para a página de login após o registro bem-sucedido
+            header("Location: login.php");
+            exit(); // Certifique-se de usar exit após o redirecionamento
         } else {
-            echo "Erro: " . $stmt->error;
+            echo "Erro ao registrar: " . $stmt->error;
         }
     }
 
     $stmt->close();
+    $conn->close(); // Fecha a conexão com o banco de dados
 }
-
-$conn->close();
 ?>

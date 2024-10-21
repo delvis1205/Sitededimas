@@ -24,8 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $row = $result->fetch_assoc();
         // Verificar a senha
         if (password_verify($password, $row['password'])) {
-            $_SESSION['username'] = $username;
-            echo "Login bem-sucedido!";
+            $_SESSION['username'] = $username; // Armazenar nome de usuário na sessão
+            header("Location: index.html"); // Redirecionar para a página index.html
+            exit(); // Terminar o script
         } else {
             echo "Senha incorreta!";
         }

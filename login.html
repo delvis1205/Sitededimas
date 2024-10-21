@@ -1,116 +1,134 @@
-<html><head><base href="https://ffdimasangola.com/login">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login - FF Dimas Angola</title>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:wght@400;700&display=swap');
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <base href="https://ffdimasangola.netlify.app/login">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FF Dimas Angola</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:wght@400;700&display=swap');
 
-    body {
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(45deg, #ff6600, #ff3300, #ff9900, #ffcc00);
-        background-size: 400% 400%;
-        animation: gradientBG 15s ease infinite;
-        color: #ffffff;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
-    @keyframes gradientBG {
-        0% {background-position: 0% 50%;}
-        50% {background-position: 100% 50%;}
-        100% {background-position: 0% 50%;}
-    }
-    .login-container {
-        background-color: rgba(0, 0, 0, 0.8);
-        border-radius: 20px;
-        padding: 40px;
-        width: 100%;
-        max-width: 400px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    }
-    h1 {
-        font-family: 'Bowlby One SC', cursive;
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 2.5em;
-        color: #ff6600;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-    form {
-        display: flex;
-        flex-direction: column;
-    }
-    .input-group {
-        margin-bottom: 20px;
-    }
-    label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-    input {
-        width: 100%;
-        padding: 12px;
-        border: none;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.1);
-        color: #ffffff;
-        font-size: 16px;
-        transition: background-color 0.3s ease;
-    }
-    input:focus {
-        background-color: rgba(255, 255, 255, 0.2);
-        outline: none;
-    }
-    .btn {
-        background-color: #ff6600;
-        color: #ffffff;
-        border: none;
-        padding: 12px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 18px;
-        font-weight: bold;
-        text-transform: uppercase;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    .btn:hover {
-        background-color: #ff8533;
-        transform: translateY(-2px);
-    }
-    .links {
-        text-align: center;
-        margin-top: 20px;
-    }
-    .links a {
-        color: #ff6600;
-        text-decoration: none;
-        margin: 0 10px;
-        transition: color 0.3s ease;
-    }
-    .links a:hover {
-        color: #ff8533;
-    }
-    .back-home {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 18px;
-        transition: color 0.3s ease;
-    }
-    .back-home:hover {
-        color: #ff6600;
-    }
-</style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff6600, #ff3300, #ff9900, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .login-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-family: 'Bowlby One SC', cursive;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #ff6600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            outline: none;
+        }
+
+        .btn {
+            background-color: #ff6600;
+            color: #ffffff;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff8533;
+            transform: translateY(-2px);
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .links a {
+            color: #ff6600;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #ff8533;
+        }
+
+        .back-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .back-home:hover {
+            color: #ff6600;
+        }
+    </style>
 </head>
 <body>
-    <a href="/" class="back-home">← Voltar para a página inicial</a>
+    <a href="https://ffdimasangola.netlify.app/" class="back-home">← Voltar para a página inicial</a>
     <div class="login-container">
         <h1>Login</h1>
         <form id="login-form">
@@ -141,9 +159,10 @@
             
             console.log('Tentativa de login com:', username, password);
             alert('Funcionalidade de login será implementada em breve!');
-            
-            // Após autenticação bem-sucedida, você redirecionaria o usuário
-            // window.location.href = '/dashboard';
+
+            // Simulando um login bem-sucedido
+            // Redireciona para a página inicial após a simulação de login
+            window.location.href = 'https://ffdimasangola.netlify.app/';
         });
     </script>
 </body>

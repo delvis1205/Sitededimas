@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regedits - FF Angola</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:wght@400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(
-                135deg, 
-                rgba(0, 0, 255, 0.6) 0%, 
-                rgba(255, 0, 0, 0.6) 50%, 
-                rgba(255, 255, 0, 0.6) 100%
-            );
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff6600, #ff3300, #ff9900, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: white;
             text-align: center;
             margin: 0;
@@ -21,13 +20,35 @@
             display: flex;
             flex-direction: column;
         }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
         h1 {
             color: #ff8c00; /* Cor do Free Fire */
+            margin: 0;
         }
+
+        h2 {
+            color: #ffffff; /* Cor do subtítulo */
+            margin: 0;
+        }
+
+        h3 {
+            color: #ffffff; /* Cor do subtítulo */
+        }
+
         .container {
             margin: 20px;
             flex: 1; /* Faz com que o conteúdo principal ocupe o espaço disponível */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Centraliza os cards */
         }
+
         .item-card {
             background-color: #282828; /* Cor de fundo dos produtos */
             padding: 20px;
@@ -36,10 +57,23 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             cursor: pointer;
             color: white;
+            width: 200px; /* Largura fixa para os cards */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
         .item-card:hover {
             background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
         }
+
+        .item-card img {
+            width: 150px; /* Largura fixa para manter o tamanho */
+            height: 150px; /* Altura fixa para manter o tamanho */
+            border-radius: 50%; /* Fazendo as imagens serem redondas */
+            object-fit: cover; /* Mantendo a proporção da imagem */
+        }
+
         .item-card button {
             background-color: #ff8c00; /* Cor do Free Fire */
             border: none;
@@ -50,9 +84,11 @@
             border-radius: 5px;
             font-size: 16px;
         }
+
         .item-card button:hover {
             background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
         }
+
         .whatsapp-icon {
             position: fixed;
             bottom: 20px;
@@ -63,16 +99,37 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             cursor: pointer;
         }
+
         .whatsapp-icon img {
             width: 50px;
             height: 50px;
         }
+
         footer {
             background-color: #282828; /* Cor de fundo do rodapé */
             color: white; /* Cor do texto do rodapé */
             text-align: center; /* Alinha o texto ao centro */
             padding: 10px 0; /* Espaçamento interno */
             font-size: 14px; /* Tamanho da fonte do texto */
+        }
+
+        .login-area {
+            text-align: right;
+            margin: 20px;
+        }
+
+        .login-area a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .login-area a:hover {
+            color: #ff6600;
         }
     </style>
 </head>
@@ -82,23 +139,29 @@
     <h1>Regedits - FF Angola</h1>
     <h2>O REGEDIT FF é um apk que se conecta com sua conta do Free Fire e permite algumas melhorias, como auto headshot e alterações de mira como leve, agachado e com scoop. Ela aperfeiçoa o seu Jogo</h2>
     <h3>Faz a tua escolha e Derrota os seus Adversários Facilmente</h3>
-    
 </header>
+
+<div class="login-area">
+    <a href="login.html">Login</a> | <a href="registro.html">Registrar</a>
+</div>
 
 <div class="container">
     <div class="item-card">
+        <img src="images/regedit1.png" alt="Regedit Prime FF"> <!-- Imagem redonda -->
         <h2>Regedit Prime FF</h2>
         <p>3000 Kz</p>
         <button onclick="window.location.href='formulario.html?produto=Regedit Prime FF&preco=3000'">Selecionar</button>
     </div>
 
     <div class="item-card">
+        <img src="images/regedit2.png" alt="Regedit Insanity FF"> <!-- Imagem redonda -->
         <h2>Regedit Insanity FF</h2>
         <p>4500 Kz</p>
         <button onclick="window.location.href='formulario.html?produto=Regedit Insanity FF&preco=4500'">Selecionar</button>
     </div>
 
     <div class="item-card">
+        <img src="images/regedit3.png" alt="Regedit Influencer FF"> <!-- Imagem redonda -->
         <h2>Regedit Influencer FF</h2>
         <p>7000 Kz</p>
         <button onclick="window.location.href='formulario.html?produto=Regedit Influencer FF&preco=7000'">Selecionar</button>
@@ -113,11 +176,8 @@
 
 <!-- Rodapé -->
 <footer>
-  <footer>
     <p>&copy; 2024 FF Dimas Angola - Todos os direitos reservados</p>
     <p>&copy; INFLUENCER 930441438</p>
-</footer>
-
 </footer>
 
 </body>

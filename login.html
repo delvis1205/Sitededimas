@@ -131,7 +131,7 @@
     <a href="https://ffdimasangola.netlify.app/" class="back-home">← Voltar para a página inicial</a>
     <div class="login-container">
         <h1>Login</h1>
-        <form id="login-form">
+        <form id="login-form" action="login.php" method="POST">
             <div class="input-group">
                 <label for="username">Nome de usuário</label>
                 <input type="text" id="username" name="username" required>
@@ -143,27 +143,14 @@
             <button type="submit" class="btn">Entrar</button>
         </form>
         <div class="links">
-            <a href="/forgot-password">Esqueceu a senha?</a>
-            <a href="/register">Criar conta</a>
+            <a href="recuperar.html">Esqueceu a senha?</a>
+            <a href="registro.html">Criar conta</a>
         </div>
     </div>
 
     <script>
-        document.getElementById('login-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            
-            // Aqui você adicionaria a lógica de autenticação
-            // Por exemplo, uma chamada para uma API de autenticação
-            
-            console.log('Tentativa de login com:', username, password);
-            alert('Funcionalidade de login será implementada em breve!');
-
-            // Simulando um login bem-sucedido
-            // Redireciona para a página inicial após a simulação de login
-            window.location.href = 'https://ffdimasangola.netlify.app/';
-        });
+        // Não é mais necessário o script de login simulado
+        // O formulário agora envia os dados para login.php
     </script>
 </body>
 </html>

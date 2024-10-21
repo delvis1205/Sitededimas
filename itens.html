@@ -5,67 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outros Itens - FF Angola</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:wght@400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(
-                135deg,
-                rgba(0, 0, 255, 0.6) 0%,
-                rgba(255, 0, 0, 0.6) 50%,
-                rgba(255, 255, 0, 0.6) 100%
-            );
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff6600, #ff3300, #ff9900, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: white;
             text-align: center;
             margin: 0;
             padding: 0;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
+            min-height: 100vh;
         }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
         h1 {
-            color: #ff8c00;
+            color: #ffffff; /* Cor branca para o título */
+            font-size: 4em;
+            text-shadow: 4px 4px 0px #ff6600, 8px 8px 0px #ff3300;
+            letter-spacing: 2px;
+            margin: 0;
         }
+
+        h2 {
+            color: #ffffff; /* Cor branca para o subtítulo */
+        }
+
+        .login-area {
+            text-align: right;
+            margin: 20px;
+        }
+
+        .login-area a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .login-area a:hover {
+            color: #ff6600;
+        }
+
         .container {
             margin: 20px;
             flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
+
         .item-card {
-            background-color: #282828;
+            background-color: #282828; /* Cor de fundo dos cartões */
             padding: 20px;
             margin: 15px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            color: white;
+            text-align: center;
         }
-        .item-card:hover {
-            background-color: #ff6f00;
+
+        .price {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #00ff00; /* Cor verde para preço */
         }
-        .item-card button {
-            background-color: #ff8c00;
-            border: none;
-            color: white;
+
+        .select-btn {
+            display: inline-block;
             padding: 10px 20px;
             margin-top: 10px;
-            cursor: pointer;
+            background-color: #ff8c00; /* Cor do Free Fire */
+            color: white;
             border-radius: 5px;
-            font-size: 16px;
-        }
-        .item-card button:hover {
-            background-color: #ff6f00;
-        }
-        .whatsapp-icon {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366;
-            border-radius: 50%;
-            padding: 15px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            text-decoration: none;
             cursor: pointer;
         }
-        .whatsapp-icon img {
-            width: 50px;
-            height: 50px;
+
+        .select-btn:hover {
+            background-color: #ff6f00; /* Cor do Free Fire ao passar o mouse */
         }
+
+        /* Estilo para o rodapé */
         footer {
             background-color: #282828;
             color: white;
@@ -73,162 +104,91 @@
             padding: 10px 0;
             font-size: 14px;
         }
-        .search-bar-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px;
-        }
-        .search-bar {
-            padding: 10px;
-            width: 300px;
-            border-radius: 5px 0 0 5px;
-            border: none;
-            font-size: 16px;
-            outline: none;
-        }
-        .search-button {
-            background-color: #ff6f00;
-            border: none;
-            padding: 10px;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-        }
-        .search-button img {
-            width: 20px;
-            height: 20px;
-        }
-        .rounded-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 10px;
-        }
     </style>
-    <script>
-        function searchProducts() {
-            var query = document.getElementById('search-input').value;
-            if (query) {
-                // Redireciona para uma página de resultados, pode ser ajustada conforme o backend.
-                window.location.href = 'search-results.html?q=' + encodeURIComponent(query);
-            }
-        }
-    </script>
 </head>
 <body>
 
-<!-- Barra de pesquisa com lupa -->
-<div class="search-bar-container">
-    <input type="text" id="search-input" class="search-bar" placeholder="Procure aqui...">
-    <button class="search-button" onclick="searchProducts()">
-        <img src="lupa-icon.png" alt="Pesquisar">
-    </button>
-</div>
-
 <header>
-    <h1>Outros Itens</h1>
-    <h2>Entrega dos Produtos via ID. Escolhe o Produto desejado e faz o seu pedido.</h2>
+    <h1>Outros Itens - FF Angola</h1>
+    <h2>Selecione o item desejado</h2>
 </header>
+
+<div class="login-area" id="login-section">
+    <a href="login.html">Login</a> | <a href="registro.html">Registrar</a>
+</div>
 
 <div class="container">
     <div class="item-card">
-        <img src="conjunto_spacefarer.png" alt="Conjunto Spacefarer" class="rounded-image">
-        <h2>Conjunto Spacefarer</h2>
-        <p>6700 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Conjunto Spacefarer&preco=6700'">Selecionar</button>
+        <h3>Conjunto Spacefarer</h3>
+        <p class="price">6700 Kz</p>
+        <a href="formulario.html?produto=Conjunto Spacefarer&preco=6700" class="select-btn">Selecionar</a>
     </div>
 
     <div class="item-card">
-        <img src="conjunto_diabinha.png" alt="Conjunto Diabinha" class="rounded-image">
-        <h2>Conjunto Diabinha</h2>
-        <p>6500 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Conjunto Diabinha&preco=6500'">Selecionar</button>
+        <h3>Conjunto Diabinha</h3>
+        <p class="price">6500 Kz</p>
+        <a href="formulario.html?produto=Conjunto Diabinha&preco=6500" class="select-btn">Selecionar</a>
     </div>
 
     <div class="item-card">
-        <img src="passe_booyah_premium.png" alt="Passe Booyah Premium" class="rounded-image">
-        <h2>Passe Booyah Premium</h2>
-        <p>3200 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Passe Booyah Premium&preco=3200'">Selecionar</button>
+        <h3>Passe Booyah Premium</h3>
+        <p class="price">3200 Kz</p>
+        <a href="formulario.html?produto=Passe Booyah Premium&preco=3200" class="select-btn">Selecionar</a>
     </div>
 
     <div class="item-card">
-        <img src="conjunto_velho_rabujento.png" alt="Conjunto Velho Rabujento" class="rounded-image">
-        <h2>Conjunto Velho Rabujento</h2>
-        <p>6500 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Conjunto Velho Rabujento&preco=6500'">Selecionar</button>
+        <h3>Conjunto Velho Rabujento</h3>
+        <p class="price">6500 Kz</p>
+        <a href="formulario.html?produto=Conjunto Velho Rabujento&preco=6500" class="select-btn">Selecionar</a>
     </div>
 
     <div class="item-card">
-        <img src="ninja_preto.png" alt="Ninja Preto - Assassino das Sombras" class="rounded-image">
-        <h2>Ninja Preto - Assassino das Sombras</h2>
-        <p>7500 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Ninja Preto - Assassino das Sombras&preco=7500'">Selecionar</button>
+        <h3>Ninja Preto - Assassino das Sombras</h3>
+        <p class="price">7500 Kz</p>
+        <a href="formulario.html?produto=Ninja Preto - Assassino das Sombras&preco=7500" class="select-btn">Selecionar</a>
     </div>
 
     <div class="item-card">
-        <img src="ninja_branco.png" alt="Ninja Branco - Águia Branca" class="rounded-image">
-        <h2>Ninja Branco - Águia Branca</h2>
-        <p>7500 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Ninja Branco - Águia Branca&preco=7500'">Selecionar</button>
+        <h3>Ninja Branco - Águia Branca</h3>
+        <p class="price">7500 Kz</p>
+        <a href="formulario.html?produto=Ninja Branco - Águia Branca&preco=7500" class="select-btn">Selecionar</a>
     </div>
 
     <div class="item-card">
-        <img src="conjunto_coalho.png" alt="Conjunto Coalho" class="rounded-image">
-        <h2>Conjunto Coalho</h2>
-        <p>6500 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Conjunto Coalho&preco=6500'">Selecionar</button>
+        <h3>Conjunto Coalho</h3>
+        <p class="price">6500 Kz</p>
+        <a href="formulario.html?produto=Conjunto Coalho&preco=6500" class="select-btn">Selecionar</a>
     </div>
 
     <div class="item-card">
-        <img src="conjunto_campo_batalha.png" alt="Conjunto Campo de Batalha" class="rounded-image">
-        <h2>Conjunto Campo de Batalha</h2>
-        <p>6000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Conjunto Campo de Batalha&preco=6000'">Selecionar</button>
+        <h3>Conjunto Campo de Batalha</h3>
+        <p class="price">6000 Kz</p>
+        <a href="formulario.html?produto=Conjunto Campo de Batalha&preco=6000" class="select-btn">Selecionar</a>
     </div>
 
     <div class="item-card">
-        <img src="conjunto_submundo.png" alt="Conjunto Submundo" class="rounded-image">
-        <h2>Conjunto Submundo</h2>
-        <p>5200 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Conjunto Submundo&preco=5200'">Selecionar</button>
+        <h3>Conjunto Submundo</h3>
+        <p class="price">5200 Kz</p>
+        <a href="formulario.html?produto=Conjunto Submundo&preco=5200" class="select-btn">Selecionar</a>
     </div>
 
     <div class="item-card">
-        <img src="conjunto_beisebol.png" alt="Conjunto Beisebol" class="rounded-image">
-        <h2>Conjunto Beisebol (999 em estoque)</h2>
-        <p>5000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Conjunto Beisebol&preco=5000'">Selecionar</button>
+        <h3>Conjunto Paleolítico</h3>
+        <p class="price">6000 Kz</p>
+        <a href="formulario.html?produto=Conjunto Paleolítico&preco=6000" class="select-btn">Selecionar</a>
     </div>
 
     <div class="item-card">
-        <img src="conjunto_paleolitico.png" alt="Conjunto Paleolítico" class="rounded-image">
-        <h2>Conjunto Paleolítico</h2>
-        <p>6000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Conjunto Paleolítico&preco=6000'">Selecionar</button>
+        <h3>Conjunto Kunai</h3>
+        <p class="price">7500 Kz</p>
+        <a href="formulario.html?produto=Conjunto Kunai&preco=7500" class="select-btn">Selecionar</a>
     </div>
 
     <div class="item-card">
-        <img src="conjunto_kunai.png" alt="Conjunto Kunai" class="rounded-image">
-        <h2>Conjunto Kunai</h2>
-        <p>7500 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Conjunto Kunai&preco=7500'">Selecionar</button>
+        <h3>Pacote de Diretor</h3>
+        <p class="price">6000 Kz</p>
+        <a href="formulario.html?produto=Pacote de Diretor&preco=6000" class="select-btn">Selecionar</a>
     </div>
-
-    <div class="item-card">
-        <img src="pacote_diretor.png" alt="Pacote de Diretor" class="rounded-image">
-        <h2>Pacote de Diretor</h2>
-        <p>6000 Kz</p>
-        <button onclick="window.location.href='formulario.html?produto=Pacote de Diretor&preco=6000'">Selecionar</button>
-    </div>
-
-</div>
-
-<div class="whatsapp-icon">
-    <a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" target="_blank">
-        <img src="whatsapp-icon.png" alt="WhatsApp">
-    </a>
 </div>
 
 <footer>

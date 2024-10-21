@@ -124,7 +124,7 @@
     <div class="forgot-password-container">
         <h1>Recuperar Senha</h1>
         <div class="message" id="message" style="display: none;"></div>
-        <form id="forgot-password-form" action="recover_password.php" method="POST">
+        <form id="forgot-password-form" method="POST" action="send_recovery_email.php">
             <div class="input-group">
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" required>
@@ -135,24 +135,5 @@
             <a href="/login">Voltar para o Login</a>
         </div>
     </div>
-
-    <script>
-        document.getElementById('forgot-password-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            
-            // Aqui você pode fazer uma chamada para a API de recuperação
-            console.log('Solicitação de recuperação de senha para:', email);
-            
-            // Limpar o formulário
-            document.getElementById('email').value = '';
-            
-            // Mostrar mensagem de sucesso
-            const messageElement = document.getElementById('message');
-            messageElement.textContent = 'Um link de recuperação foi enviado para o seu e-mail. Por favor, verifique sua caixa de entrada.';
-            messageElement.style.display = 'block';
-            messageElement.style.backgroundColor = 'rgba(0, 255, 0, 0.2)';
-        });
-    </script>
 </body>
 </html>

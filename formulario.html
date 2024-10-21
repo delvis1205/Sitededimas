@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedido de Outros Itens</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:wght@400;700&display=swap');
-
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(45deg, #ff6600, #ff3300, #ff9900, #ffcc00);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(
+                135deg, 
+                rgba(0, 0, 255, 0.6) 0%, 
+                rgba(255, 0, 0, 0.6) 50%, 
+                rgba(255, 255, 0, 0.6) 100%
+            );
             color: white;
             text-align: center;
             margin: 0;
@@ -20,65 +21,59 @@
             display: flex;
             flex-direction: column;
         }
-
-        @keyframes gradientBG {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
+        header {
+            background-color: #282828; /* Cor de fundo do cabeçalho */
+            padding: 20px; /* Espaçamento interno */
+            border-radius: 10px; /* Bordas arredondadas */
         }
-
+        h1 {
+            color: #ff8c00; /* Cor do Free Fire */
+            margin: 0;
+        }
         h2 {
-            color: #ffffff; /* Cor branca para o título */
+            margin: 10px 0; /* Espaçamento entre os títulos */
         }
-
         .container {
             margin: 20px;
             flex: 1;
         }
-
         form {
             background-color: #282828;
-            padding: 30px;
+            padding: 30px; /* Aumenta o espaço de preenchimento */
             border-radius: 10px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
-            transition: transform 0.3s;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7); /* Aumenta o efeito de sombra */
+            transition: transform 0.3s; /* Efeito de animação ao focar */
         }
-
         form:hover {
-            transform: scale(1.02);
+            transform: scale(1.02); /* Leve aumento de tamanho ao passar o mouse */
         }
-
         input, select {
-            padding: 15px;
+            padding: 15px; /* Aumenta o espaço interno dos campos */
             margin: 10px 0;
-            width: calc(100% - 30px);
-            border: 2px solid #ff8c00;
-            border-radius: 5px;
-            background-color: #383838;
-            color: white;
-            transition: border-color 0.3s;
+            width: calc(100% - 30px); /* Ajusta a largura para manter a consistência */
+            border: 2px solid #ff8c00; /* Borda estilizada */
+            border-radius: 5px; /* Bordas arredondadas */
+            background-color: #383838; /* Fundo dos campos */
+            color: white; /* Cor do texto */
+            transition: border-color 0.3s; /* Efeito de transição na borda */
         }
-
         input:focus, select:focus {
-            border-color: #ff6f00;
-            outline: none;
+            border-color: #ff6f00; /* Muda a cor da borda ao focar */
+            outline: none; /* Remove o contorno padrão do navegador */
         }
-
         button {
             padding: 15px;
             background-color: #ff6f00;
             color: white;
             border: none;
             cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-size: 16px;
+            border-radius: 5px; /* Bordas arredondadas */
+            transition: background-color 0.3s; /* Efeito de transição */
+            font-size: 16px; /* Aumenta o tamanho da fonte */
         }
-
         button:hover {
             background-color: #ff8c00;
         }
-
         .whatsapp-icon {
             position: fixed;
             bottom: 20px;
@@ -89,12 +84,10 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             cursor: pointer;
         }
-
         .whatsapp-icon img {
             width: 50px;
             height: 50px;
         }
-
         footer {
             background-color: #282828;
             color: white;
@@ -102,108 +95,79 @@
             padding: 10px 0;
             font-size: 14px;
         }
-
-        .login-area {
-            text-align: right;
-            margin: 20px;
-        }
-
-        .login-area a {
-            color: #ffffff;
-            text-decoration: none;
-            margin-left: 15px;
-            font-weight: bold;
-            transition: color 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .login-area a:hover {
-            color: #ff6600;
-        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Pedido de Outros Itens</h1>
-    </header>
+<audio id="background-music" autoplay loop>
+    <source src="music/free.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+</audio>
 
-    <div class="login-area" id="login-section">
-        <!-- Esta área será atualizada dependendo do status de login -->
-    </div>
+<header>
+    <h1>Codiguins - FF Angola</h1>
+    <h2>Pedido de Outros Itens</h2>
+</header>
 
-    <div class="container">
-        <h2 id="produto-info">Pedido de Outros Itens</h2>
-        <form id="pedido-form">
-            <label for="id-jogador">ID do Jogador:</label>
-            <input type="text" id="id-jogador" name="id-jogador" required>
+<div class="container">
+    <form id="pedido-form">
+        <label for="id-jogador">ID do Jogador:</label>
+        <input type="text" id="id-jogador" name="id-jogador" required>
 
-            <label for="nome-jogador">Nome do Jogador:</label>
-            <input type="text" id="nome-jogador" name="nome-jogador" required>
+        <label for="nome-jogador">Nome do Jogador:</label>
+        <input type="text" id="nome-jogador" name="nome-jogador" required>
 
-            <label for="metodo-pagamento">Método de Pagamento:</label>
-            <select id="metodo-pagamento" name="metodo-pagamento" required>
-                <option value="Express: 930441438">Express: 930441438</option>
-                <option value="Tranf. BAI 0040.0000.9841.5347.1016.4">Tranf. BAI 0040.0000.9841.5347.1016.4</option>
-                <option value="PAYPAY AO: 930441438">PAYPAY AO: 930441438</option>
-            </select>
+        <label for="metodo-pagamento">Método de Pagamento:</label>
+        <select id="metodo-pagamento" name="metodo-pagamento" required>
+            <option value="Express: 930441438">Express: 930441438</option>
+            <option value="Transf. BAI 0040.0000.9841.5347.1016.4">Transf. BAI 0040.0000.9841.5347.1016.4</option>
+            <option value="PAYPAY AO: 930441438">PAYPAY AO: 930441438</option>
+        </select>
 
-            <input type="hidden" id="hidden-text" name="text">
-            <button type="submit">Obter Agora</button>
-        </form>
-    </div>
+        <input type="hidden" id="hidden-text" name="text">
+        <button type="submit">Obter Agora</button>
+    </form>
+</div>
 
-    <script>
-        // Simulando login (substitua esta parte por uma verificação real)
-        const isLoggedIn = false; // Aqui você pode substituir com a lógica real de verificação de login
+<script>
+    // Ajusta o volume da música
+    document.getElementById('background-music').volume = 0.1; // Define o volume para 10%
 
-        const loginSection = document.getElementById('login-section');
+    // Obtém os parâmetros da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const produto = urlParams.get('produto');
+    const preco = urlParams.get('preco');
 
-        if (isLoggedIn) {
-            loginSection.innerHTML = '<p>Bem-vindo, Usuário! <a href="/logout">Logout</a></p>';
-        } else {
-            loginSection.innerHTML = '<a href="login.html">Login</a> | <a href="registro.html">Registrar</a>';
-        }
+    // Atualiza as informações do produto no formulário
+    document.getElementById('produto-info').textContent = `${produto} - ${preco} Kz`;
 
-        // Ajusta o volume da música
-        document.getElementById('background-music').volume = 0.1; // Define o volume para 10%
+    // Envia o formulário para o WhatsApp
+    document.getElementById('pedido-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const idJogador = document.getElementById('id-jogador').value;
+        const nomeJogador = document.getElementById('nome-jogador').value;
+        const metodoPagamento = document.getElementById('metodo-pagamento').value;
 
-        // Obtém os parâmetros da URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const produto = urlParams.get('produto');
-        const preco = urlParams.get('preco');
+        const mensagem = `Novo Pedido:\nProduto: ${produto} \nPreço: ${preco} Kz\nID do Jogador: ${idJogador}\nNome do Jogador: ${nomeJogador}\nMétodo de Pagamento: ${metodoPagamento}`;
+        const linkWhatsApp = `https://wa.me/244930441438?text=${encodeURIComponent(mensagem)}`;
+        
+        window.location.href = linkWhatsApp;
+    });
+</script>
 
-        // Atualiza as informações do produto no formulário
-        document.getElementById('produto-info').textContent = `${produto} - ${preco} Kz`;
+<!-- Ícone do WhatsApp -->
+<div class="whatsapp-icon">
+    <a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" target="_blank">
+        <img src="images/whatsapp-icon.png" alt="WhatsApp">
+    </a>
+</div>
 
-        // Envia o formulário para o WhatsApp
-        document.getElementById('pedido-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const idJogador = document.getElementById('id-jogador').value;
-            const nomeJogador = document.getElementById('nome-jogador').value;
-            const metodoPagamento = document.getElementById('metodo-pagamento').value;
-
-            const mensagem = `Novo Pedido:\nProduto: ${produto} \nPreço: ${preco} Kz\nID do Jogador: ${idJogador}\nNome do Jogador: ${nomeJogador}\nMétodo de Pagamento: ${metodoPagamento}`;
-            const linkWhatsApp = `https://wa.me/244930441438?text=${encodeURIComponent(mensagem)}`;
-            
-            window.location.href = linkWhatsApp;
-        });
-    </script>
-
-    <!-- Ícone do WhatsApp -->
-    <div class="whatsapp-icon">
-        <a href="https://chat.whatsapp.com/L3ieH3i8QvXGtJe44zaNbP" target="_blank">
-            <img src="images/whatsapp-icon.png" alt="WhatsApp">
-        </a>
-    </div>
-
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2024 FF Dimas Angola - Todos os direitos reservados</p> 
-        <p>&copy; INFLUENCER 930441438</p> 
-    </footer>
+<!-- Rodapé -->
+<footer>
+    <p>&copy; 2024 FF Dimas Angola - Todos os direitos reservados</p> 
+    <p>&copy; INFLUENCER 930441438</p> 
+</footer>
 
 </body>
 </html>

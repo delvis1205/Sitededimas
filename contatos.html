@@ -1,169 +1,171 @@
-<html><head><base href="/login/registro/contato">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contato - FF Dimas Angola</title>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:wght@400;700&display=swap');
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - FF Dimas Angola</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:wght@400;700&display=swap');
 
-    :root {
-        --primary-color: #ff6600;
-        --secondary-color: #ffcc00;
-        --background-color: #1a1a1a;
-        --text-color: #ffffff;
-    }
+        :root {
+            --primary-color: #ff6600;
+            --secondary-color: #ffcc00;
+            --background-color: #1a1a1a;
+            --text-color: #ffffff;
+        }
 
-    body {
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(45deg, #ff6600, #ff3300, #ff9900, #ffcc00);
-        background-size: 400% 400%;
-        animation: gradientBG 15s ease infinite;
-        color: var(--text-color);
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff6600, #ff3300, #ff9900, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-    @keyframes gradientBG {
-        0% {background-position: 0% 50%;}
-        50% {background-position: 100% 50%;}
-        100% {background-position: 0% 50%;}
-    }
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
 
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-    header {
-        background-color: rgba(0, 0, 0, 0.8);
-        padding: 20px 0;
-        text-align: center;
-    }
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px 0;
+            text-align: center;
+        }
 
-    .logo {
-        font-family: 'Bowlby One SC', cursive;
-        font-size: 3em;
-        color: var(--primary-color);
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5),
-                     -2px -2px 4px rgba(255,255,255,0.2),
-                     0 0 10px var(--secondary-color);
-        margin: 0;
-        letter-spacing: 2px;
-        transform: skew(-5deg);
-    }
+        .logo {
+            font-family: 'Bowlby One SC', cursive;
+            font-size: 3em;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5),
+                         -2px -2px 4px rgba(255,255,255,0.2),
+                         0 0 10px var(--secondary-color);
+            margin: 0;
+            letter-spacing: 2px;
+            transform: skew(-5deg);
+        }
 
-    nav {
-        margin-top: 20px;
-    }
+        nav {
+            margin-top: 20px;
+        }
 
-    nav a {
-        color: var(--text-color);
-        text-decoration: none;
-        margin: 0 15px;
-        font-weight: bold;
-        font-size: 1.1em;
-        transition: color 0.3s ease;
-    }
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
 
-    nav a:hover {
-        color: var(--primary-color);
-    }
+        nav a:hover {
+            color: var(--primary-color);
+        }
 
-    main {
-        flex-grow: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+        main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .contact-container {
-        background-color: rgba(0, 0, 0, 0.8);
-        border-radius: 10px;
-        padding: 40px;
-        width: 100%;
-        max-width: 600px;
-    }
+        .contact-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+        }
 
-    h2 {
-        text-align: center;
-        color: var(--primary-color);
-        margin-bottom: 30px;
-    }
+        h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
 
-    form {
-        display: flex;
-        flex-direction: column;
-    }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
 
-    .form-group {
-        margin-bottom: 20px;
-    }
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-    label {
-        display: block;
-        margin-bottom: 5px;
-        color: var(--text-color);
-    }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
 
-    input[type="text"],
-    input[type="email"],
-    textarea {
-        width: 100%;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.1);
-        color: var(--text-color);
-    }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+        }
 
-    textarea {
-        resize: vertical;
-        min-height: 100px;
-    }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
 
-    button {
-        background-color: var(--primary-color);
-        color: var(--text-color);
-        border: none;
-        padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
+        button {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-    button:hover {
-        background-color: var(--secondary-color);
-    }
+        button:hover {
+            background-color: var(--secondary-color);
+        }
 
-    .contact-info {
-        margin-top: 30px;
-        text-align: center;
-    }
+        .contact-info {
+            margin-top: 30px;
+            text-align: center;
+        }
 
-    .contact-info h3 {
-        color: var(--secondary-color);
-    }
+        .contact-info h3 {
+            color: var(--secondary-color);
+        }
 
-    footer {
-        background-color: rgba(0, 0, 0, 0.8);
-        text-align: center;
-        padding: 20px 0;
-    }
-</style>
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="container">
             <h1 class="logo">FF Dimas Angola</h1>
             <nav>
-                <a href="/">Início</a>
+                <a href="index.html">Início</a>
                 <a href="/contatos">Contato</a>
                 <a href="/login">Login</a>
             </nav>
@@ -174,7 +176,7 @@
         <div class="container">
             <div class="contact-container">
                 <h2>Entre em Contato</h2>
-                <form id="contactForm">
+                <form id="contactForm" action="send_email.php" method="POST">
                     <div class="form-group">
                         <label for="nome">Nome completo:</label>
                         <input type="text" id="nome" name="nome" required>
@@ -196,8 +198,8 @@
                 <div class="contact-info">
                     <h3>Informações de Contato</h3>
                     <p>Endereço: Rua Principal, 123 - Luanda, Angola</p>
-                    <p>Telefone: +244 123 456 789</p>
-                    <p>E-mail: contato@ffdimasangola.com</p>
+                    <p>Telefone: +244 930 441 438</p>
+                    <p>E-mail: ffdimasangola@gmail.com</p>
                 </div>
             </div>
         </div>
@@ -206,24 +208,8 @@
     <footer>
         <div class="container">
             <p>&copy; 2023 FF Dimas Angola. Todos os direitos reservados.</p>
+             <p>&copy; INFLUENCER 930 441 438.</p>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const nome = document.getElementById('nome').value;
-            const email = document.getElementById('email').value;
-            const assunto = document.getElementById('assunto').value;
-            const mensagem = document.getElementById('mensagem').value;
-            
-            // Aqui você pode adicionar a lógica para enviar o formulário
-            console.log('Formulário de contato:', nome, email, assunto, mensagem);
-            
-            // Simulação de envio bem-sucedido
-            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-            this.reset();
-        });
-    </script>
 </body>
 </html>

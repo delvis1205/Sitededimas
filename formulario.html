@@ -5,38 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedido de Outros Itens</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Poppins:wght@400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(
-                135deg, 
-                rgba(0, 0, 255, 0.6) 0%, 
-                rgba(255, 0, 0, 0.6) 50%, 
-                rgba(255, 255, 0, 0.6) 100%
-            );
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff6600, #ff3300, #ff9900, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: white;
             text-align: center;
             margin: 0;
             padding: 0;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
+            min-height: 100vh;
         }
-        header {
-            background-color: #282828; /* Cor de fundo do cabeçalho */
-            padding: 20px; /* Espaçamento interno */
-            border-radius: 10px; /* Bordas arredondadas */
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
         }
+
         h1 {
-            color: #ff8c00; /* Cor do Free Fire */
+            color: #ffffff; /* Cor branca para o título */
+            font-size: 4em;
+            text-shadow: 4px 4px 0px #ff6600, 8px 8px 0px #ff3300;
+            letter-spacing: 2px;
+            transform: skew(-5deg);
             margin: 0;
         }
-        h2 {
-            margin: 10px 0; /* Espaçamento entre os títulos */
-        }
+
         .container {
             margin: 20px;
             flex: 1;
         }
+
         form {
             background-color: #282828;
             padding: 30px; /* Aumenta o espaço de preenchimento */
@@ -44,9 +48,11 @@
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7); /* Aumenta o efeito de sombra */
             transition: transform 0.3s; /* Efeito de animação ao focar */
         }
+
         form:hover {
             transform: scale(1.02); /* Leve aumento de tamanho ao passar o mouse */
         }
+
         input, select {
             padding: 15px; /* Aumenta o espaço interno dos campos */
             margin: 10px 0;
@@ -57,10 +63,12 @@
             color: white; /* Cor do texto */
             transition: border-color 0.3s; /* Efeito de transição na borda */
         }
+
         input:focus, select:focus {
             border-color: #ff6f00; /* Muda a cor da borda ao focar */
             outline: none; /* Remove o contorno padrão do navegador */
         }
+
         button {
             padding: 15px;
             background-color: #ff6f00;
@@ -71,9 +79,11 @@
             transition: background-color 0.3s; /* Efeito de transição */
             font-size: 16px; /* Aumenta o tamanho da fonte */
         }
+
         button:hover {
             background-color: #ff8c00;
         }
+
         .whatsapp-icon {
             position: fixed;
             bottom: 20px;
@@ -84,10 +94,12 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             cursor: pointer;
         }
+
         .whatsapp-icon img {
             width: 50px;
             height: 50px;
         }
+
         footer {
             background-color: #282828;
             color: white;
@@ -104,12 +116,8 @@
     Seu navegador não suporta o elemento de áudio.
 </audio>
 
-<header>
-    <h1>Codiguins - FF Angola</h1>
-    <h2>Pedido de Outros Itens</h2>
-</header>
-
 <div class="container">
+    <h1 id="produto-info">Pedido de Outros Itens</h1>
     <form id="pedido-form">
         <label for="id-jogador">ID do Jogador:</label>
         <input type="text" id="id-jogador" name="id-jogador" required>
@@ -119,9 +127,9 @@
 
         <label for="metodo-pagamento">Método de Pagamento:</label>
         <select id="metodo-pagamento" name="metodo-pagamento" required>
-            <option value="Express: 930441438">Express: 930441438</option>
-            <option value="Transf. BAI 0040.0000.9841.5347.1016.4">Transf. BAI 0040.0000.9841.5347.1016.4</option>
-            <option value="PAYPAY AO: 930441438">PAYPAY AO: 930441438</option>
+            <option value="Express: 930441438">Express: 930 441 438</option>
+            <option value="Tranf. BAI 0040.0000.9841.5347.1016.4">Tranf. BAI 0040.0000.9841.5347.1016.4</option>
+            <option value="PAYPAY AO: 930441438">PAYPAY AO: 930 441 438</option>
         </select>
 
         <input type="hidden" id="hidden-text" name="text">
@@ -131,7 +139,7 @@
 
 <script>
     // Ajusta o volume da música
-    document.getElementById('background-music').volume = 0.1; // Define o volume para 10%
+    document.getElementById('background-music').volume = 0.5; // Define o volume para 50%
 
     // Obtém os parâmetros da URL
     const urlParams = new URLSearchParams(window.location.search);

@@ -233,17 +233,17 @@
     const isLoggedIn = false; // Aqui você pode substituir com a lógica real de verificação de login
 
     const loginSection = document.getElementById('login-section');
-
     if (isLoggedIn) {
-        loginSection.innerHTML = '<a href="#">Perfil</a><a href="#">Sair</a>';
+        loginSection.innerHTML = '<a href="termo.html">Termo</a> <a href="politicas.html">Privacidade</a>';
     } else {
-        loginSection.innerHTML = '<a href="login.html">Login</a><a href="register.html">Registrar</a>';
+        loginSection.innerHTML = '<a href="termo.html">Termo</a> <a href="politicas.html">Privacidade</a>';
     }
 </script>
 
-<div class="whatsapp-icon" onclick="window.open('https://api.whatsapp.com/send?phone=YOUR_NUMBER_HERE', '_blank')">
-    <img src="images/whatsapp-icon.png" alt="WhatsApp">
-</div>
+<!-- Ícone flutuante do WhatsApp -->
+<a href="https://chat.whatsapp.com/DNLzxLfZVqK7d3PP4XgH" class="whatsapp-icon" target="_blank">
+    <img src="images/whatsapp.png" alt="WhatsApp">
+</a>
 
 </body>
 </html>

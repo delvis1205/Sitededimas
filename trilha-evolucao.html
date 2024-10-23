@@ -121,6 +121,20 @@
             padding: 10px 0;
             font-size: 14px;
         }
+
+        /* Ícone flutuante do WhatsApp */
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+        }
+
+        .whatsapp-icon img {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -174,13 +188,17 @@
         const isLoggedIn = false; // Aqui você pode substituir com a lógica real de verificação de login
 
         const loginSection = document.getElementById('login-section');
-
         if (isLoggedIn) {
-            loginSection.innerHTML = '<p>Bem-vindo, Usuário! <a href="/logout">Logout</a></p>';
+            loginSection.innerHTML = '<a href="termo.html">Termo</a> <a href="politicas.html">Privacidade</a>';
         } else {
-            loginSection.innerHTML = '<a href="/login">Login</a> | <a href="/register">Registrar</a>';
+            loginSection.innerHTML = '<a href="termo.html">Termo</a> <a href="politicas.html">Privacidade</a>';
         }
     </script>
+
+    <!-- Ícone flutuante do WhatsApp -->
+    <a href="https://chat.whatsapp.com/DNLzxLfZVqXK7d3bPP4XgH" class="whatsapp-icon" target="_blank">
+        <img src="images/whatsapp.png" alt="WhatsApp">
+    </a>
 
 </body>
 </html>
